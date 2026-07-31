@@ -1,0 +1,451 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Soutien scolaire">
+
+  <section class="soutien-hero fade-in">
+    <h1>Soutien scolaire <span class="highlight">Maths & Français</span></h1>
+    <p>Des cours individuels en ligne pour les enfants de 6 à 10 ans. Une pédagogie Montessori bienveillante pour reprendre confiance et progresser à son rythme.</p>
+  </section>
+
+  <section class="matieres fade-in">
+    <div class="matiere">
+      <span class="matiere-icon">🔢</span>
+      <h2>Mathématiques</h2>
+      <p>Numération, calcul, géométrie, résolution de problèmes. On reprend les bases avec patience et on construit des fondations solides.</p>
+    </div>
+    <div class="matiere">
+      <span class="matiere-icon">📖</span>
+      <h2>Français</h2>
+      <p>Lecture, écriture, grammaire, conjugaison. On travaille la compréhension et l'expression, à l'oral comme à l'écrit.</p>
+    </div>
+  </section>
+
+  <section class="avantages-soutien fade-in">
+    <h2>L'approche Soroclub</h2>
+    <div class="avantages-grid">
+      <div class="avantage">
+        <span>👩‍🏫</span>
+        <h3>Pédagogie Montessori</h3>
+        <p>10 ans d'expérience. On s'adapte à l'enfant, pas l'inverse.</p>
+      </div>
+      <div class="avantage">
+        <span>👤</span>
+        <h3>100% individuel</h3>
+        <p>Un enseignant, un enfant. Attention totale et programme sur mesure.</p>
+      </div>
+      <div class="avantage">
+        <span>❤️</span>
+        <h3>Bienveillance</h3>
+        <p>Zéro pression. On encourage, on valorise les progrès, on dédramatise les erreurs.</p>
+      </div>
+      <div class="avantage">
+        <span>💻</span>
+        <h3>En ligne</h3>
+        <p>Depuis chez toi, pas de déplacement. Pratique pour les parents, confortable pour l'enfant.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarifs-soutien fade-in">
+    <h2>Nos tarifs</h2>
+    <div class="formats">
+
+      <div class="format">
+        <div class="format-header">
+          <h3>⏱️ Séance de 30 min</h3>
+          <p>Idéal pour les 6-8 ans</p>
+        </div>
+        <div class="format-body">
+          <div class="formule">
+            <div class="formule-info">
+              <h4>Pack 4 séances</h4>
+            </div>
+            <div class="formule-prix">
+              <span class="prix">28€</span>
+              <span class="par-heure">soit 7€ / séance</span>
+            </div>
+          </div>
+          <div class="formule populaire">
+            <div class="formule-tag">Meilleur rapport</div>
+            <div class="formule-info">
+              <h4>Pack 12 séances</h4>
+            </div>
+            <div class="formule-prix">
+              <span class="prix">72€</span>
+              <span class="par-heure">soit 6€ / séance</span>
+            </div>
+          </div>
+          <div class="formule carte">
+            <div class="formule-info">
+              <h4>À la carte</h4>
+              <p>Sans engagement, réserve quand tu veux</p>
+            </div>
+            <div class="formule-prix">
+              <span class="prix">10€</span>
+              <span class="par-heure">/ séance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="format">
+        <div class="format-header">
+          <h3>🕐 Séance de 1h</h3>
+          <p>Idéal pour les 8-10 ans</p>
+        </div>
+        <div class="format-body">
+          <div class="formule">
+            <div class="formule-info">
+              <h4>Pack 4 séances</h4>
+            </div>
+            <div class="formule-prix">
+              <span class="prix">56€</span>
+              <span class="par-heure">soit 14€ / séance</span>
+            </div>
+          </div>
+          <div class="formule populaire">
+            <div class="formule-tag">Meilleur rapport</div>
+            <div class="formule-info">
+              <h4>Pack 12 séances</h4>
+            </div>
+            <div class="formule-prix">
+              <span class="prix">150€</span>
+              <span class="par-heure">soit 12,50€ / séance</span>
+            </div>
+          </div>
+          <div class="formule carte">
+            <div class="formule-info">
+              <h4>À la carte</h4>
+              <p>Sans engagement, réserve quand tu veux</p>
+            </div>
+            <div class="formule-prix">
+              <span class="prix">18€</span>
+              <span class="par-heure">/ séance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-soutien fade-in">
+    <h2>Envie d'essayer ?</h2>
+    <p>Réserve un premier cours et vois la différence.</p>
+    <a href="/reservation" class="cta">Cours d'essai — 5€</a>
+  </section>
+
+</Base>
+
+<style>
+  .soutien-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+  }
+
+  .soutien-hero h1 {
+    font-size: 2.5rem;
+    color: var(--bleu);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    color: var(--corail);
+  }
+
+  .soutien-hero p {
+    font-size: 1.1rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.8;
+  }
+
+  .matieres {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .matiere {
+    background-color: var(--blanc);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .matiere:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .matiere-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .matiere h2 {
+    font-size: 1.4rem;
+    color: var(--bleu);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .matiere p {
+    font-size: 0.95rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.7;
+  }
+
+  .avantages-soutien {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .avantages-soutien h2 {
+    font-size: 2rem;
+    color: var(--bleu);
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+
+  .avantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .avantage {
+    background-color: var(--blanc);
+    border-left: 4px solid var(--corail);
+    border-radius: 0 16px 16px 0;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .avantage:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .avantage span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .avantage h3 {
+    font-size: 1.05rem;
+    color: var(--bleu);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .avantage p {
+    font-size: 0.92rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+
+  .tarifs-soutien {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .tarifs-soutien h2 {
+    font-size: 2rem;
+    color: var(--bleu);
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+
+  .formats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+
+  .format {
+    background-color: var(--blanc);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .format:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .format-header {
+    background: linear-gradient(135deg, var(--corail) 0%, #D4553B 100%);
+    padding: 1.5rem 2rem;
+    color: var(--blanc);
+  }
+
+  .format-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .format-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .format-body {
+    padding: 1.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .formule {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    background-color: var(--creme);
+    position: relative;
+  }
+
+  .formule.populaire {
+    border: 2px solid var(--jaune);
+    background-color: #fffdf5;
+  }
+
+  .formule.carte {
+    border: 1px dashed var(--bleu);
+    background-color: var(--blanc);
+  }
+
+  .formule-tag {
+    position: absolute;
+    top: -10px;
+    left: 1rem;
+    background-color: var(--jaune);
+    color: var(--blanc);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+  }
+
+  .formule-info h4 {
+    font-size: 1rem;
+    color: var(--bleu);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .formule-info p {
+    font-size: 0.85rem;
+    color: var(--texte);
+    opacity: 0.7;
+  }
+
+  .formule-prix {
+    text-align: right;
+  }
+
+  .prix {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bleu);
+    display: block;
+  }
+
+  .par-heure {
+    font-size: 0.8rem;
+    color: var(--texte);
+    opacity: 0.6;
+  }
+
+  .cta-soutien {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+    color: var(--blanc);
+  }
+
+  .cta-soutien h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .cta-soutien p {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .cta {
+    display: inline-block;
+    background-color: var(--jaune);
+    color: var(--bleu);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .cta:hover {
+    background-color: #e0950f;
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    .soutien-hero h1 {
+      font-size: 2rem;
+    }
+
+    .soutien-hero {
+      padding: 2rem 1.5rem 1rem;
+    }
+
+    .matieres {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem;
+    }
+
+    .formats {
+      grid-template-columns: 1fr;
+    }
+
+    .formule {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.8rem;
+    }
+
+    .formule-prix {
+      text-align: center;
+    }
+
+    .cta-soutien {
+      padding: 3rem 1.5rem;
+    }
+  }
+</style>

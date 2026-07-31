@@ -122,7 +122,7 @@ import Base from '../layouts/Base.astro';
     position: absolute;
     border-radius: 50%;
     opacity: 0.15;
-    animation: flotter 12s ease-in-out infinite;
+    transition: transform 0.3s ease-out;
   }
 
   .perle:nth-child(1) {
@@ -188,22 +188,7 @@ import Base from '../layouts/Base.astro';
     animation-delay: 6s;
   }
 
-  @keyframes flotter {
-    0%, 100% {
-      transform: translateY(0) translateX(0) scale(1);
-    }
-    25% {
-      transform: translateY(-20px) translateX(10px) scale(1.1);
-    }
-    50% {
-      transform: translateY(-10px) translateX(-15px) scale(0.95);
-    }
-    75% {
-      transform: translateY(-25px) translateX(5px) scale(1.05);
-    }
-  }
-
-.hero h1, .hero-sub, .hero .cta {
+  .hero h1, .hero-sub, .hero .cta {
     position: relative;
     z-index: 1;
   }
@@ -471,3 +456,28 @@ import Base from '../layouts/Base.astro';
     }
   }
 </style>
+
+<script>
+  const perles = document.querySelectorAll('.perle');
+  const hero = document.querySelector('.hero');
+
+  if (hero) {
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      perles.forEach((perle, i) => {
+        const speed = (i + 1) * 8;
+        perle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+      });
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      perles.forEach((perle) => {
+        perle.style.transform = 'translate(0, 0)';
+        perle.style.transition = 'transform 0.5s ease-out';
+      });
+    });
+  }
+</script>

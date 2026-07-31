@@ -4,8 +4,17 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Accueil">
 
-  <section class="hero fade-in">
-    <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
+<section class="hero fade-in">
+    <div class="perles">
+      <span class="perle"></span>
+      <span class="perle"></span>
+      <span class="perle"></span>
+      <span class="perle"></span>
+      <span class="perle"></span>
+      <span class="perle"></span>
+      <span class="perle"></span>
+      <span class="perle"></span>
+    </div>    <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
     <p class="hero-sub">Des cours en ligne pour enfants de 4 à 16 ans.<br />Ludiques, progressifs, et efficaces.</p>
     <a href="/reservation" class="cta">Cours d'essai — 5€</a>
   </section>
@@ -93,6 +102,113 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <style>
+/* ===== PERLES ANIMÉES ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .perles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .perle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: flotter 12s ease-in-out infinite;
+  }
+
+  .perle:nth-child(1) {
+    width: 30px; height: 30px;
+    background: var(--corail);
+    top: 20%; left: 10%;
+    animation-duration: 14s;
+  }
+
+  .perle:nth-child(2) {
+    width: 20px; height: 20px;
+    background: var(--jaune);
+    top: 60%; left: 85%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+  }
+
+  .perle:nth-child(3) {
+    width: 40px; height: 40px;
+    background: var(--bleu);
+    top: 80%; left: 30%;
+    animation-duration: 16s;
+    animation-delay: 4s;
+  }
+
+  .perle:nth-child(4) {
+    width: 15px; height: 15px;
+    background: #2BAB7C;
+    top: 10%; left: 70%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+  }
+
+  .perle:nth-child(5) {
+    width: 25px; height: 25px;
+    background: var(--jaune);
+    top: 50%; left: 5%;
+    animation-duration: 13s;
+    animation-delay: 3s;
+  }
+
+  .perle:nth-child(6) {
+    width: 35px; height: 35px;
+    background: var(--corail);
+    top: 30%; left: 90%;
+    animation-duration: 15s;
+    animation-delay: 5s;
+  }
+
+  .perle:nth-child(7) {
+    width: 18px; height: 18px;
+    background: var(--bleu);
+    top: 70%; left: 50%;
+    animation-duration: 12s;
+    animation-delay: 2.5s;
+  }
+
+  .perle:nth-child(8) {
+    width: 22px; height: 22px;
+    background: #2BAB7C;
+    top: 40%; left: 40%;
+    animation-duration: 14s;
+    animation-delay: 6s;
+  }
+
+  @keyframes flotter {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px) scale(1.1);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-15px) scale(0.95);
+    }
+    75% {
+      transform: translateY(-25px) translateX(5px) scale(1.05);
+    }
+  }
+
+.hero h1, .hero-sub, .hero .cta {
+    position: relative;
+    z-index: 1;
+  }
+
+
   .hero {
     max-width: 800px;
     margin: 0 auto;

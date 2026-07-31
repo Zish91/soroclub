@@ -5,30 +5,30 @@ import Base from '../layouts/Base.astro';
 <Base title="Réservation">
 
   <section class="resa-hero fade-in">
-    <span class="resa-icon">📅</span>
-    <h1>Réservation <span class="highlight">bientôt disponible</span></h1>
-    <p>Notre système de réservation en ligne arrive très bientôt. En attendant, contacte-nous directement pour réserver ton cours d'essai ou t'inscrire à un pack.</p>
-    <div class="resa-actions">
-      <a href="/contact" class="cta">Nous contacter</a>
-    </div>
+    <h1>Réserve ton <span class="highlight">cours d'essai</span></h1>
+    <p>Choisis un créneau qui te convient. 30 minutes en visio pour découvrir le soroban avec ton enfant.</p>
+  </section>
+
+  <section class="resa-embed fade-in">
+    <div id="cal-embed"></div>
   </section>
 
   <section class="resa-infos fade-in">
     <div class="info-cards">
       <div class="info-card">
         <span>⏱️</span>
-        <h3>Réponse rapide</h3>
-        <p>On te répond sous 24h maximum.</p>
+        <h3>30 minutes</h3>
+        <p>Un cours d'essai pour découvrir la méthode.</p>
       </div>
       <div class="info-card">
-        <span>💬</span>
-        <h3>Par email ou téléphone</h3>
-        <p>Choisis le moyen qui te convient le mieux.</p>
+        <span>💻</span>
+        <h3>En visio</h3>
+        <p>Depuis chez toi, aucun déplacement.</p>
       </div>
       <div class="info-card">
         <span>🎯</span>
-        <h3>Cours d'essai — 5€</h3>
-        <p>Teste la méthode avant de t'engager.</p>
+        <h3>5€ seulement</h3>
+        <p>Teste sans te ruiner.</p>
       </div>
     </div>
   </section>
@@ -37,20 +37,14 @@ import Base from '../layouts/Base.astro';
 
 <style>
   .resa-hero {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 5rem 2rem 3rem;
+    padding: 4rem 2rem 2rem;
     text-align: center;
   }
 
-  .resa-icon {
-    font-size: 4rem;
-    display: block;
-    margin-bottom: 1.5rem;
-  }
-
   .resa-hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--bleu);
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -65,23 +59,13 @@ import Base from '../layouts/Base.astro';
     color: var(--texte);
     opacity: 0.85;
     line-height: 1.8;
-    margin-bottom: 2.5rem;
   }
 
-  .cta {
-    display: inline-block;
-    background-color: var(--corail);
-    color: var(--blanc);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-
-  .cta:hover {
-    background-color: var(--corail-hover);
-    transform: scale(1.03);
+  .resa-embed {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 500px;
   }
 
   .resa-infos {
@@ -126,11 +110,58 @@ import Base from '../layouts/Base.astro';
 
   @media (max-width: 768px) {
     .resa-hero h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
 
     .resa-hero {
-      padding: 3rem 1.5rem 2rem;
+      padding: 2rem 1.5rem 1rem;
     }
   }
 </style>
+
+<script>
+  (function (C, A, L) {
+    let p = function (a, ar) {
+      a.q.push(ar);
+    };
+    let d = C.document;
+    C.Cal =
+      C.Cal ||
+      function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () {
+            p(api, arguments);
+          };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", { origin: "https://cal.com" });
+  Cal("inline", {
+    calLink: "soroclub/cours-d-essai-5",
+    elementOrSelector: "#cal-embed",
+    config: { layout: "month_view" },
+  });
+  Cal("ui", {
+    styles: { branding: { brandColor: "#1B3A5C" } },
+    hideEventTypeDetails: false,
+    layout: "month_view",
+  });
+</script>

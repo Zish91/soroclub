@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Boutique">
+
+  <section class="boutique-hero fade-in">
+    <span class="boutique-icon">🧮</span>
+    <h1>La boutique <span class="highlight">arrive bientôt</span></h1>
+    <p>Retrouve ici prochainement le soroban idéal pour ton enfant. En attendant, contacte-nous pour te procurer ton boulier.</p>
+    <div class="boutique-actions">
+      <a href="/contact" class="cta">Nous contacter</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .boutique-hero {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .boutique-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .boutique-hero h1 {
+    font-size: 2.2rem;
+    color: var(--bleu);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    color: var(--corail);
+  }
+
+  .boutique-hero p {
+    font-size: 1.1rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta {
+    display: inline-block;
+    background-color: var(--corail);
+    color: var(--blanc);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .cta:hover {
+    background-color: var(--corail-hover);
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    .boutique-hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .boutique-hero {
+      padding: 3rem 1.5rem;
+    }
+  }
+</style>

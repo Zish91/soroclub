@@ -1,0 +1,225 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Témoignages">
+
+  <section class="temoignages-hero fade-in">
+    <h1>Ce que disent <span class="highlight">les parents</span></h1>
+    <p>Ils nous ont fait confiance pour leurs enfants. Voici leurs retours.</p>
+  </section>
+
+  <section class="temoignages-grid fade-in">
+
+    <div class="temoignage">
+      <div class="etoiles">⭐⭐⭐⭐⭐</div>
+      <p class="avis">"Ma fille a complètement changé de regard sur les maths. Avant, elle bloquait dès qu'on parlait de calcul. Après 3 mois de soroban, elle calcule plus vite que moi ! L'enseignante est bienveillante et très patiente. Je recommande à 100%."</p>
+      <div class="parent">
+        <div class="parent-info">
+          <strong>Fatima B.</strong>
+          <span>Maman de Inaya, 7 ans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="temoignage">
+      <div class="etoiles">⭐⭐⭐⭐⭐</div>
+      <p class="avis">"Mon fils avait du mal à se concentrer à l'école. Depuis qu'il fait du soroban, ses professeurs ont remarqué un vrai progrès. En plus il adore ses cours, il me demande quand c'est le prochain ! Masha Allah, une super méthode."</p>
+      <div class="parent">
+        <div class="parent-info">
+          <strong>Youssef M.</strong>
+          <span>Papa de Adam, 9 ans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="temoignage">
+      <div class="etoiles">⭐⭐⭐⭐⭐</div>
+      <p class="avis">"J'étais sceptique au début, je ne connaissais pas du tout le soroban. Mais les résultats parlent d'eux-mêmes. Mon fils fait du calcul mental à une vitesse impressionnante. Et en plus, ça l'a aidé en français aussi grâce à la concentration."</p>
+      <div class="parent">
+        <div class="parent-info">
+          <strong>Claire D.</strong>
+          <span>Maman de Théo, 8 ans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="temoignage">
+      <div class="etoiles">⭐⭐⭐⭐⭐</div>
+      <p class="avis">"On a essayé plusieurs méthodes de soutien scolaire avant. Ici c'est différent : pas de pression, l'enfant avance à son rythme. Ma fille a repris confiance en elle et ses notes ont remonté. Barakallahu fikum pour votre travail."</p>
+      <div class="parent">
+        <div class="parent-info">
+          <strong>Khadija A.</strong>
+          <span>Maman de Maryam, 10 ans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="temoignage">
+      <div class="etoiles">⭐⭐⭐⭐⭐</div>
+      <p class="avis">"Le format en ligne me convenait parfaitement, pas besoin de se déplacer. L'enseignante est très à l'écoute et adapte ses cours au niveau de chaque enfant. Ma fille attend ses cours avec impatience chaque semaine !"</p>
+      <div class="parent">
+        <div class="parent-info">
+          <strong>Sophie L.</strong>
+          <span>Maman de Léa, 6 ans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="temoignage">
+      <div class="etoiles">⭐⭐⭐⭐⭐</div>
+      <p class="avis">"Mon fils a commencé le soroban à 5 ans. Au début je trouvais ça tôt, mais l'approche est tellement ludique qu'il ne voit même pas que c'est un cours. Il progresse à son rythme et il est fier de lui. Merci pour tout !"</p>
+      <div class="parent">
+        <div class="parent-info">
+          <strong>Mehdi R.</strong>
+          <span>Papa de Ayoub, 5 ans</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="cta-temoignages fade-in">
+    <h2>Rejoins les familles Soroclub</h2>
+    <p>Offre à ton enfant les clés du calcul mental.</p>
+    <a href="/reservation" class="cta">Cours d'essai — 5€</a>
+  </section>
+
+</Base>
+
+<style>
+  .temoignages-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+  }
+
+  .temoignages-hero h1 {
+    font-size: 2.5rem;
+    color: var(--bleu);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    color: var(--corail);
+  }
+
+  .temoignages-hero p {
+    font-size: 1.1rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.8;
+  }
+
+  .temoignages-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .temoignage {
+    background-color: var(--blanc);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .temoignage:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .etoiles {
+    font-size: 1.2rem;
+  }
+
+  .avis {
+    font-size: 0.95rem;
+    color: var(--texte);
+    line-height: 1.8;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  .parent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .parent-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .parent-info strong {
+    font-size: 0.95rem;
+    color: var(--bleu);
+  }
+
+  .parent-info span {
+    font-size: 0.85rem;
+    color: var(--texte);
+    opacity: 0.65;
+  }
+
+  .cta-temoignages {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+    color: var(--blanc);
+  }
+
+  .cta-temoignages h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .cta-temoignages p {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .cta {
+    display: inline-block;
+    background-color: var(--jaune);
+    color: var(--bleu);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .cta:hover {
+    background-color: #e0950f;
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    .temoignages-hero h1 {
+      font-size: 2rem;
+    }
+
+    .temoignages-grid {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem;
+    }
+
+    .cta-temoignages {
+      padding: 3rem 1.5rem;
+    }
+  }
+</style>

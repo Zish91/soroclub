@@ -1,0 +1,136 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Réservation">
+
+  <section class="resa-hero fade-in">
+    <span class="resa-icon">📅</span>
+    <h1>Réservation <span class="highlight">bientôt disponible</span></h1>
+    <p>Notre système de réservation en ligne arrive très bientôt. En attendant, contacte-nous directement pour réserver ton cours d'essai ou t'inscrire à un pack.</p>
+    <div class="resa-actions">
+      <a href="/contact" class="cta">Nous contacter</a>
+    </div>
+  </section>
+
+  <section class="resa-infos fade-in">
+    <div class="info-cards">
+      <div class="info-card">
+        <span>⏱️</span>
+        <h3>Réponse rapide</h3>
+        <p>On te répond sous 24h maximum.</p>
+      </div>
+      <div class="info-card">
+        <span>💬</span>
+        <h3>Par email ou téléphone</h3>
+        <p>Choisis le moyen qui te convient le mieux.</p>
+      </div>
+      <div class="info-card">
+        <span>🎯</span>
+        <h3>Cours d'essai — 5€</h3>
+        <p>Teste la méthode avant de t'engager.</p>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .resa-hero {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .resa-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .resa-hero h1 {
+    font-size: 2.2rem;
+    color: var(--bleu);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    color: var(--corail);
+  }
+
+  .resa-hero p {
+    font-size: 1.1rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta {
+    display: inline-block;
+    background-color: var(--corail);
+    color: var(--blanc);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .cta:hover {
+    background-color: var(--corail-hover);
+    transform: scale(1.03);
+  }
+
+  .resa-infos {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 5rem;
+  }
+
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    background-color: var(--blanc);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .info-card span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.05rem;
+    color: var(--bleu);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-card p {
+    font-size: 0.92rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .resa-hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .resa-hero {
+      padding: 3rem 1.5rem 2rem;
+    }
+  }
+</style>

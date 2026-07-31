@@ -1,17 +1,52 @@
 ---
-
+import Base from '../layouts/Base.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Accueil">
+  <section class="hero">
+    <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
+    <p>Des cours en ligne pour enfants de 4 à 16 ans. Ludiques, progressifs, et efficaces.</p>
+    <a href="/reservation" class="cta">Réserver un cours d'essai</a>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    color: var(--bleu);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    color: var(--corail);
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--texte);
+    margin-bottom: 2rem;
+  }
+
+  .cta {
+    display: inline-block;
+    background-color: var(--corail);
+    color: var(--blanc);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .cta:hover {
+    background-color: var(--corail-hover);
+  }
+</style>

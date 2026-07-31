@@ -1,0 +1,37 @@
+/* ===== PALETTE SOROCLUB ===== */
+:root {
+  --bleu: #1B3A5C;
+  --jaune: #F5A623;
+  --corail: #E8644A;
+  --creme: #F7F4EF;
+  --texte: #2D2D2D;
+  --blanc: #FFFFFF;
+
+  /* Variantes utiles */
+  --bleu-clair: #2A5580;
+  --corail-hover: #D4553B;
+}
+
+/* ===== RESET DE BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--creme);
+  color: var(--texte);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

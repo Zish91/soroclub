@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Soroclub</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="/" class="logo">Soroclub</a>
+        <nav>
+          <a href="/programme">Programme</a>
+          <a href="/tarifs">Tarifs</a>
+          <a href="/temoignages">Témoignages</a>
+          <a href="/reservation">Réservation</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Soroclub. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .header {
+    background-color: var(--bleu);
+    padding: 1rem 0;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: var(--jaune);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: var(--blanc);
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  nav a:hover {
+    color: var(--jaune);
+  }
+
+  .footer {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+  }
+</style>

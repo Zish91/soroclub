@@ -3,36 +3,122 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Accueil">
-  <section class="hero">
+
+  <section class="hero fade-in">
     <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
-    <p>Des cours en ligne pour enfants de 4 à 16 ans. Ludiques, progressifs, et efficaces.</p>
+    <p class="hero-sub">Des cours en ligne pour enfants de 4 à 16 ans.<br />Ludiques, progressifs, et efficaces.</p>
     <a href="/reservation" class="cta">Réserver un cours d'essai</a>
   </section>
+
+  <section class="benefices fade-in">
+    <h2>Pourquoi le soroban ?</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">🧠</span>
+        <h3>Calcul mental</h3>
+        <p>Ton enfant apprend à visualiser le boulier mentalement pour calculer à une vitesse fulgurante, sans calculatrice.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎯</span>
+        <h3>Concentration</h3>
+        <p>Manipuler les perles demande une attention totale. Cette habitude se transfère dans toutes les matières à l'école.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">💪</span>
+        <h3>Confiance en soi</h3>
+        <p>Fini les "je suis nul en maths". En maîtrisant le calcul, ton enfant retrouve le plaisir d'apprendre.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🧩</span>
+        <h3>Stimulation cérébrale</h3>
+        <p>Le soroban active les deux hémisphères du cerveau : la logique à gauche, la visualisation et la créativité à droite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="etapes fade-in">
+    <h2>Comment ça marche ?</h2>
+    <div class="etapes-grid">
+      <div class="etape">
+        <span class="etape-num">1</span>
+        <h3>Réserve ton cours d'essai</h3>
+        <p>Choisis un créneau en ligne. Le premier cours est offert pour découvrir la méthode.</p>
+      </div>
+      <div class="etape">
+        <span class="etape-num">2</span>
+        <h3>Apprends avec ton soroban</h3>
+        <p>En visio, ton enfant manipule son boulier avec un professeur passionné. Ludique et interactif.</p>
+      </div>
+      <div class="etape">
+        <span class="etape-num">3</span>
+        <h3>Progresse niveau par niveau</h3>
+        <p>Du débutant au calcul mental avancé, chaque niveau est validé par un examen. Comme les ceintures en judo !</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pourquoi fade-in">
+    <h2>Pourquoi Soroclub ?</h2>
+    <p class="pourquoi-intro">Fondée par <strong>Ibtissama</strong>, enseignante Montessori depuis plus de 10 ans et coach diplômée à la méthode soroban. Tous nos enseignants sont formés à sa pédagogie bienveillante.</p>
+    <div class="pourquoi-grid">
+      <div class="pourquoi-item">
+        <span class="pourquoi-icon">👩‍🏫</span>
+        <h3>Enseignante certifiée</h3>
+        <p>Une méthode conçue par une experte, avec 10 ans de pédagogie Montessori et une certification soroban.</p>
+      </div>
+      <div class="pourquoi-item">
+        <span class="pourquoi-icon">🐢</span>
+        <h3>On ne brûle pas les étapes</h3>
+        <p>Chaque enfant avance à son rythme. Pas de pression, pas de course. La maîtrise avant la vitesse.</p>
+      </div>
+      <div class="pourquoi-item">
+        <span class="pourquoi-icon">👤</span>
+        <h3>Suivi personnalisé</h3>
+        <p>Des petits groupes pour un vrai accompagnement. Chaque enfant est suivi individuellement.</p>
+      </div>
+      <div class="pourquoi-item">
+        <span class="pourquoi-icon">❤️</span>
+        <h3>Zéro stress</h3>
+        <p>L'erreur fait partie de l'apprentissage. Ici on encourage, on ne juge pas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final fade-in">
+    <h2>Prêt à commencer ?</h2>
+    <p>Offre à ton enfant un super pouvoir en mathématiques.</p>
+    <a href="/reservation" class="cta">Réserver un cours d'essai gratuit</a>
+  </section>
+
 </Base>
 
 <style>
   .hero {
     max-width: 800px;
     margin: 0 auto;
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     text-align: center;
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--bleu);
-    line-height: 1.3;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
 
   .highlight {
     color: var(--corail);
   }
 
-  .hero p {
-    font-size: 1.2rem;
+  .hero-sub {
+    font-size: 1.15rem;
     color: var(--texte);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
+    line-height: 1.8;
   }
 
   .cta {
@@ -40,13 +126,232 @@ import Base from '../layouts/Base.astro';
     background-color: var(--corail);
     color: var(--blanc);
     padding: 1rem 2.5rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
     font-weight: 600;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s, transform 0.2s;
+    letter-spacing: 0.3px;
   }
 
   .cta:hover {
     background-color: var(--corail-hover);
+    transform: scale(1.03);
+  }
+
+  .benefices {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .benefices h2 {
+    font-size: 2rem;
+    color: var(--bleu);
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background-color: var(--blanc);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-icon {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .card h3 {
+    color: var(--bleu);
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .card p {
+    font-size: 0.92rem;
+    color: var(--texte);
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .etapes {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .etapes h2 {
+    font-size: 2rem;
+    color: var(--bleu);
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+
+  .etapes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .etape {
+    padding: 1.5rem;
+  }
+
+  .etape-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: var(--jaune);
+    color: var(--blanc);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 3px 10px rgba(245, 166, 35, 0.3);
+  }
+
+  .etape h3 {
+    color: var(--bleu);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .etape p {
+    font-size: 0.92rem;
+    color: var(--texte);
+    opacity: 0.85;
+    line-height: 1.7;
+  }
+
+  .pourquoi {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .pourquoi h2 {
+    font-size: 2rem;
+    color: var(--bleu);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .pourquoi-intro {
+    font-size: 1.05rem;
+    color: var(--texte);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+    opacity: 0.85;
+  }
+
+  .pourquoi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .pourquoi-item {
+    background-color: var(--blanc);
+    border-left: 4px solid var(--jaune);
+    border-radius: 0 16px 16px 0;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .pourquoi-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .pourquoi-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .pourquoi-item h3 {
+    color: var(--bleu);
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .pourquoi-item p {
+    font-size: 0.92rem;
+    color: var(--texte);
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .cta-final {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+    color: var(--blanc);
+  }
+
+  .cta-final h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .cta-final p {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .cta-final .cta {
+    background-color: var(--jaune);
+    color: var(--bleu);
+    font-weight: 700;
+  }
+
+  .cta-final .cta:hover {
+    background-color: #e0950f;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero {
+      padding: 2rem 1.5rem;
+    }
+
+    .benefices, .etapes, .pourquoi {
+      padding: 3rem 1.5rem;
+    }
+
+    .cta-final {
+      padding: 3rem 1.5rem;
+    }
   }
 </style>

@@ -13,9 +13,10 @@ const { title } = Astro.props;
   <body>
     <header class="header">
       <div class="header-inner">
-        <a href="/" class="logo">Soroclub</a>
+        <a href="/" class="logo"><img src="/logo.png" alt="Soroclub" class="logo-img" /></a>
         <button class="burger" aria-label="Menu">☰</button>
         <nav>
+          <a href="/">Accueil</a>
           <a href="/programme">Programme</a>
           <a href="/tarifs">Tarifs</a>
           <a href="/temoignages">Témoignages</a>
@@ -30,13 +31,24 @@ const { title } = Astro.props;
     <footer class="footer">
       <p>&copy; 2025 Soroclub. Tous droits réservés.</p>
     </footer>
-  </body>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+</script>
+</body>
 </html>
 
 <style>
   .header {
     background-color: var(--bleu);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 
   .header-inner {
@@ -46,6 +58,11 @@ const { title } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .logo-img {
+    height: 150px;
+    width: auto;
   }
 
   .logo {

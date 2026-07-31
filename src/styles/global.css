@@ -1,3 +1,6 @@
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 /* ===== PALETTE SOROCLUB ===== */
 :root {
   --bleu: #1B3A5C;
@@ -6,24 +9,27 @@
   --creme: #F7F4EF;
   --texte: #2D2D2D;
   --blanc: #FFFFFF;
-
-  /* Variantes utiles */
   --bleu-clair: #2A5580;
   --corail-hover: #D4553B;
 }
 
-/* ===== RESET DE BASE ===== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--creme);
   color: var(--texte);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -34,4 +40,16 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* ===== ANIMATIONS AU SCROLL ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

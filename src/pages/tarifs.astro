@@ -25,6 +25,7 @@ import Base from '../layouts/Base.astro';
           <div class="formule-prix">
             <span class="prix">15€</span>
             <span class="par-heure">/ heure</span>
+            <a href="https://buy.stripe.com/fZuaEZ6RV60r6JkaW31wY0b" target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule populaire">
@@ -67,12 +68,13 @@ import Base from '../layouts/Base.astro';
           <div class="formule-prix">
             <span class="prix">10€</span>
             <span class="par-heure">/ heure</span>
+            <a href="https://buy.stripe.com/dRmeVfekngF54Bc1lt1wY0a" target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule populaire">
           <div class="formule-tag">Le plus choisi</div>
           <div class="formule-info">
-            <h3>Mensuel</h3>
+            <h3>Pack 4h</h3>
             <p>4 heures de cours</p>
           </div>
           <div class="formule-prix">
@@ -83,7 +85,7 @@ import Base from '../layouts/Base.astro';
         </div>
         <div class="formule">
           <div class="formule-info">
-            <h3>Trimestriel</h3>
+            <h3>Pack 12h</h3>
             <p>12 heures de cours</p>
           </div>
           <div class="formule-prix">
@@ -99,18 +101,22 @@ import Base from '../layouts/Base.astro';
 
   <section class="tarifs-info fade-in">
     <div class="info-cards">
-      <div class="info-card">
+      <a href="/reservation" class="info-card info-card-link">
         <span>🎁</span>
         <p><strong>Cours d'essai à 5€</strong> — teste la méthode et vois si ça plaît à ton enfant.</p>
-      </div>
+      </a>
       <div class="info-card">
         <span>💻</span>
         <p><strong>100% en ligne</strong> — cours en visio depuis chez toi, pas de déplacement.</p>
       </div>
-      <div class="info-card">
+      <a href="/boutique" class="info-card info-card-link">
         <span>🧮</span>
         <p><strong>Commande ton soroban</strong> — retrouve le boulier idéal dans notre boutique.</p>
-      </div>
+      </a>
+      <a href="/soutien-scolaire" class="info-card info-card-link">
+        <span>📖</span>
+        <p><strong>Soutien scolaire</strong> — maths & français pour les 6-10 ans, même approche bienveillante.</p>
+      </a>
     </div>
   </section>
 
@@ -198,17 +204,18 @@ import Base from '../layouts/Base.astro';
     padding: 1.5rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .formule {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 1.2rem 1.5rem;
     border-radius: 12px;
     background-color: var(--creme);
     position: relative;
+    gap: 1rem;
   }
 
   .formule.populaire {
@@ -243,13 +250,16 @@ import Base from '../layouts/Base.astro';
 
   .formule-prix {
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
   }
 
   .prix {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--bleu);
-    display: block;
   }
 
   .par-heure {
@@ -266,7 +276,7 @@ import Base from '../layouts/Base.astro';
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
     transition: background-color 0.3s, transform 0.2s;
   }
 
@@ -283,7 +293,7 @@ import Base from '../layouts/Base.astro';
 
   .info-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
   }
 
@@ -295,6 +305,16 @@ import Base from '../layouts/Base.astro';
     background-color: var(--blanc);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .info-card-link {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .info-card-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   }
 
   .info-card span {
@@ -360,7 +380,7 @@ import Base from '../layouts/Base.astro';
     }
 
     .formule-prix {
-      text-align: center;
+      align-items: center;
     }
 
     .cta-tarifs {

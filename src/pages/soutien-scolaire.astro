@@ -87,6 +87,7 @@ import Base from '../layouts/Base.astro';
             <div class="formule-prix">
               <span class="prix">10€</span>
               <span class="par-heure">/ séance</span>
+              <a href="https://buy.stripe.com/dRm3cx9034Wn7Nofcj1wY09" target="_blank" class="btn-acheter">Acheter</a>
             </div>
           </div>
         </div>
@@ -127,6 +128,7 @@ import Base from '../layouts/Base.astro';
             <div class="formule-prix">
               <span class="prix">18€</span>
               <span class="par-heure">/ séance</span>
+              <a href="https://buy.stripe.com/14AaEZb8b1Kbc3E3tB1wY08" target="_blank" class="btn-acheter">Acheter</a>
             </div>
           </div>
         </div>
@@ -320,17 +322,18 @@ import Base from '../layouts/Base.astro';
     padding: 1.5rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .formule {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 1.2rem 1.5rem;
     border-radius: 12px;
     background-color: var(--creme);
     position: relative;
+    gap: 1rem;
   }
 
   .formule.populaire {
@@ -370,13 +373,16 @@ import Base from '../layouts/Base.astro';
 
   .formule-prix {
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
   }
 
   .prix {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--bleu);
-    display: block;
   }
 
   .par-heure {
@@ -393,7 +399,7 @@ import Base from '../layouts/Base.astro';
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
     transition: background-color 0.3s, transform 0.2s;
   }
 
@@ -462,7 +468,7 @@ import Base from '../layouts/Base.astro';
     }
 
     .formule-prix {
-      text-align: center;
+      align-items: center;
     }
 
     .cta-soutien {

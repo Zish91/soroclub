@@ -105,11 +105,10 @@ import Base from '../layouts/Base.astro';
 /* ===== PERLES ANIMÉES ===== */
   .hero {
     position: relative;
-    overflow: hidden;
   }
 
   .perles {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -459,24 +458,14 @@ import Base from '../layouts/Base.astro';
 
 <script>
   const perles = document.querySelectorAll('.perle');
-  const hero = document.querySelector('.hero');
 
-  if (hero) {
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
 
-      perles.forEach((perle, i) => {
-        const speed = (i + 1) * 20;
-        perle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-      });
+    perles.forEach((perle, i) => {
+      const speed = (i + 1) * 25;
+      perle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
     });
-
-    hero.addEventListener('mouseleave', () => {
-      perles.forEach((perle) => {
-        perle.style.transform = 'translate(0, 0)';
-      });
-    });
-  }
+  });
 </script>

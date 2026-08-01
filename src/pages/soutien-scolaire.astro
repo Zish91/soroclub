@@ -65,6 +65,7 @@ import Base from '../layouts/Base.astro';
             <div class="formule-prix">
               <span class="prix">28€</span>
               <span class="par-heure">soit 7€ / séance</span>
+              <a href="https://buy.stripe.com/3cI5kF1xB74v0kWc071wY04" target="_blank" class="btn-acheter">Acheter</a>
             </div>
           </div>
           <div class="formule populaire">
@@ -75,6 +76,7 @@ import Base from '../layouts/Base.astro';
             <div class="formule-prix">
               <span class="prix">72€</span>
               <span class="par-heure">soit 6€ / séance</span>
+              <a href="https://buy.stripe.com/dRmcN7ccf2OfaZA5BJ1wY03" target="_blank" class="btn-acheter">Acheter</a>
             </div>
           </div>
           <div class="formule carte">
@@ -103,6 +105,7 @@ import Base from '../layouts/Base.astro';
             <div class="formule-prix">
               <span class="prix">56€</span>
               <span class="par-heure">soit 14€ / séance</span>
+              <a href="https://buy.stripe.com/28EdRb2BF0G7gjU0hp1wY02" target="_blank" class="btn-acheter">Acheter</a>
             </div>
           </div>
           <div class="formule populaire">
@@ -113,6 +116,7 @@ import Base from '../layouts/Base.astro';
             <div class="formule-prix">
               <span class="prix">150€</span>
               <span class="par-heure">soit 12,50€ / séance</span>
+              <a href="https://buy.stripe.com/6oU9AVforagH2t49RZ1wY01" target="_blank" class="btn-acheter">Acheter</a>
             </div>
           </div>
           <div class="formule carte">
@@ -379,6 +383,23 @@ import Base from '../layouts/Base.astro';
     font-size: 0.8rem;
     color: var(--texte);
     opacity: 0.6;
+  }
+
+  .btn-acheter {
+    display: inline-block;
+    background-color: var(--corail);
+    color: var(--blanc);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .btn-acheter:hover {
+    background-color: var(--corail-hover);
+    transform: scale(1.05);
   }
 
   .cta-soutien {

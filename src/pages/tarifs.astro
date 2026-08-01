@@ -31,21 +31,23 @@ import Base from '../layouts/Base.astro';
           <div class="formule-tag">Le plus choisi</div>
           <div class="formule-info">
             <h3>Pack 4h</h3>
-            <p>1 mois de cours (1h/semaine)</p>
+            <p>4 heures de cours</p>
           </div>
           <div class="formule-prix">
             <span class="prix">50€</span>
             <span class="par-heure">soit 12,50€ / heure</span>
+            <a href="https://buy.stripe.com/28E5kF7VZ3Sj4BcaW31wY07" target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule">
           <div class="formule-info">
             <h3>Pack 12h</h3>
-            <p>3 mois de cours (1h/semaine)</p>
+            <p>12 heures de cours</p>
           </div>
           <div class="formule-prix">
             <span class="prix">130€</span>
             <span class="par-heure">soit 10,80€ / heure</span>
+            <a href="https://buy.stripe.com/00w9AV6RVewX9Vwe8f1wY00" target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
       </div>
@@ -71,21 +73,23 @@ import Base from '../layouts/Base.astro';
           <div class="formule-tag">Le plus choisi</div>
           <div class="formule-info">
             <h3>Mensuel</h3>
-            <p>4h/mois (1h/semaine)</p>
+            <p>4 heures de cours</p>
           </div>
           <div class="formule-prix">
             <span class="prix">35€</span>
             <span class="par-heure">soit 8,75€ / heure</span>
+            <a href="https://buy.stripe.com/5kQ8wRfor9cD4Bcc071wY06" target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule">
           <div class="formule-info">
             <h3>Trimestriel</h3>
-            <p>12h de cours (1h/semaine, 3 mois)</p>
+            <p>12 heures de cours</p>
           </div>
           <div class="formule-prix">
             <span class="prix">90€</span>
             <span class="par-heure">soit 7,50€ / heure</span>
+            <a href="https://buy.stripe.com/cNi7sN6RV60r1p0aW31wY05" target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
       </div>
@@ -104,7 +108,7 @@ import Base from '../layouts/Base.astro';
         <p><strong>100% en ligne</strong> — cours en visio depuis chez toi, pas de déplacement.</p>
       </div>
       <div class="info-card">
-        <span>📦</span>
+        <span>🧮</span>
         <p><strong>Commande ton soroban</strong> — retrouve le boulier idéal dans notre boutique.</p>
       </div>
     </div>
@@ -252,6 +256,23 @@ import Base from '../layouts/Base.astro';
     font-size: 0.8rem;
     color: var(--texte);
     opacity: 0.6;
+  }
+
+  .btn-acheter {
+    display: inline-block;
+    background-color: var(--corail);
+    color: var(--blanc);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .btn-acheter:hover {
+    background-color: var(--corail-hover);
+    transform: scale(1.05);
   }
 
   .tarifs-info {

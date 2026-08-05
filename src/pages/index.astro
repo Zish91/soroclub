@@ -145,7 +145,7 @@ import Base from '../layouts/Base.astro';
           <h3>Cours d'essai</h3>
         </div>
         <div class="tarif-body">
-          <span class="tarif-prix"><strong>5€</strong> la séance</span>
+          <span class="tarif-prix"><strong>5€</strong></span>
           <p>Teste la méthode, sans engagement.</p>
           <span class="cta-outline">Réserver →</span>
         </div>
@@ -189,7 +189,7 @@ import Base from '../layouts/Base.astro';
         <div class="accordion-icon">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"/><path d="M4.82 7.9 8 10"/><path d="M15.18 7.9 12 10"/><path d="M16.93 10H20a2 2 0 0 1 0 4H2"/></svg>
         </div>
-        <h3 class="accordion-title">Chaque enfant à son rythme</h3>
+        <h3 class="accordion-title">À son rythme</h3>
         <p class="accordion-text">Pas de pression, pas de course. La maîtrise avant la vitesse.</p>
       </div>
       <div class="accordion-item" style="--acc-color: var(--bleu); --acc-bg: rgba(27,58,92,0.06);">
@@ -245,7 +245,7 @@ import Base from '../layouts/Base.astro';
   .cta-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shine 3s ease-in-out infinite; }
   @keyframes shine { 0% { left: -100%; } 50% { left: 150%; } 100% { left: 150%; } }
   .cta-outline { display: inline-block; border: 2px solid var(--bleu); color: var(--bleu); padding: 0.8rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; letter-spacing: 0.3px; }
-  .cta-outline:hover { background: linear-gradient(135deg, var(--corail), var(--jaune)); color: var(--blanc); border-color: transparent; transform: scale(1.03); box-shadow: 0 4px 15px rgba(232, 100, 74, 0.3); }
+  .cta-outline:hover { background: linear-gradient(135deg, #1A6B5C, #2BAB7C); color: var(--blanc); border-color: transparent; transform: scale(1.03); box-shadow: 0 4px 15px rgba(26, 107, 92, 0.3); }
 
   /* ACCORDION */
   .benefices, .pourquoi { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }

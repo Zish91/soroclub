@@ -224,9 +224,11 @@ import Base from '../layouts/Base.astro';
   .symbol:nth-child(10) { font-size: 2.6rem; color: var(--teal); top: 48%; left: 78%; animation: float 7.5s ease-in-out infinite 3.5s; }
   .symbol:nth-child(11) { font-size: 1.9rem; color: var(--jaune); top: 92%; left: 12%; animation: float 6s ease-in-out infinite 2.2s; }
   .symbol:nth-child(12) { font-size: 2.1rem; color: var(--bleu-clair); top: 3%; left: 45%; animation: float 7s ease-in-out infinite 0.8s; }
+  @keyframes pulse-bandeau { 0%, 100% { box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2); transform: scale(1); } 50% { box-shadow: 0 12px 50px rgba(26, 107, 92, 0.5), 0 0 0 15px rgba(26, 107, 92, 0); transform: scale(1.01); } }
+  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
   @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } }
 
-  .hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: center; animation: pageEnter 2.5s ease-out; position: relative; z-index: 1; }
   .hero h1 { font-size: 2.8rem; color: var(--bleu); line-height: 1.2; margin-bottom: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
   .highlight { color: var(--corail); }
   .hero-sub { font-size: 1.15rem; color: var(--texte); margin-bottom: 2.5rem; opacity: 0.85; line-height: 1.8; }
@@ -366,13 +368,13 @@ import Base from '../layouts/Base.astro';
   .pourquoi-intro { font-size: 1.05rem; color: var(--texte); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8; opacity: 0.85; }
 
   .accordion { display: flex; gap: 0.75rem; height: 320px; }
-  .accordion-item { flex: 1; min-width: 0; background: var(--acc-bg); border-radius: 16px; padding: 2rem 1.2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; border: 2px solid transparent; }
+  .accordion-item { flex: 1; min-width: 0; background: var(--acc-bg); border-radius: 16px; padding: 2rem 1.2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; position: relative; transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease; overflow: hidden; border: 2px solid transparent; }
   .accordion-item:hover { flex: 3; border-color: var(--acc-color); }
   .accordion-icon { margin-bottom: 1rem; transition: transform 0.3s ease; }
   .accordion-item:hover .accordion-icon { transform: scale(1.2); }
   .accordion-title { color: var(--bleu); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; white-space: nowrap; }
-  .accordion-text { font-size: 0.9rem; color: var(--texte); line-height: 1.6; opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease 0.1s, max-height 0.4s ease; }
-  .accordion-item:hover .accordion-text { opacity: 0.85; max-height: 200px; }
+  .accordion-text { font-size: 0.9rem; color: var(--texte); line-height: 1.6; opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s; position: absolute; padding: 0 1rem; }
+  .accordion-item:hover .accordion-text { opacity: 0.85; transform: translateY(0); }
 
   @media (max-width: 768px) {
     .accordion { display: grid; grid-template-columns: 1fr 1fr; height: auto; gap: 1rem; }
@@ -382,7 +384,7 @@ import Base from '../layouts/Base.astro';
   }
 
   .chiffres { padding: 3rem 2rem; text-align: center; position: relative; z-index: 1; }
-  .chiffres-bandeau { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%); border-radius: 24px; padding: 3rem 2rem; box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2); }
+  .chiffres-bandeau { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%); border-radius: 24px; padding: 3rem 2rem; box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2); animation: pulse-bandeau 3s ease-in-out infinite; }
   .chiffre-item { padding: 1rem; }
   .chiffre-link { display: block; color: inherit; border-radius: 12px; transition: transform 0.12s ease-out, background 0.12s ease-out; cursor: pointer; }
   .chiffre-link:hover { transform: translateY(-4px) scale(1.05); background: rgba(255,255,255,0.15); }

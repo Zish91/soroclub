@@ -64,7 +64,7 @@ const { title } = Astro.props;
         entry.target.classList.add("visible");
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.35 });
 
   document.querySelectorAll(".fade-in, .stagger, .fade-left, .fade-right").forEach(el => observer.observe(el));
 </script>

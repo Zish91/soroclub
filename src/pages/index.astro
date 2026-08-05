@@ -30,7 +30,7 @@ import Base from '../layouts/Base.astro';
 
   <section class="benefices fade-in">
     <h2 class="section-title">Pourquoi le soroban ?</h2>
-    <div class="cards stagger">
+    <div class="cards stagger" id="cards-dock">
       <div class="card">
         <span class="icon-bounce" style="background: rgba(232,100,74,0.1);">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>
@@ -86,7 +86,7 @@ import Base from '../layouts/Base.astro';
   <section class="pourquoi fade-in">
     <h2 class="section-title">Pourquoi Soroclub ?</h2>
     <p class="pourquoi-intro">Fondée par <strong>Ibtissama</strong>, enseignante Montessori depuis plus de 10 ans et coach diplômée à la méthode soroban. Tous nos enseignants sont formés à sa pédagogie bienveillante.</p>
-    <div class="pourquoi-grid stagger">
+    <div class="pourquoi-grid stagger" id="pourquoi-dock">
       <div class="pourquoi-item">
         <span class="icon-bounce" style="background: rgba(27,58,92,0.1);">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
@@ -165,70 +165,21 @@ import Base from '../layouts/Base.astro';
   .symbol {
     position: absolute;
     font-weight: 700;
-    opacity: 0.2;
-    transition: transform 0.6s ease-out;
+    opacity: 0.25;
   }
 
-  .symbol:nth-child(1) {
-    font-size: 2.5rem; color: var(--corail);
-    top: 12%; left: 6%;
-    animation: float 6s ease-in-out infinite;
-  }
-  .symbol:nth-child(2) {
-    font-size: 2rem; color: var(--jaune);
-    top: 55%; left: 90%;
-    animation: float 7s ease-in-out infinite 1s;
-  }
-  .symbol:nth-child(3) {
-    font-size: 3rem; color: var(--teal);
-    top: 78%; left: 22%;
-    animation: float 8s ease-in-out infinite 2s;
-  }
-  .symbol:nth-child(4) {
-    font-size: 2.2rem; color: var(--corail);
-    top: 6%; left: 75%;
-    animation: float 6.5s ease-in-out infinite 0.5s;
-  }
-  .symbol:nth-child(5) {
-    font-size: 2rem; color: var(--jaune);
-    top: 42%; left: 3%;
-    animation: float 7.5s ease-in-out infinite 1.5s;
-  }
-  .symbol:nth-child(6) {
-    font-size: 2.8rem; color: var(--teal);
-    top: 22%; left: 93%;
-    animation: float 6s ease-in-out infinite 3s;
-  }
-  .symbol:nth-child(7) {
-    font-size: 1.8rem; color: var(--bleu-clair);
-    top: 68%; left: 58%;
-    animation: float 7s ease-in-out infinite 2.5s;
-  }
-  .symbol:nth-child(8) {
-    font-size: 2.4rem; color: var(--jaune);
-    top: 32%; left: 42%;
-    animation: float 8s ease-in-out infinite 4s;
-  }
-  .symbol:nth-child(9) {
-    font-size: 1.6rem; color: var(--corail);
-    top: 88%; left: 70%;
-    animation: float 6.5s ease-in-out infinite 1.2s;
-  }
-  .symbol:nth-child(10) {
-    font-size: 2.6rem; color: var(--teal);
-    top: 48%; left: 78%;
-    animation: float 7.5s ease-in-out infinite 3.5s;
-  }
-  .symbol:nth-child(11) {
-    font-size: 1.9rem; color: var(--jaune);
-    top: 92%; left: 12%;
-    animation: float 6s ease-in-out infinite 2.2s;
-  }
-  .symbol:nth-child(12) {
-    font-size: 2.1rem; color: var(--bleu-clair);
-    top: 3%; left: 45%;
-    animation: float 7s ease-in-out infinite 0.8s;
-  }
+  .symbol:nth-child(1) { font-size: 2.5rem; color: var(--corail); top: 12%; left: 6%; animation: float 6s ease-in-out infinite; }
+  .symbol:nth-child(2) { font-size: 2rem; color: var(--jaune); top: 55%; left: 90%; animation: float 7s ease-in-out infinite 1s; }
+  .symbol:nth-child(3) { font-size: 3rem; color: var(--teal); top: 78%; left: 22%; animation: float 8s ease-in-out infinite 2s; }
+  .symbol:nth-child(4) { font-size: 2.2rem; color: var(--corail); top: 6%; left: 75%; animation: float 6.5s ease-in-out infinite 0.5s; }
+  .symbol:nth-child(5) { font-size: 2rem; color: var(--jaune); top: 42%; left: 3%; animation: float 7.5s ease-in-out infinite 1.5s; }
+  .symbol:nth-child(6) { font-size: 2.8rem; color: var(--teal); top: 22%; left: 93%; animation: float 6s ease-in-out infinite 3s; }
+  .symbol:nth-child(7) { font-size: 1.8rem; color: var(--bleu-clair); top: 68%; left: 58%; animation: float 7s ease-in-out infinite 2.5s; }
+  .symbol:nth-child(8) { font-size: 2.4rem; color: var(--jaune); top: 32%; left: 42%; animation: float 8s ease-in-out infinite 4s; }
+  .symbol:nth-child(9) { font-size: 1.6rem; color: var(--corail); top: 88%; left: 70%; animation: float 6.5s ease-in-out infinite 1.2s; }
+  .symbol:nth-child(10) { font-size: 2.6rem; color: var(--teal); top: 48%; left: 78%; animation: float 7.5s ease-in-out infinite 3.5s; }
+  .symbol:nth-child(11) { font-size: 1.9rem; color: var(--jaune); top: 92%; left: 12%; animation: float 6s ease-in-out infinite 2.2s; }
+  .symbol:nth-child(12) { font-size: 2.1rem; color: var(--bleu-clair); top: 3%; left: 45%; animation: float 7s ease-in-out infinite 0.8s; }
 
   @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -244,33 +195,11 @@ import Base from '../layouts/Base.astro';
     z-index: 1;
   }
 
-  .hero h1 {
-    font-size: 2.8rem;
-    color: var(--bleu);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-  }
+  .hero h1 { font-size: 2.8rem; color: var(--bleu); line-height: 1.2; margin-bottom: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
+  .highlight { color: var(--corail); }
+  .hero-sub { font-size: 1.15rem; color: var(--texte); margin-bottom: 2.5rem; opacity: 0.85; line-height: 1.8; }
 
-  .highlight {
-    color: var(--corail);
-  }
-
-  .hero-sub {
-    font-size: 1.15rem;
-    color: var(--texte);
-    margin-bottom: 2.5rem;
-    opacity: 0.85;
-    line-height: 1.8;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
   .cta {
     display: inline-block;
@@ -281,32 +210,22 @@ import Base from '../layouts/Base.astro';
     font-size: 1.15rem;
     font-weight: 700;
     transition: transform 0.2s, box-shadow 0.3s;
-    letter-spacing: 0.3px;
     position: relative;
     overflow: hidden;
   }
 
-  .cta:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(232, 100, 74, 0.35);
-  }
+  .cta:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(232, 100, 74, 0.35); }
 
   .cta-shine::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
     animation: shine 3s ease-in-out infinite;
   }
 
-  @keyframes shine {
-    0% { left: -100%; }
-    50% { left: 150%; }
-    100% { left: 150%; }
-  }
+  @keyframes shine { 0% { left: -100%; } 50% { left: 150%; } 100% { left: 150%; } }
 
   .cta-outline {
     display: inline-block;
@@ -317,36 +236,14 @@ import Base from '../layouts/Base.astro';
     font-size: 1.05rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
   }
 
-  .cta-outline:hover {
-    background-color: var(--bleu);
-    color: var(--blanc);
-  }
+  .cta-outline:hover { background-color: var(--bleu); color: var(--blanc); }
 
-  .benefices {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
+  .benefices { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .benefices h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
 
-  .benefices h2 {
-    font-size: 2rem;
-    color: var(--bleu);
-    margin-bottom: 3rem;
-    font-weight: 600;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.5rem;
-  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; }
 
   .card {
     background-color: var(--blanc);
@@ -354,139 +251,47 @@ import Base from '../layouts/Base.astro';
     padding: 2rem 1.5rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
     border: 2px solid transparent;
+    transform-origin: center bottom;
   }
 
-  .card:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    border-color: var(--jaune);
-  }
+  .card .icon-bounce { margin: 0 auto 1rem; }
+  .card h3 { color: var(--bleu); font-size: 1.15rem; margin-bottom: 0.75rem; font-weight: 600; }
+  .card p { font-size: 0.92rem; color: var(--texte); line-height: 1.7; opacity: 0.85; }
 
-  .card .icon-bounce {
-    margin: 0 auto 1rem;
-  }
+  .etapes { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .etapes h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
+  .etapes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
 
-  .card h3 {
-    color: var(--bleu);
-    font-size: 1.15rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-
-  .card p {
-    font-size: 0.92rem;
-    color: var(--texte);
-    line-height: 1.7;
-    opacity: 0.85;
-  }
-
-  .etapes {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .etapes h2 {
-    font-size: 2rem;
-    color: var(--bleu);
-    margin-bottom: 3rem;
-    font-weight: 600;
-  }
-
-  .etapes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .etape {
-    padding: 1.5rem;
-    display: block;
-    color: inherit;
-  }
+  .etape { padding: 1.5rem; display: block; color: inherit; }
 
   .etape-link {
     border-radius: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s ease-out;
     cursor: pointer;
   }
 
-  .etape-link:hover {
-    transform: translateY(-4px);
-    background: var(--blanc);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  }
+  .etape-link:hover { transform: translateY(-4px); background: var(--blanc); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); }
 
   .etape-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background-color: var(--jaune);
-    color: var(--blanc);
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 52px; height: 52px; border-radius: 50%;
+    background-color: var(--jaune); color: var(--blanc);
+    font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem;
     box-shadow: 0 3px 10px rgba(245, 166, 35, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
   }
 
-  .etape-link:hover .etape-num {
-    transform: scale(1.25);
-    box-shadow: 0 6px 20px rgba(245, 166, 35, 0.5);
-  }
+  .etape-link:hover .etape-num { transform: scale(1.3); box-shadow: 0 6px 20px rgba(245, 166, 35, 0.5); }
 
-  .etape h3 {
-    color: var(--bleu);
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
+  .etape h3 { color: var(--bleu); font-size: 1.1rem; margin-bottom: 0.75rem; font-weight: 600; }
+  .etape p { font-size: 0.92rem; color: var(--texte); opacity: 0.85; line-height: 1.7; }
 
-  .etape p {
-    font-size: 0.92rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.7;
-  }
-
-  .pourquoi {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .pourquoi h2 {
-    font-size: 2rem;
-    color: var(--bleu);
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  .pourquoi-intro {
-    font-size: 1.05rem;
-    color: var(--texte);
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    line-height: 1.8;
-    opacity: 0.85;
-  }
-
-  .pourquoi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.5rem;
-  }
+  .pourquoi { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .pourquoi h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 1rem; font-weight: 600; }
+  .pourquoi-intro { font-size: 1.05rem; color: var(--texte); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8; opacity: 0.85; }
+  .pourquoi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; }
 
   .pourquoi-item {
     background-color: var(--blanc);
@@ -494,172 +299,100 @@ import Base from '../layouts/Base.astro';
     border-radius: 0 16px 16px 0;
     padding: 1.5rem;
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-left-color 0.15s ease-out;
+    transform-origin: center bottom;
   }
 
-  .pourquoi-item:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-left-color: var(--corail);
-  }
+  .pourquoi-item .icon-bounce { width: 52px; height: 52px; border-radius: 12px; margin-bottom: 0.75rem; }
+  .pourquoi-item h3 { color: var(--bleu); font-size: 1.05rem; margin-bottom: 0.5rem; font-weight: 600; }
+  .pourquoi-item p { font-size: 0.92rem; color: var(--texte); line-height: 1.7; opacity: 0.85; }
 
-  .pourquoi-item .icon-bounce {
-    width: 52px;
-    height: 52px;
-    border-radius: 12px;
-    margin-bottom: 0.75rem;
-  }
-
-  .pourquoi-item h3 {
-    color: var(--bleu);
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-
-  .pourquoi-item p {
-    font-size: 0.92rem;
-    color: var(--texte);
-    line-height: 1.7;
-    opacity: 0.85;
-  }
-
-  .chiffres {
-    background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%);
-    padding: 4rem 2rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .chiffres-grid {
-    max-width: 900px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-
-  .chiffre-item {
-    padding: 1.5rem;
-  }
+  .chiffres { background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%); padding: 4rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .chiffres-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .chiffre-item { padding: 1.5rem; }
 
   .chiffre-link {
-    display: block;
-    color: inherit;
-    border-radius: 12px;
-    transition: transform 0.15s ease, background 0.15s ease;
+    display: block; color: inherit; border-radius: 12px;
+    transition: transform 0.12s ease-out, background 0.12s ease-out;
     cursor: pointer;
   }
 
-  .chiffre-link:hover {
-    transform: translateY(-4px) scale(1.05);
-    background: rgba(255,255,255,0.15);
-  }
+  .chiffre-link:hover { transform: translateY(-4px) scale(1.05); background: rgba(255,255,255,0.15); }
 
-  .chiffre-num {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--blanc);
-    line-height: 1;
-    display: inline;
-    transition: transform 0.2s ease;
-  }
+  .chiffre-num { font-size: 3.5rem; font-weight: 700; color: var(--blanc); line-height: 1; display: inline; transition: transform 0.2s ease; }
+  .chiffre-suffix { font-size: 2.2rem; font-weight: 700; color: var(--jaune); }
+  .chiffre-item p { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin-top: 0.5rem; }
 
-  .chiffre-suffix {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--jaune);
-  }
-
-  .chiffre-item p {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.8);
-    margin-top: 0.5rem;
-  }
-
-  .cta-final {
-    text-align: center;
-    padding: 5rem 2rem;
-    background: var(--creme);
-    color: var(--texte);
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-final h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: var(--bleu);
-  }
-
-  .cta-final p {
-    font-size: 1.15rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.85;
-  }
-
-  .cta-final .cta {
-    background: linear-gradient(135deg, var(--corail), #F5A623);
-    color: var(--blanc);
-    font-weight: 700;
-  }
+  .cta-final { text-align: center; padding: 5rem 2rem; background: var(--creme); color: var(--texte); position: relative; z-index: 1; }
+  .cta-final h2 { font-size: 2rem; margin-bottom: 1rem; font-weight: 600; color: var(--bleu); }
+  .cta-final p { font-size: 1.15rem; margin-bottom: 2.5rem; opacity: 0.85; }
+  .cta-final .cta { background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); font-weight: 700; }
 
   @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-
-    .hero {
-      padding: 2rem 1.5rem;
-    }
-
-    .benefices, .etapes, .pourquoi {
-      padding: 3rem 1.5rem;
-    }
-
-    .chiffres {
-      padding: 3rem 1.5rem;
-    }
-
-    .chiffres-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .chiffre-num {
-      font-size: 2.5rem;
-    }
-
-    .cta-final {
-      padding: 3rem 1.5rem;
-    }
+    .hero h1 { font-size: 2rem; }
+    .hero { padding: 2rem 1.5rem; }
+    .benefices, .etapes, .pourquoi { padding: 3rem 1.5rem; }
+    .chiffres { padding: 3rem 1.5rem; }
+    .chiffres-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .chiffre-num { font-size: 2.5rem; }
+    .cta-final { padding: 3rem 1.5rem; }
   }
 </style>
 
 <script>
   const symbols = document.querySelectorAll('.symbol');
-  let mouseX = 0.5, mouseY = 0.5;
 
   document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX / window.innerWidth;
-    mouseY = e.clientY / window.innerHeight;
+    const mx = e.clientX / window.innerWidth - 0.5;
+    const my = e.clientY / window.innerHeight - 0.5;
+    symbols.forEach((sym, i) => {
+      const speed = (i + 1) * 40;
+      const floatY = Math.sin(Date.now() / 1000 + i) * 15;
+      sym.style.transform = `translate(${mx * speed}px, ${my * speed + floatY}px) rotate(${mx * 15}deg)`;
+      sym.style.transition = 'transform 0.08s linear';
+    });
   });
 
-  function animateSymbols() {
-    symbols.forEach((sym, i) => {
-      const rect = sym.getBoundingClientRect();
-      const symX = (rect.left + rect.width / 2) / window.innerWidth;
-      const symY = (rect.top + rect.height / 2) / window.innerHeight;
-      const dx = (mouseX - symX) * 80 * ((i % 3) + 1);
-      const dy = (mouseY - symY) * 80 * ((i % 3) + 1);
-      sym.style.transform = `translate(${dx}px, ${dy}px)`;
+  function dockEffect(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const items = container.children;
+
+    container.addEventListener('mousemove', (e) => {
+      const containerRect = container.getBoundingClientRect();
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      Array.from(items).forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        const itemCenterX = rect.left + rect.width / 2;
+        const itemCenterY = rect.top + rect.height / 2;
+        const dist = Math.sqrt(Math.pow(mouseX - itemCenterX, 2) + Math.pow(mouseY - itemCenterY, 2));
+        const maxDist = 300;
+        const scale = Math.max(1, 1.08 - (dist / maxDist) * 0.08 + 0.08);
+        const clampedScale = Math.min(scale, 1.08);
+        const shadow = dist < maxDist ? `0 ${8 + (1 - dist/maxDist) * 12}px ${20 + (1 - dist/maxDist) * 20}px rgba(0,0,0,${0.05 + (1 - dist/maxDist) * 0.1})` : '0 4px 15px rgba(0,0,0,0.05)';
+        const borderColor = dist < 150 ? 'var(--jaune)' : 'transparent';
+
+        item.style.transform = `scale(${clampedScale})`;
+        item.style.boxShadow = shadow;
+        if (item.classList.contains('card')) item.style.borderColor = borderColor;
+        if (item.classList.contains('pourquoi-item')) item.style.borderLeftColor = dist < 150 ? 'var(--corail)' : 'var(--jaune)';
+      });
     });
-    requestAnimationFrame(animateSymbols);
+
+    container.addEventListener('mouseleave', () => {
+      Array.from(items).forEach((item) => {
+        item.style.transform = 'scale(1)';
+        item.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
+        if (item.classList.contains('card')) item.style.borderColor = 'transparent';
+        if (item.classList.contains('pourquoi-item')) item.style.borderLeftColor = 'var(--jaune)';
+      });
+    });
   }
 
-  requestAnimationFrame(animateSymbols);
+  dockEffect('cards-dock');
+  dockEffect('pourquoi-dock');
 
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

@@ -23,7 +23,7 @@ import Base from '../layouts/Base.astro';
     <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
     <p class="hero-sub">Des cours en ligne pour enfants de 6 à 12 ans.<br />Ludiques, progressifs, et efficaces.</p>
     <div class="hero-buttons">
-      <a href="/reservation" class="cta cta-pulse cta-shine">Cours d'essai · 5€</a>
+      <a href="/reservation" class="cta-final-btn cta-shine">Réserver un cours d'essai</a>
       <a href="/tarifs" class="cta-secondary cta-shine">Voir nos formules</a>
     </div>
   </section>
@@ -201,10 +201,12 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <section class="cta-final fade-left">
-    <h2>Et si on <span class="highlight">essayait</span> ?</h2>
-    <p>Offre à ton enfant un super pouvoir en mathématiques.</p>
-    <a href="/reservation" class="cta cta-pulse cta-shine">Cours d'essai · 5€</a>
+  <section class="cta-final-section fade-in">
+    <div class="cta-final-bandeau">
+      <h2 class="cta-final-title">Et si on essayait ?</h2>
+      <p>Le premier cours est à <strong>5€</strong>. Sans engagement.</p>
+      <a href="/reservation" class="cta-final-btn cta-shine">Réserver un cours d'essai</a>
+    </div>
   </section>
 
 </Base>
@@ -437,10 +439,10 @@ import Base from '../layouts/Base.astro';
   .etape h3 { color: var(--bleu); font-size: 1.1rem; margin-bottom: 0.75rem; font-weight: 600; }
   .etape p { font-size: 0.92rem; color: var(--texte); opacity: 0.85; line-height: 1.7; }
 
-  .cta-final { text-align: center; padding: 5rem 2rem; background: var(--creme); color: var(--texte); position: relative; z-index: 1; }
-  .cta-final h2 { font-size: 2rem; margin-bottom: 1rem; font-weight: 600; color: var(--bleu); }
-  .cta-final p { font-size: 1.15rem; margin-bottom: 2.5rem; opacity: 0.85; }
-  .cta-final .cta { background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); font-weight: 700; }
+  .cta-final-section { padding: 3rem 2rem; position: relative; z-index: 1; } .cta-final-bandeau { max-width: 900px; margin: 0 auto; background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); border-radius: 24px; padding: 4rem 3rem; text-align: center; box-shadow: 0 8px 30px rgba(232, 100, 74, 0.25); overflow: hidden; position: relative; }
+  .cta-final-title { font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 700; color: var(--blanc); }
+  .cta-final p { font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.95; color: var(--blanc); }
+  .cta-final-btn { display: inline-block; background: var(--blanc); color: var(--corail); padding: 1.2rem 3.5rem; border-radius: 50px; font-size: 1.2rem; font-weight: 700; transition: transform 0.2s, box-shadow 0.3s; position: relative; overflow: hidden; animation: pulse-glow-white 2.5s ease-in-out infinite; } .cta-final-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); } @keyframes pulse-glow-white { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); } 50% { box-shadow: 0 0 0 15px rgba(255,255,255,0); } }
 
   @media (max-width: 768px) {
     .hero h1 { font-size: 2rem; }
@@ -449,7 +451,7 @@ import Base from '../layouts/Base.astro';
     .chiffres { padding: 2rem 1rem; }
     .chiffres-bandeau { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 2rem 1.5rem; border-radius: 20px; }
     .chiffre-num { font-size: 2.5rem; }
-    .cta-final { padding: 3rem 1.5rem; }
+    .cta-final-section { padding: 2rem 1rem; } .cta-final-bandeau { padding: 3rem 1.5rem; border-radius: 20px; } .cta-final-title { font-size: 2rem; }
   }
 </style>
 

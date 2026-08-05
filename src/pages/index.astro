@@ -5,21 +5,22 @@ import Base from '../layouts/Base.astro';
 <Base title="Accueil">
 
 <section class="hero fade-in">
-    <div class="perles">
-      <span class="perle"></span>
-      <span class="perle"></span>
-      <span class="perle"></span>
-      <span class="perle"></span>
-      <span class="perle"></span>
-      <span class="perle"></span>
-      <span class="perle"></span>
-      <span class="perle"></span>
-    </div>    <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
+    <div class="floating-symbols">
+      <span class="symbol">+</span>
+      <span class="symbol">×</span>
+      <span class="symbol">★</span>
+      <span class="symbol">√</span>
+      <span class="symbol">÷</span>
+      <span class="symbol">=</span>
+      <span class="symbol">+</span>
+      <span class="symbol">★</span>
+    </div>
+    <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
     <p class="hero-sub">Des cours en ligne pour enfants de 6 à 12 ans.<br />Ludiques, progressifs, et efficaces.</p>
     <div class="hero-buttons">
-  <a href="/reservation" class="cta cta-pulse">Cours d'essai — 5€</a>
-  <a href="/tarifs" class="cta-outline">Voir nos formules</a>
-</div>
+      <a href="/reservation" class="cta cta-pulse">Cours d'essai · 5€</a>
+      <a href="/tarifs" class="cta-outline">Voir nos formules →</a>
+    </div>
   </section>
 
   <section class="benefices fade-in">
@@ -113,8 +114,12 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <section class="chiffres fade-in">
-    <h2 class="section-title">Soroclub en chiffres</h2>
     <div class="chiffres-grid stagger">
+      <div class="chiffre-item">
+        <span class="chiffre-num" data-target="40">0</span>
+        <span class="chiffre-suffix">+</span>
+        <p>élèves accompagnés</p>
+      </div>
       <div class="chiffre-item">
         <span class="chiffre-num" data-target="10">0</span>
         <span class="chiffre-suffix">+</span>
@@ -124,11 +129,6 @@ import Base from '../layouts/Base.astro';
         <span class="chiffre-num" data-target="9">0</span>
         <span class="chiffre-suffix"></span>
         <p>niveaux progressifs</p>
-      </div>
-      <div class="chiffre-item">
-        <span class="chiffre-num" data-target="100">0</span>
-        <span class="chiffre-suffix">%</span>
-        <p>en ligne</p>
       </div>
       <div class="chiffre-item">
         <span class="chiffre-num" data-target="5">0</span>
@@ -141,18 +141,17 @@ import Base from '../layouts/Base.astro';
   <section class="cta-final fade-in">
     <h2>Prêt à commencer ?</h2>
     <p>Offre à ton enfant un super pouvoir en mathématiques.</p>
-    <a href="/reservation" class="cta cta-pulse">Cours d'essai — 5€</a>
+    <a href="/reservation" class="cta cta-pulse">Cours d'essai · 5€</a>
   </section>
 
 </Base>
 
 <style>
-/* ===== PERLES ANIMÉES ===== */
   .hero {
     position: relative;
   }
 
-  .perles {
+  .floating-symbols {
     position: fixed;
     top: 0;
     left: 0;
@@ -162,74 +161,72 @@ import Base from '../layouts/Base.astro';
     z-index: 0;
   }
 
-  .perle {
+  .symbol {
     position: absolute;
-    border-radius: 50%;
-    opacity: 0.15;
+    font-weight: 700;
+    opacity: 0.12;
     transition: transform 0.3s ease-out;
   }
 
-  .perle:nth-child(1) {
-    width: 30px; height: 30px;
-    background: var(--corail);
-    top: 20%; left: 10%;
-    animation-duration: 14s;
+  .symbol:nth-child(1) {
+    font-size: 2.5rem;
+    color: var(--corail);
+    top: 15%; left: 8%;
+    animation: float 6s ease-in-out infinite;
   }
 
-  .perle:nth-child(2) {
-    width: 20px; height: 20px;
-    background: var(--jaune);
-    top: 60%; left: 85%;
-    animation-duration: 10s;
-    animation-delay: 2s;
+  .symbol:nth-child(2) {
+    font-size: 2rem;
+    color: var(--jaune);
+    top: 55%; left: 88%;
+    animation: float 7s ease-in-out infinite 1s;
   }
 
-  .perle:nth-child(3) {
-    width: 40px; height: 40px;
-    background: var(--bleu);
-    top: 80%; left: 30%;
-    animation-duration: 16s;
-    animation-delay: 4s;
+  .symbol:nth-child(3) {
+    font-size: 3rem;
+    color: var(--teal);
+    top: 75%; left: 25%;
+    animation: float 8s ease-in-out infinite 2s;
   }
 
-  .perle:nth-child(4) {
-    width: 15px; height: 15px;
-    background: #2BAB7C;
-    top: 10%; left: 70%;
-    animation-duration: 11s;
-    animation-delay: 1s;
+  .symbol:nth-child(4) {
+    font-size: 2.2rem;
+    color: var(--corail);
+    top: 8%; left: 72%;
+    animation: float 6.5s ease-in-out infinite 0.5s;
   }
 
-  .perle:nth-child(5) {
-    width: 25px; height: 25px;
-    background: var(--jaune);
-    top: 50%; left: 5%;
-    animation-duration: 13s;
-    animation-delay: 3s;
+  .symbol:nth-child(5) {
+    font-size: 2rem;
+    color: var(--jaune);
+    top: 45%; left: 4%;
+    animation: float 7.5s ease-in-out infinite 1.5s;
   }
 
-  .perle:nth-child(6) {
-    width: 35px; height: 35px;
-    background: var(--corail);
-    top: 30%; left: 90%;
-    animation-duration: 15s;
-    animation-delay: 5s;
+  .symbol:nth-child(6) {
+    font-size: 2.8rem;
+    color: var(--teal);
+    top: 25%; left: 92%;
+    animation: float 6s ease-in-out infinite 3s;
   }
 
-  .perle:nth-child(7) {
-    width: 18px; height: 18px;
-    background: var(--bleu);
-    top: 70%; left: 50%;
-    animation-duration: 12s;
-    animation-delay: 2.5s;
+  .symbol:nth-child(7) {
+    font-size: 1.8rem;
+    color: var(--bleu-clair);
+    top: 65%; left: 55%;
+    animation: float 7s ease-in-out infinite 2.5s;
   }
 
-  .perle:nth-child(8) {
-    width: 22px; height: 22px;
-    background: #2BAB7C;
-    top: 40%; left: 40%;
-    animation-duration: 14s;
-    animation-delay: 6s;
+  .symbol:nth-child(8) {
+    font-size: 2.4rem;
+    color: var(--jaune);
+    top: 35%; left: 38%;
+    animation: float 8s ease-in-out infinite 4s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
   }
 
   .hero h1, .hero-sub, .hero .cta, .hero-buttons {
@@ -262,7 +259,6 @@ import Base from '../layouts/Base.astro';
     color: var(--blanc);
   }
 
-
   .hero {
     max-width: 800px;
     margin: 0 auto;
@@ -293,19 +289,19 @@ import Base from '../layouts/Base.astro';
 
   .cta {
     display: inline-block;
-    background-color: var(--corail);
+    background: linear-gradient(135deg, var(--corail), #F5A623);
     color: var(--blanc);
-    padding: 1rem 2.5rem;
+    padding: 1.15rem 3rem;
     border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.15rem;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.3s;
     letter-spacing: 0.3px;
   }
 
   .cta:hover {
-    background-color: var(--corail-hover);
-    transform: scale(1.03);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(232, 100, 74, 0.35);
   }
 
   .benefices {
@@ -477,6 +473,44 @@ import Base from '../layouts/Base.astro';
     opacity: 0.85;
   }
 
+  .chiffres {
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--teal) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .chiffres-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .chiffre-item {
+    padding: 1.5rem;
+  }
+
+  .chiffre-num {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--blanc);
+    line-height: 1;
+    display: inline;
+  }
+
+  .chiffre-suffix {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--jaune);
+  }
+
+  .chiffre-item p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    margin-top: 0.5rem;
+  }
+
   .cta-final {
     text-align: center;
     padding: 5rem 2rem;
@@ -497,57 +531,13 @@ import Base from '../layouts/Base.astro';
   }
 
   .cta-final .cta {
-    background-color: var(--jaune);
+    background: var(--jaune);
     color: var(--bleu);
     font-weight: 700;
   }
 
   .cta-final .cta:hover {
     background-color: #e0950f;
-  }
-
-  .chiffres {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-    text-align: center;
-  }
-
-  .chiffres h2 {
-    font-size: 2rem;
-    color: var(--bleu);
-    margin-bottom: 3rem;
-    font-weight: 600;
-  }
-
-  .chiffres-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-  }
-
-  .chiffre-item {
-    padding: 1.5rem;
-  }
-
-  .chiffre-num {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--corail);
-    line-height: 1;
-  }
-
-  .chiffre-suffix {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--corail);
-  }
-
-  .chiffre-item p {
-    font-size: 0.95rem;
-    color: var(--texte);
-    opacity: 0.8;
-    margin-top: 0.5rem;
   }
 
   @media (max-width: 768px) {
@@ -559,30 +549,39 @@ import Base from '../layouts/Base.astro';
       padding: 2rem 1.5rem;
     }
 
-    .benefices, .etapes, .pourquoi, .chiffres {
+    .benefices, .etapes, .pourquoi {
       padding: 3rem 1.5rem;
     }
 
-    .cta-final {
+    .chiffres {
       padding: 3rem 1.5rem;
+    }
+
+    .chiffres-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
 
     .chiffre-num {
       font-size: 2.5rem;
     }
+
+    .cta-final {
+      padding: 3rem 1.5rem;
+    }
   }
 </style>
 
 <script>
-  const perles = document.querySelectorAll('.perle');
+  const symbols = document.querySelectorAll('.symbol');
 
   document.addEventListener('mousemove', (e) => {
     const x = e.clientX / window.innerWidth - 0.5;
     const y = e.clientY / window.innerHeight - 0.5;
 
-    perles.forEach((perle, i) => {
-      const speed = (i + 1) * 25;
-      perle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+    symbols.forEach((sym, i) => {
+      const speed = (i + 1) * 20;
+      sym.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
     });
   });
 
@@ -600,6 +599,8 @@ import Base from '../layouts/Base.astro';
             if (current >= target) {
               current = target;
               clearInterval(timer);
+              counter.style.transform = 'scale(1.15)';
+              setTimeout(() => { counter.style.transform = 'scale(1)'; }, 200);
             }
             counter.textContent = current;
           }, 30);

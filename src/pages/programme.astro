@@ -9,9 +9,9 @@ import Base from '../layouts/Base.astro';
     <p>9 niveaux progressifs pour accompagner ton enfant du boulier physique au calcul mental pur. Chaque niveau est validé par un examen — comme les ceintures en judo !</p>
   </section>
 
-  <section class="niveaux fade-in">
+  <section class="niveaux">
 
-    <div class="niveau">
+    <div class="niveau fade-right">
       <div class="niveau-badge" style="background: #2BAB7C;">Niveau 1</div>
       <div class="niveau-content">
         <h2>Niveau 1 — Les premiers pas</h2>
@@ -26,7 +26,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-left">
       <div class="niveau-badge" style="background: #34B886;">Niveau 2</div>
       <div class="niveau-content">
         <h2>Niveau 2 — Les amis du soroban</h2>
@@ -43,7 +43,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-right">
       <div class="niveau-badge" style="background: #5EBD6E;">Niveau 3</div>
       <div class="niveau-content">
         <h2>Niveau 3 — Premiers calculs complexes</h2>
@@ -56,7 +56,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-left">
       <div class="niveau-badge" style="background: #A3C540;">Niveau 4</div>
       <div class="niveau-content">
         <h2>Niveau 4 — La multiplication</h2>
@@ -71,7 +71,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-right">
       <div class="niveau-badge" style="background: #F5A623;">Niveau 5</div>
       <div class="niveau-content">
         <h2>Niveau 5 — La division</h2>
@@ -86,7 +86,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-left">
       <div class="niveau-badge" style="background: #F08C3A;">Niveau 6</div>
       <div class="niveau-content">
         <h2>Niveau 6 — Division avancée</h2>
@@ -100,7 +100,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-right">
       <div class="niveau-badge" style="background: #E8644A;">Niveau 7</div>
       <div class="niveau-content">
         <h2>Niveau 7 — Toutes opérations</h2>
@@ -113,7 +113,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-left">
       <div class="niveau-badge" style="background: #D4553B;">Niveau 8</div>
       <div class="niveau-content">
         <h2>Niveau 8 — Les décimaux</h2>
@@ -126,7 +126,7 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="niveau">
+    <div class="niveau fade-right">
       <div class="niveau-badge" style="background: #1B3A5C;">Niveau 9</div>
       <div class="niveau-content">
         <h2>Niveau 9 — La maîtrise</h2>
@@ -143,14 +143,28 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <section class="examen fade-in">
-    <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-4px;margin-right:6px"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>Validation par examen</h2>
-    <p>Chaque niveau se termine par un examen. L'enfant sait toujours où il en est et ce qu'il lui reste à accomplir. Pas de pression — chacun avance à son rythme.</p>
+    <div class="examen-bandeau">
+      <div class="examen-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+      <h2>Validation par examen</h2>
+      <p>Chaque niveau se termine par un examen. L'enfant sait toujours où il en est et ce qu'il lui reste à accomplir. Pas de pression — chacun avance à son rythme.</p>
+    </div>
   </section>
 
-  <section class="cta-programme fade-in">
-    <h2>Prêt à commencer ?</h2>
-    <p>Découvre le soroban avec nous !</p>
-    <a href="/reservation" class="cta">Cours d'essai — 5€</a>
+  <section class="cta-end fade-in">
+    <div class="cta-end-grid">
+      <a href="/reservation" class="cta-end-card">
+        <div class="cta-end-icon" style="background: linear-gradient(135deg, var(--corail), #F5A623);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
+        <h3>Cours d'essai · 5€</h3>
+        <p>Découvre le soroban avec ton enfant.</p>
+        <span class="cta-outline">Réserver →</span>
+      </a>
+      <a href="/tarifs" class="cta-end-card">
+        <div class="cta-end-icon" style="background: linear-gradient(135deg, #1B3A5C, #1A6B5C);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg></div>
+        <h3>Voir nos formules</h3>
+        <p>Individuel, groupe ou soutien scolaire.</p>
+        <span class="cta-outline">Voir les tarifs →</span>
+      </a>
+    </div>
   </section>
 
 </Base>
@@ -161,25 +175,14 @@ import Base from '../layouts/Base.astro';
     margin: 0 auto;
     padding: 4rem 2rem 2rem;
     text-align: center;
+    animation: pageEnter 2.5s ease-out;
   }
 
-  .prog-hero h1 {
-    font-size: 2.5rem;
-    color: var(--bleu);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
+  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
-  .highlight {
-    color: var(--corail);
-  }
-
-  .prog-hero p {
-    font-size: 1.1rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.8;
-  }
+  .prog-hero h1 { font-size: 2.5rem; color: var(--bleu); font-weight: 700; margin-bottom: 1.5rem; }
+  .highlight { color: var(--corail); }
+  .prog-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; }
 
   .niveaux {
     max-width: 900px;
@@ -198,12 +201,15 @@ import Base from '../layouts/Base.astro';
     border-radius: 16px;
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
   }
 
+  .niveau.fade-left, .niveau.fade-right { transition: opacity 3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 3s cubic-bezier(0.25, 0.1, 0.25, 1) !important; }
   .niveau:hover {
     transform: translateX(6px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: var(--jaune);
   }
 
   .niveau-badge {
@@ -214,25 +220,15 @@ import Base from '../layouts/Base.astro';
     color: var(--blanc);
     white-space: nowrap;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
   }
 
-  .niveau-content h2 {
-    font-size: 1.2rem;
-    color: var(--bleu);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
+  .niveau:hover .niveau-badge { transform: scale(1.1); }
 
-  .niveau-content ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
+  .niveau-content h2 { font-size: 1.2rem; color: var(--bleu); font-weight: 600; margin-bottom: 0.75rem; }
+
+  .niveau-content ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
 
   .niveau-content li {
     font-size: 0.9rem;
@@ -243,96 +239,45 @@ import Base from '../layouts/Base.astro';
     line-height: 1.6;
   }
 
-  .niveau-content li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--jaune);
-    font-weight: 700;
-  }
+  .niveau-content li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
 
-  .examen {
+  .examen { padding: 3rem 2rem; position: relative; z-index: 1; }
+
+  .examen-bandeau {
     max-width: 700px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%);
+    border-radius: 24px;
+    padding: 3rem;
     text-align: center;
-  }
-
-  .examen h2 {
-    font-size: 1.8rem;
-    color: var(--bleu);
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  .examen p {
-    font-size: 1rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.8;
-  }
-
-  .cta-programme {
-    text-align: center;
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
     color: var(--blanc);
+    box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2);
   }
 
-  .cta-programme h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
+  .examen-icon { margin-bottom: 1rem; }
+  .examen-bandeau h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem; }
+  .examen-bandeau p { font-size: 1rem; opacity: 0.9; line-height: 1.8; }
 
-  .cta-programme p {
-    font-size: 1.15rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.9;
-  }
+  .cta-end { padding: 4rem 2rem; position: relative; z-index: 1; }
+  .cta-end-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .cta-end-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--blanc); border-radius: 20px; padding: 3rem 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; color: inherit; }
+  .cta-end-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+  .cta-end-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+  .cta-end-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--bleu); margin-bottom: 0.75rem; }
+  .cta-end-card p { font-size: 0.95rem; color: var(--texte); opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem; }
 
-  .cta {
-    display: inline-block;
-    background-color: var(--jaune);
-    color: var(--bleu);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-
-  .cta:hover {
-    background-color: #e0950f;
-    transform: scale(1.03);
-  }
+  .cta-outline { display: inline-block; border: 2px solid var(--teal); color: var(--teal); padding: 0.8rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
+  .cta-outline:hover { background: linear-gradient(135deg, #1A6B5C, #2BAB7C); color: var(--blanc); border-color: #1A6B5C; transform: scale(1.03); box-shadow: 0 4px 15px rgba(26, 107, 92, 0.3); }
 
   @media (max-width: 768px) {
-    .prog-hero h1 {
-      font-size: 2rem;
-    }
-
-    .prog-hero {
-      padding: 2rem 1.5rem 1rem;
-    }
-
-    .niveaux {
-      padding: 2rem 1.5rem;
-    }
-
-    .niveau {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    .niveau-content li {
-      text-align: left;
-    }
-
-    .cta-programme {
-      padding: 3rem 1.5rem;
-    }
+    .prog-hero h1 { font-size: 2rem; }
+    .prog-hero { padding: 2rem 1.5rem 1rem; }
+    .niveaux { padding: 2rem 1.5rem; }
+    .niveau { flex-direction: column; align-items: center; text-align: center; padding: 1.5rem; }
+    .niveau-content li { text-align: left; }
+    .examen { padding: 2rem 1rem; }
+    .examen-bandeau { padding: 2rem 1.5rem; border-radius: 20px; }
+    .cta-end { padding: 2rem 1rem; }
+    .cta-end-grid { grid-template-columns: 1fr; }
   }
 </style>

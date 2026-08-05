@@ -131,13 +131,13 @@ img {
 /* ===== FADE GAUCHE / DROITE ===== */
 .fade-left {
   opacity: 0;
-  transform: translateX(-60px);
+  transform: translateX(-120px);
   transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
 .fade-right {
   opacity: 0;
-  transform: translateX(60px);
+  transform: translateX(120px);
   transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 

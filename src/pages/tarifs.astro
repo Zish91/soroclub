@@ -9,19 +9,17 @@ import Base from '../layouts/Base.astro';
     <p>Des formules adaptées à chaque besoin. Plus tu t'engages, plus le tarif est avantageux !</p>
   </section>
 
-  <section class="packs fade-in">
+  <section class="packs">
 
-    <div class="pack">
+    <div class="pack fade-right">
       <div class="pack-header individuel">
-        <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-4px;margin-right:6px"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Individuel</h2>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <h2>Individuel</h2>
         <p class="pack-desc">Cours particulier 1-to-1. Attention 100% sur ton enfant.</p>
       </div>
       <div class="pack-body">
         <div class="formule">
-          <div class="formule-info">
-            <h3>À l'unité</h3>
-            <p>1 heure de cours</p>
-          </div>
+          <div class="formule-info"><h3>À l'unité</h3><p>1 heure de cours</p></div>
           <div class="formule-prix">
             <span class="prix">15€</span>
             <span class="par-heure">/ heure</span>
@@ -30,10 +28,7 @@ import Base from '../layouts/Base.astro';
         </div>
         <div class="formule populaire">
           <div class="formule-tag">Le plus choisi</div>
-          <div class="formule-info">
-            <h3>Pack 4h</h3>
-            <p>4 heures de cours</p>
-          </div>
+          <div class="formule-info"><h3>Pack 4h</h3><p>4 heures de cours</p></div>
           <div class="formule-prix">
             <span class="prix">50€</span>
             <span class="par-heure">soit 12,50€ / heure</span>
@@ -41,10 +36,7 @@ import Base from '../layouts/Base.astro';
           </div>
         </div>
         <div class="formule">
-          <div class="formule-info">
-            <h3>Pack 12h</h3>
-            <p>12 heures de cours</p>
-          </div>
+          <div class="formule-info"><h3>Pack 12h</h3><p>12 heures de cours</p></div>
           <div class="formule-prix">
             <span class="prix">130€</span>
             <span class="par-heure">soit 10,80€ / heure</span>
@@ -54,17 +46,15 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <div class="pack">
+    <div class="pack fade-left">
       <div class="pack-header groupe">
-        <h2><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-4px;margin-right:6px"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>Groupe</h2>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+        <h2>Groupe</h2>
         <p class="pack-desc">Petits groupes. Dynamique collective et entraide entre enfants.</p>
       </div>
       <div class="pack-body">
         <div class="formule">
-          <div class="formule-info">
-            <h3>À l'unité</h3>
-            <p>1 heure de cours</p>
-          </div>
+          <div class="formule-info"><h3>À l'unité</h3><p>1 heure de cours</p></div>
           <div class="formule-prix">
             <span class="prix">10€</span>
             <span class="par-heure">/ heure</span>
@@ -73,10 +63,7 @@ import Base from '../layouts/Base.astro';
         </div>
         <div class="formule populaire">
           <div class="formule-tag">Le plus choisi</div>
-          <div class="formule-info">
-            <h3>Pack 4h</h3>
-            <p>4 heures de cours</p>
-          </div>
+          <div class="formule-info"><h3>Pack 4h</h3><p>4 heures de cours</p></div>
           <div class="formule-prix">
             <span class="prix">35€</span>
             <span class="par-heure">soit 8,75€ / heure</span>
@@ -84,10 +71,7 @@ import Base from '../layouts/Base.astro';
           </div>
         </div>
         <div class="formule">
-          <div class="formule-info">
-            <h3>Pack 12h</h3>
-            <p>12 heures de cours</p>
-          </div>
+          <div class="formule-info"><h3>Pack 12h</h3><p>12 heures de cours</p></div>
           <div class="formule-prix">
             <span class="prix">90€</span>
             <span class="par-heure">soit 7,50€ / heure</span>
@@ -99,31 +83,42 @@ import Base from '../layouts/Base.astro';
 
   </section>
 
-  <section class="tarifs-info fade-in">
+  <section class="tarifs-info fade-right">
     <div class="info-cards">
       <a href="/reservation" class="info-card info-card-link">
-        <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></span>
+        <div class="info-icon" style="background: rgba(232,100,74,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></div>
         <p><strong>Cours d'essai à 5€</strong> — teste la méthode et vois si ça plaît à ton enfant.</p>
       </a>
       <div class="info-card">
-        <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+        <div class="info-icon" style="background: rgba(27,58,92,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
         <p><strong>100% en ligne</strong> — cours en visio depuis chez toi, pas de déplacement.</p>
       </div>
       <a href="/boutique" class="info-card info-card-link">
-        <span>🧮</span>
+        <div class="info-icon" style="background: rgba(245,166,35,0.1);"><span style="font-size:1.5rem;">🧮</span></div>
         <p><strong>Commande ton soroban</strong> — retrouve le boulier idéal dans notre boutique.</p>
       </a>
       <a href="/soutien-scolaire" class="info-card info-card-link">
-        <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg></span>
+        <div class="info-icon" style="background: rgba(43,171,124,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg></div>
         <p><strong>Soutien scolaire</strong> — maths & français pour les 6-10 ans, même approche bienveillante.</p>
       </a>
     </div>
   </section>
 
-  <section class="cta-tarifs fade-in">
-    <h2>Envie d'essayer ?</h2>
-    <p>Teste la méthode avec un premier cours à seulement 5€.</p>
-    <a href="/reservation" class="cta">Cours d'essai — 5€</a>
+  <section class="cta-end fade-in">
+    <div class="cta-end-grid">
+      <a href="/reservation" class="cta-end-card">
+        <div class="cta-end-icon" style="background: linear-gradient(135deg, var(--corail), #F5A623);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
+        <h3>Cours d'essai · 5€</h3>
+        <p>Teste la méthode sans engagement.</p>
+        <span class="cta-outline">Réserver →</span>
+      </a>
+      <a href="/contact" class="cta-end-card">
+        <div class="cta-end-icon" style="background: linear-gradient(135deg, #1B3A5C, #1A6B5C);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+        <h3>Une question ?</h3>
+        <p>On est là pour toi.</p>
+        <span class="cta-outline">Nous contacter →</span>
+      </a>
+    </div>
   </section>
 
 </Base>
@@ -134,25 +129,14 @@ import Base from '../layouts/Base.astro';
     margin: 0 auto;
     padding: 4rem 2rem 2rem;
     text-align: center;
+    animation: pageEnter 2.5s ease-out;
   }
 
-  .tarifs-hero h1 {
-    font-size: 2.5rem;
-    color: var(--bleu);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
+  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
-  .highlight {
-    color: var(--corail);
-  }
-
-  .tarifs-hero p {
-    font-size: 1.1rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.8;
-  }
+  .tarifs-hero h1 { font-size: 2.5rem; color: var(--bleu); font-weight: 700; margin-bottom: 1.5rem; }
+  .highlight { color: var(--corail); }
+  .tarifs-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; }
 
   .packs {
     max-width: 1100px;
@@ -168,44 +152,20 @@ import Base from '../layouts/Base.astro';
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
   }
 
-  .pack:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  }
+  .pack:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); border-color: var(--jaune); }
 
-  .pack-header {
-    padding: 2rem;
-    color: var(--blanc);
-  }
+  .pack-header { padding: 2rem; color: var(--blanc); display: flex; flex-direction: column; gap: 0.5rem; }
+  .pack-header svg { margin-bottom: 0.3rem; }
+  .pack-header.individuel { background: linear-gradient(135deg, #1B3A5C 0%, #2A5580 100%); }
+  .pack-header.groupe { background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%); }
+  .pack-header h2 { font-size: 1.5rem; font-weight: 700; }
+  .pack-desc { font-size: 0.95rem; opacity: 0.9; }
 
-  .pack-header.individuel {
-    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
-  }
-
-  .pack-header.groupe {
-    background: linear-gradient(135deg, #2BAB7C 0%, #34C590 100%);
-  }
-
-  .pack-header h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
-  .pack-desc {
-    font-size: 0.95rem;
-    opacity: 0.9;
-  }
-
-  .pack-body {
-    padding: 1.5rem 2rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
+  .pack-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
 
   .formule {
     display: flex;
@@ -216,175 +176,77 @@ import Base from '../layouts/Base.astro';
     background-color: var(--creme);
     position: relative;
     gap: 1rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
-  .formule.populaire {
-    border: 2px solid var(--jaune);
-    background-color: #fffdf5;
-  }
+  .formule:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+
+  .formule.populaire { border: 2px solid var(--jaune); background-color: #fffdf5; }
 
   .formule-tag {
-    position: absolute;
-    top: -10px;
-    left: 1rem;
-    background-color: var(--jaune);
-    color: var(--blanc);
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.2rem 0.8rem;
-    border-radius: 50px;
+    position: absolute; top: -10px; left: 1rem;
+    background-color: var(--jaune); color: var(--blanc);
+    font-size: 0.75rem; font-weight: 600;
+    padding: 0.2rem 0.8rem; border-radius: 50px;
   }
 
-  .formule-info h3 {
-    font-size: 1rem;
-    color: var(--bleu);
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-  }
-
-  .formule-info p {
-    font-size: 0.85rem;
-    color: var(--texte);
-    opacity: 0.7;
-  }
-
-  .formule-prix {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.3rem;
-  }
-
-  .prix {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--bleu);
-  }
-
-  .par-heure {
-    font-size: 0.8rem;
-    color: var(--texte);
-    opacity: 0.6;
-  }
+  .formule-info h3 { font-size: 1rem; color: var(--bleu); font-weight: 600; margin-bottom: 0.2rem; }
+  .formule-info p { font-size: 0.85rem; color: var(--texte); opacity: 0.7; }
+  .formule-prix { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
+  .prix { font-size: 1.5rem; font-weight: 700; color: var(--corail); }
+  .par-heure { font-size: 0.8rem; color: var(--texte); opacity: 0.6; }
 
   .btn-acheter {
     display: inline-block;
-    background-color: var(--corail);
+    background: linear-gradient(135deg, var(--corail), #F5A623);
     color: var(--blanc);
     padding: 0.4rem 1.2rem;
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
     margin-top: 0.3rem;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
   }
 
-  .btn-acheter:hover {
-    background-color: var(--corail-hover);
-    transform: scale(1.05);
-  }
+  .btn-acheter:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(232,100,74,0.3); }
 
-  .tarifs-info {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-  }
+  .tarifs-info { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
 
-  .info-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
+  .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
 
   .info-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.5rem;
-    background-color: var(--blanc);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.5rem; background-color: var(--blanc);
+    border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
 
-  .info-card-link {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
+  .info-card-link { cursor: pointer; color: inherit; }
+  .info-card-link:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); border-color: var(--jaune); }
 
-  .info-card-link:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  }
+  .info-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .info-card p { font-size: 0.92rem; color: var(--texte); line-height: 1.6; }
 
-  .info-card span {
-    font-size: 1.8rem;
-    flex-shrink: 0;
-  }
+  .cta-end { padding: 4rem 2rem; position: relative; z-index: 1; }
+  .cta-end-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .cta-end-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--blanc); border-radius: 20px; padding: 3rem 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; color: inherit; }
+  .cta-end-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+  .cta-end-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+  .cta-end-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--bleu); margin-bottom: 0.75rem; }
+  .cta-end-card p { font-size: 0.95rem; color: var(--texte); opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem; }
 
-  .info-card p {
-    font-size: 0.92rem;
-    color: var(--texte);
-    line-height: 1.6;
-  }
-
-  .cta-tarifs {
-    text-align: center;
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
-    color: var(--blanc);
-  }
-
-  .cta-tarifs h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  .cta-tarifs p {
-    font-size: 1.15rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.9;
-  }
-
-  .cta {
-    display: inline-block;
-    background-color: var(--jaune);
-    color: var(--bleu);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-
-  .cta:hover {
-    background-color: #e0950f;
-    transform: scale(1.03);
-  }
+  .cta-outline { display: inline-block; border: 2px solid var(--teal); color: var(--teal); padding: 0.8rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
+  .cta-outline:hover { background: linear-gradient(135deg, #1A6B5C, #2BAB7C); color: var(--blanc); border-color: #1A6B5C; transform: scale(1.03); box-shadow: 0 4px 15px rgba(26, 107, 92, 0.3); }
 
   @media (max-width: 768px) {
-    .tarifs-hero h1 {
-      font-size: 2rem;
-    }
-
-    .packs {
-      grid-template-columns: 1fr;
-      padding: 2rem 1.5rem;
-    }
-
-    .formule {
-      flex-direction: column;
-      text-align: center;
-      gap: 0.8rem;
-    }
-
-    .formule-prix {
-      align-items: center;
-    }
-
-    .cta-tarifs {
-      padding: 3rem 1.5rem;
-    }
+    .tarifs-hero h1 { font-size: 2rem; }
+    .packs { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+    .formule { flex-direction: column; text-align: center; gap: 0.8rem; }
+    .formule-prix { align-items: center; }
+    .cta-end { padding: 2rem 1rem; }
+    .cta-end-grid { grid-template-columns: 1fr; }
   }
 </style>

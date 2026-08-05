@@ -5,33 +5,33 @@ import Base from '../layouts/Base.astro';
 <Base title="Contact">
 
   <section class="contact-hero fade-in">
-    <h1>Une question ? <span class="highlight">Contacte-nous</span></h1>
-    <p>On te répond sous 24h. N'hésite pas, on est là pour t'aider à trouver la formule idéale pour ton enfant.</p>
+    <h1>Une question ? <span class="highlight">Parlons-en</span></h1>
+    <p>On te répond sous 24h. N'hésite pas, on est là pour t'aider.</p>
   </section>
 
-  <section class="contact-grid fade-in">
+  <section class="contact-grid fade-right">
 
     <div class="contact-cards">
-      <div class="contact-card">
-        <span><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></span>
+      <a href="mailto:contact@soroclub.fr" class="contact-card">
+        <div class="contact-card-icon" style="background: rgba(232,100,74,0.1);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
         <h3>Email</h3>
-        <a href="mailto:contact@soroclub.fr.fr">contact@soroclub.fr</a>
-      </div>
-      <div class="contact-card">
-        <span><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
+        <span class="contact-link">contact@soroclub.fr</span>
+      </a>
+      <a href="https://wa.me/33618354388" target="_blank" class="contact-card">
+        <div class="contact-card-icon" style="background: rgba(43,171,124,0.1);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></div>
         <h3>WhatsApp</h3>
-        <a href="https://wa.me/33XXXXXXXXX" target="_blank">Envoyer un message</a>
-      </div>
-      <div class="contact-card">
-        <span>📸</span>
+        <span class="contact-link">Envoyer un message</span>
+      </a>
+      <a href="https://www.instagram.com/soroclub.fr" target="_blank" class="contact-card">
+        <div class="contact-card-icon" style="background: rgba(245,166,35,0.1);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
         <h3>Instagram</h3>
-        <a href="https://www.instagram.com/soroclub.fr" target="_blank">@soroclub.fr</a>
-      </div>
+        <span class="contact-link">@soroclub.fr</span>
+      </a>
     </div>
 
-    <div class="contact-form-wrapper">
-      <h2>Envoie-nous un message</h2>
-      <form class="contact-form" action="https://formsubmit.co/contact@soroclub.fr.fr" method="POST">
+    <div class="contact-form-wrapper fade-left">
+      <h2 class="section-title">Envoie-nous un <span class="highlight">message</span></h2>
+      <form class="contact-form" action="https://formsubmit.co/contact@soroclub.fr" method="POST">
         <input type="hidden" name="_subject" value="Nouveau message depuis Soroclub.fr">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://soroclub.fr/contact">
@@ -63,7 +63,7 @@ import Base from '../layouts/Base.astro';
           <textarea id="message" name="message" rows="5" placeholder="Écris ton message ici..." required></textarea>
         </div>
 
-        <button type="submit" class="cta">Envoyer</button>
+        <button type="submit" class="cta cta-shine">Envoyer</button>
       </form>
     </div>
 
@@ -77,25 +77,14 @@ import Base from '../layouts/Base.astro';
     margin: 0 auto;
     padding: 4rem 2rem 2rem;
     text-align: center;
+    animation: pageEnter 2.5s ease-out;
   }
 
-  .contact-hero h1 {
-    font-size: 2.5rem;
-    color: var(--bleu);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
+  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
-  .highlight {
-    color: var(--corail);
-  }
-
-  .contact-hero p {
-    font-size: 1.1rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.8;
-  }
+  .contact-hero h1 { font-size: 2.5rem; color: var(--bleu); font-weight: 700; margin-bottom: 1.5rem; }
+  .highlight { color: var(--corail); }
+  .contact-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; }
 
   .contact-grid {
     max-width: 1000px;
@@ -107,11 +96,7 @@ import Base from '../layouts/Base.astro';
     align-items: start;
   }
 
-  .contact-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+  .contact-cards { display: flex; flex-direction: column; gap: 1.5rem; }
 
   .contact-card {
     background-color: var(--blanc);
@@ -119,36 +104,27 @@ import Base from '../layouts/Base.astro';
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
+    display: block;
+    color: inherit;
   }
 
   .contact-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--jaune);
   }
 
-  .contact-card span {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.75rem;
+  .contact-card-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.75rem;
   }
 
-  .contact-card h3 {
-    font-size: 1rem;
-    color: var(--bleu);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .contact-card a {
-    font-size: 0.92rem;
-    color: var(--corail);
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-
-  .contact-card a:hover {
-    color: var(--corail-hover);
-  }
+  .contact-card h3 { font-size: 1rem; color: var(--bleu); font-weight: 600; margin-bottom: 0.4rem; }
+  .contact-link { font-size: 0.9rem; color: var(--teal); font-weight: 500; }
 
   .contact-form-wrapper {
     background-color: var(--blanc);
@@ -157,30 +133,10 @@ import Base from '../layouts/Base.astro';
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   }
 
-  .contact-form-wrapper h2 {
-    font-size: 1.4rem;
-    color: var(--bleu);
-    font-weight: 600;
-    margin-bottom: 2rem;
-  }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .form-group label {
-    font-size: 0.9rem;
-    color: var(--bleu);
-    font-weight: 500;
-  }
+  .contact-form-wrapper h2 { font-size: 1.4rem; color: var(--bleu); font-weight: 600; margin-bottom: 2rem; }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-size: 0.9rem; color: var(--bleu); font-weight: 500; }
 
   .form-group input,
   .form-group select,
@@ -192,23 +148,22 @@ import Base from '../layouts/Base.astro';
     font-family: 'Poppins', sans-serif;
     color: var(--texte);
     background-color: var(--creme);
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--bleu);
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(26, 107, 92, 0.1);
   }
 
-  .form-group textarea {
-    resize: vertical;
-  }
+  .form-group textarea { resize: vertical; }
 
   .cta {
     display: inline-block;
-    background-color: var(--corail);
+    background: linear-gradient(135deg, var(--corail), #F5A623);
     color: var(--blanc);
     padding: 1rem 2.5rem;
     border-radius: 50px;
@@ -217,32 +172,20 @@ import Base from '../layouts/Base.astro';
     border: none;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.3s;
     align-self: flex-start;
+    position: relative;
+    overflow: hidden;
   }
 
-  .cta:hover {
-    background-color: var(--corail-hover);
-    transform: scale(1.03);
-  }
+  .cta:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(232, 100, 74, 0.3); }
+  .cta-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shine 3s ease-in-out infinite; }
+  @keyframes shine { 0% { left: -100%; } 50% { left: 150%; } 100% { left: 150%; } }
 
   @media (max-width: 768px) {
-    .contact-hero h1 {
-      font-size: 2rem;
-    }
-
-    .contact-grid {
-      grid-template-columns: 1fr;
-      padding: 2rem 1.5rem 3rem;
-    }
-
-    .contact-cards {
-      flex-direction: row;
-      overflow-x: auto;
-    }
-
-    .contact-card {
-      min-width: 150px;
-    }
+    .contact-hero h1 { font-size: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; padding: 2rem 1.5rem 3rem; }
+    .contact-cards { flex-direction: row; overflow-x: auto; }
+    .contact-card { min-width: 150px; }
   }
 </style>

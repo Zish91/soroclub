@@ -17,31 +17,39 @@ import Base from '../layouts/Base.astro';
     </div>    <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
     <p class="hero-sub">Des cours en ligne pour enfants de 6 à 12 ans.<br />Ludiques, progressifs, et efficaces.</p>
     <div class="hero-buttons">
-  <a href="/reservation" class="cta">Cours d'essai — 5€</a>
+  <a href="/reservation" class="cta cta-pulse">Cours d'essai — 5€</a>
   <a href="/tarifs" class="cta-outline">Voir nos formules</a>
 </div>
   </section>
 
   <section class="benefices fade-in">
-    <h2>Pourquoi le soroban ?</h2>
-    <div class="cards">
+    <h2 class="section-title">Pourquoi le soroban ?</h2>
+    <div class="cards stagger">
       <div class="card">
-        <span class="card-icon">🧠</span>
+        <span class="icon-bounce" style="background: rgba(232,100,74,0.1);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>
+        </span>
         <h3>Calcul mental</h3>
         <p>Ton enfant apprend à visualiser le boulier mentalement pour calculer à une vitesse fulgurante, sans calculatrice.</p>
       </div>
       <div class="card">
-        <span class="card-icon">🎯</span>
+        <span class="icon-bounce" style="background: rgba(245,166,35,0.1);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </span>
         <h3>Concentration</h3>
         <p>Manipuler les perles demande une attention totale. Cette habitude se transfère dans toutes les matières à l'école.</p>
       </div>
       <div class="card">
-        <span class="card-icon">💪</span>
+        <span class="icon-bounce" style="background: rgba(232,100,74,0.1);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+        </span>
         <h3>Confiance en soi</h3>
         <p>Fini les "je suis nul en maths". En maîtrisant le calcul, ton enfant retrouve le plaisir d'apprendre.</p>
       </div>
       <div class="card">
-        <span class="card-icon">🧩</span>
+        <span class="icon-bounce" style="background: rgba(245,166,35,0.1);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg>
+        </span>
         <h3>Stimulation cérébrale</h3>
         <p>Le soroban active les deux hémisphères du cerveau : la logique à gauche, la visualisation et la créativité à droite.</p>
       </div>
@@ -49,7 +57,7 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <section class="etapes fade-in">
-    <h2>Comment ça marche ?</h2>
+    <h2 class="section-title">Comment ça marche ?</h2>
     <div class="etapes-grid">
       <div class="etape">
         <span class="etape-num">1</span>
@@ -70,28 +78,62 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <section class="pourquoi fade-in">
-    <h2>Pourquoi Soroclub ?</h2>
+    <h2 class="section-title">Pourquoi Soroclub ?</h2>
     <p class="pourquoi-intro">Fondée par <strong>Ibtissama</strong>, enseignante Montessori depuis plus de 10 ans et coach diplômée à la méthode soroban. Tous nos enseignants sont formés à sa pédagogie bienveillante.</p>
-    <div class="pourquoi-grid">
+    <div class="pourquoi-grid stagger">
       <div class="pourquoi-item">
-        <span class="pourquoi-icon">👩‍🏫</span>
+        <span class="icon-bounce" style="background: rgba(27,58,92,0.1);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+        </span>
         <h3>Enseignante certifiée</h3>
         <p>Une méthode conçue par une experte, avec 10 ans de pédagogie Montessori et une certification soroban.</p>
       </div>
       <div class="pourquoi-item">
-        <span class="pourquoi-icon">🐢</span>
+        <span class="icon-bounce" style="background: rgba(43,171,124,0.1);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"/><path d="M4.82 7.9 8 10"/><path d="M15.18 7.9 12 10"/><path d="M16.93 10H20a2 2 0 0 1 0 4H2"/></svg>
+        </span>
         <h3>On ne brûle pas les étapes</h3>
         <p>Chaque enfant avance à son rythme. Pas de pression, pas de course. La maîtrise avant la vitesse.</p>
       </div>
       <div class="pourquoi-item">
-        <span class="pourquoi-icon">👤</span>
+        <span class="icon-bounce" style="background: rgba(27,58,92,0.1);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </span>
         <h3>Suivi personnalisé</h3>
         <p>Des petits groupes pour un vrai accompagnement. Chaque enfant est suivi individuellement.</p>
       </div>
       <div class="pourquoi-item">
-        <span class="pourquoi-icon">❤️</span>
+        <span class="icon-bounce" style="background: rgba(232,100,74,0.1);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+        </span>
         <h3>Zéro stress</h3>
         <p>L'erreur fait partie de l'apprentissage. Ici on encourage, on ne juge pas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="chiffres fade-in">
+    <h2 class="section-title">Soroclub en chiffres</h2>
+    <div class="chiffres-grid stagger">
+      <div class="chiffre-item">
+        <span class="chiffre-num" data-target="10">0</span>
+        <span class="chiffre-suffix">+</span>
+        <p>ans d'expérience</p>
+      </div>
+      <div class="chiffre-item">
+        <span class="chiffre-num" data-target="9">0</span>
+        <span class="chiffre-suffix"></span>
+        <p>niveaux progressifs</p>
+      </div>
+      <div class="chiffre-item">
+        <span class="chiffre-num" data-target="100">0</span>
+        <span class="chiffre-suffix">%</span>
+        <p>en ligne</p>
+      </div>
+      <div class="chiffre-item">
+        <span class="chiffre-num" data-target="5">0</span>
+        <span class="chiffre-suffix">€</span>
+        <p>le cours d'essai</p>
       </div>
     </div>
   </section>
@@ -99,7 +141,7 @@ import Base from '../layouts/Base.astro';
   <section class="cta-final fade-in">
     <h2>Prêt à commencer ?</h2>
     <p>Offre à ton enfant un super pouvoir en mathématiques.</p>
-    <a href="/reservation" class="cta">Cours d'essai — 5€</a>
+    <a href="/reservation" class="cta cta-pulse">Cours d'essai — 5€</a>
   </section>
 
 </Base>
@@ -300,10 +342,8 @@ import Base from '../layouts/Base.astro';
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
 
-  .card-icon {
-    font-size: 2.8rem;
-    display: block;
-    margin-bottom: 1rem;
+  .card .icon-bounce {
+    margin: 0 auto 1rem;
   }
 
   .card h3 {
@@ -416,9 +456,10 @@ import Base from '../layouts/Base.astro';
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   }
 
-  .pourquoi-icon {
-    font-size: 2rem;
-    display: block;
+  .pourquoi-item .icon-bounce {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
     margin-bottom: 0.75rem;
   }
 
@@ -465,6 +506,50 @@ import Base from '../layouts/Base.astro';
     background-color: #e0950f;
   }
 
+  .chiffres {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .chiffres h2 {
+    font-size: 2rem;
+    color: var(--bleu);
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+
+  .chiffres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+
+  .chiffre-item {
+    padding: 1.5rem;
+  }
+
+  .chiffre-num {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--corail);
+    line-height: 1;
+  }
+
+  .chiffre-suffix {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--corail);
+  }
+
+  .chiffre-item p {
+    font-size: 0.95rem;
+    color: var(--texte);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+
   @media (max-width: 768px) {
     .hero h1 {
       font-size: 2rem;
@@ -474,12 +559,16 @@ import Base from '../layouts/Base.astro';
       padding: 2rem 1.5rem;
     }
 
-    .benefices, .etapes, .pourquoi {
+    .benefices, .etapes, .pourquoi, .chiffres {
       padding: 3rem 1.5rem;
     }
 
     .cta-final {
       padding: 3rem 1.5rem;
+    }
+
+    .chiffre-num {
+      font-size: 2.5rem;
     }
   }
 </style>
@@ -496,4 +585,30 @@ import Base from '../layouts/Base.astro';
       perle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
     });
   });
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counters = entry.target.querySelectorAll('.chiffre-num');
+        counters.forEach(counter => {
+          const target = parseInt(counter.dataset.target);
+          const duration = 1500;
+          const step = Math.ceil(target / (duration / 30));
+          let current = 0;
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            counter.textContent = current;
+          }, 30);
+        });
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const chiffresSection = document.querySelector('.chiffres');
+  if (chiffresSection) counterObserver.observe(chiffresSection);
 </script>

@@ -53,3 +53,76 @@ img {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== CASCADE DÉCALÉE (stagger) ===== */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+.stagger.visible > *:nth-child(2) { transition-delay: 0.12s; }
+.stagger.visible > *:nth-child(3) { transition-delay: 0.24s; }
+.stagger.visible > *:nth-child(4) { transition-delay: 0.36s; }
+
+.stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== REBOND ICÔNE ===== */
+.icon-bounce {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.visible .icon-bounce {
+  transform: scale(1);
+}
+
+/* ===== SOULIGNEMENT ANIMÉ TITRES ===== */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60px;
+  height: 4px;
+  background: var(--jaune);
+  border-radius: 2px;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: 0.2s;
+}
+
+.visible .section-title::after,
+.fade-in.visible .section-title::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ===== PULSE DOUX CTA ===== */
+.cta-pulse {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(232, 100, 74, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(232, 100, 74, 0);
+  }
+}

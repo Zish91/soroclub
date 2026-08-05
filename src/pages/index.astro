@@ -4,21 +4,26 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Accueil">
 
+<div class="floating-symbols">
+  <span class="symbol">+</span>
+  <span class="symbol">×</span>
+  <span class="symbol">★</span>
+  <span class="symbol">√</span>
+  <span class="symbol">÷</span>
+  <span class="symbol">=</span>
+  <span class="symbol">+</span>
+  <span class="symbol">★</span>
+  <span class="symbol">×</span>
+  <span class="symbol">√</span>
+  <span class="symbol">÷</span>
+  <span class="symbol">=</span>
+</div>
+
 <section class="hero fade-in">
-    <div class="floating-symbols">
-      <span class="symbol">+</span>
-      <span class="symbol">×</span>
-      <span class="symbol">★</span>
-      <span class="symbol">√</span>
-      <span class="symbol">÷</span>
-      <span class="symbol">=</span>
-      <span class="symbol">+</span>
-      <span class="symbol">★</span>
-    </div>
     <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
     <p class="hero-sub">Des cours en ligne pour enfants de 6 à 12 ans.<br />Ludiques, progressifs, et efficaces.</p>
     <div class="hero-buttons">
-      <a href="/reservation" class="cta cta-pulse">Cours d'essai · 5€</a>
+      <a href="/reservation" class="cta cta-pulse cta-shine">Cours d'essai · 5€</a>
       <a href="/tarifs" class="cta-outline">Voir nos formules →</a>
     </div>
   </section>
@@ -115,42 +120,38 @@ import Base from '../layouts/Base.astro';
 
   <section class="chiffres fade-in">
     <div class="chiffres-grid stagger">
-      <div class="chiffre-item">
+      <a href="/temoignages" class="chiffre-item chiffre-link">
         <span class="chiffre-num" data-target="40">0</span>
         <span class="chiffre-suffix">+</span>
         <p>élèves accompagnés</p>
-      </div>
-      <div class="chiffre-item">
+      </a>
+      <a href="/programme" class="chiffre-item chiffre-link">
         <span class="chiffre-num" data-target="10">0</span>
         <span class="chiffre-suffix">+</span>
         <p>ans d'expérience</p>
-      </div>
-      <div class="chiffre-item">
+      </a>
+      <a href="/programme" class="chiffre-item chiffre-link">
         <span class="chiffre-num" data-target="9">0</span>
         <span class="chiffre-suffix"></span>
         <p>niveaux progressifs</p>
-      </div>
-      <div class="chiffre-item">
+      </a>
+      <a href="/reservation" class="chiffre-item chiffre-link">
         <span class="chiffre-num" data-target="5">0</span>
         <span class="chiffre-suffix">€</span>
         <p>le cours d'essai</p>
-      </div>
+      </a>
     </div>
   </section>
 
   <section class="cta-final fade-in">
     <h2>Prêt à commencer ?</h2>
     <p>Offre à ton enfant un super pouvoir en mathématiques.</p>
-    <a href="/reservation" class="cta cta-pulse">Cours d'essai · 5€</a>
+    <a href="/reservation" class="cta cta-pulse cta-shine">Cours d'essai · 5€</a>
   </section>
 
 </Base>
 
 <style>
-  .hero {
-    position: relative;
-  }
-
   .floating-symbols {
     position: fixed;
     top: 0;
@@ -169,59 +170,64 @@ import Base from '../layouts/Base.astro';
   }
 
   .symbol:nth-child(1) {
-    font-size: 2.5rem;
-    color: var(--corail);
-    top: 15%; left: 8%;
+    font-size: 2.5rem; color: var(--corail);
+    top: 12%; left: 6%;
     animation: float 6s ease-in-out infinite;
   }
-
   .symbol:nth-child(2) {
-    font-size: 2rem;
-    color: var(--jaune);
-    top: 55%; left: 88%;
+    font-size: 2rem; color: var(--jaune);
+    top: 55%; left: 90%;
     animation: float 7s ease-in-out infinite 1s;
   }
-
   .symbol:nth-child(3) {
-    font-size: 3rem;
-    color: var(--teal);
-    top: 75%; left: 25%;
+    font-size: 3rem; color: var(--teal);
+    top: 78%; left: 22%;
     animation: float 8s ease-in-out infinite 2s;
   }
-
   .symbol:nth-child(4) {
-    font-size: 2.2rem;
-    color: var(--corail);
-    top: 8%; left: 72%;
+    font-size: 2.2rem; color: var(--corail);
+    top: 6%; left: 75%;
     animation: float 6.5s ease-in-out infinite 0.5s;
   }
-
   .symbol:nth-child(5) {
-    font-size: 2rem;
-    color: var(--jaune);
-    top: 45%; left: 4%;
+    font-size: 2rem; color: var(--jaune);
+    top: 42%; left: 3%;
     animation: float 7.5s ease-in-out infinite 1.5s;
   }
-
   .symbol:nth-child(6) {
-    font-size: 2.8rem;
-    color: var(--teal);
-    top: 25%; left: 92%;
+    font-size: 2.8rem; color: var(--teal);
+    top: 22%; left: 93%;
     animation: float 6s ease-in-out infinite 3s;
   }
-
   .symbol:nth-child(7) {
-    font-size: 1.8rem;
-    color: var(--bleu-clair);
-    top: 65%; left: 55%;
+    font-size: 1.8rem; color: var(--bleu-clair);
+    top: 68%; left: 58%;
     animation: float 7s ease-in-out infinite 2.5s;
   }
-
   .symbol:nth-child(8) {
-    font-size: 2.4rem;
-    color: var(--jaune);
-    top: 35%; left: 38%;
+    font-size: 2.4rem; color: var(--jaune);
+    top: 32%; left: 42%;
     animation: float 8s ease-in-out infinite 4s;
+  }
+  .symbol:nth-child(9) {
+    font-size: 1.6rem; color: var(--corail);
+    top: 88%; left: 70%;
+    animation: float 6.5s ease-in-out infinite 1.2s;
+  }
+  .symbol:nth-child(10) {
+    font-size: 2.6rem; color: var(--teal);
+    top: 48%; left: 78%;
+    animation: float 7.5s ease-in-out infinite 3.5s;
+  }
+  .symbol:nth-child(11) {
+    font-size: 1.9rem; color: var(--jaune);
+    top: 92%; left: 12%;
+    animation: float 6s ease-in-out infinite 2.2s;
+  }
+  .symbol:nth-child(12) {
+    font-size: 2.1rem; color: var(--bleu-clair);
+    top: 3%; left: 45%;
+    animation: float 7s ease-in-out infinite 0.8s;
   }
 
   @keyframes float {
@@ -229,41 +235,13 @@ import Base from '../layouts/Base.astro';
     50% { transform: translateY(-20px) rotate(10deg); }
   }
 
-  .hero h1, .hero-sub, .hero .cta, .hero-buttons {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .cta-outline {
-    display: inline-block;
-    border: 2px solid var(--bleu);
-    color: var(--bleu);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-outline:hover {
-    background-color: var(--bleu);
-    color: var(--blanc);
-  }
-
   .hero {
     max-width: 800px;
     margin: 0 auto;
     padding: 4rem 2rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .hero h1 {
@@ -287,6 +265,13 @@ import Base from '../layouts/Base.astro';
     line-height: 1.8;
   }
 
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .cta {
     display: inline-block;
     background: linear-gradient(135deg, var(--corail), #F5A623);
@@ -297,6 +282,8 @@ import Base from '../layouts/Base.astro';
     font-weight: 700;
     transition: transform 0.2s, box-shadow 0.3s;
     letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
   }
 
   .cta:hover {
@@ -304,11 +291,49 @@ import Base from '../layouts/Base.astro';
     box-shadow: 0 6px 20px rgba(232, 100, 74, 0.35);
   }
 
+  .cta-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: none;
+    animation: shine 3s ease-in-out infinite;
+  }
+
+  @keyframes shine {
+    0% { left: -100%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
+  }
+
+  .cta-outline {
+    display: inline-block;
+    border: 2px solid var(--bleu);
+    color: var(--bleu);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-outline:hover {
+    background-color: var(--bleu);
+    color: var(--blanc);
+  }
+
   .benefices {
     max-width: 1100px;
     margin: 0 auto;
     padding: 5rem 2rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .benefices h2 {
@@ -330,12 +355,14 @@ import Base from '../layouts/Base.astro';
     padding: 2rem 1.5rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
   }
 
   .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--jaune);
   }
 
   .card .icon-bounce {
@@ -361,6 +388,8 @@ import Base from '../layouts/Base.astro';
     margin: 0 auto;
     padding: 5rem 2rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .etapes h2 {
@@ -414,6 +443,8 @@ import Base from '../layouts/Base.astro';
     margin: 0 auto;
     padding: 5rem 2rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .pourquoi h2 {
@@ -474,9 +505,11 @@ import Base from '../layouts/Base.astro';
   }
 
   .chiffres {
-    background: linear-gradient(135deg, var(--bleu) 0%, var(--teal) 100%);
+    background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%);
     padding: 4rem 2rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .chiffres-grid {
@@ -491,12 +524,26 @@ import Base from '../layouts/Base.astro';
     padding: 1.5rem;
   }
 
+  .chiffre-link {
+    display: block;
+    color: inherit;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+  }
+
+  .chiffre-link:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.1);
+  }
+
   .chiffre-num {
     font-size: 3.5rem;
     font-weight: 700;
     color: var(--blanc);
     line-height: 1;
     display: inline;
+    transition: transform 0.3s ease;
   }
 
   .chiffre-suffix {
@@ -514,8 +561,10 @@ import Base from '../layouts/Base.astro';
   .cta-final {
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+    background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%);
     color: var(--blanc);
+    position: relative;
+    z-index: 1;
   }
 
   .cta-final h2 {
@@ -580,7 +629,7 @@ import Base from '../layouts/Base.astro';
     const y = e.clientY / window.innerHeight - 0.5;
 
     symbols.forEach((sym, i) => {
-      const speed = (i + 1) * 20;
+      const speed = (i + 1) * 15;
       sym.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
     });
   });

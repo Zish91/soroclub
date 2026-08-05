@@ -73,17 +73,10 @@ const { title } = Astro.props;
 
 <style>
   .header {
-    background: linear-gradient(135deg, var(--bleu), var(--teal), var(--bleu-clair), var(--bleu));
-    background-size: 300% 300%;
-    animation: header-breathe 8s ease-in-out infinite;
+    background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%);
     padding: 0.5rem 0;
     position: relative;
     z-index: 1000;
-  }
-
-  @keyframes header-breathe {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
   }
 
   .header-inner {
@@ -185,7 +178,7 @@ const { title } = Astro.props;
       top: 100%;
       left: 0;
       right: 0;
-      background: linear-gradient(135deg, var(--bleu), var(--teal));
+      background: linear-gradient(135deg, #1A6B5C, #2BAB7C);
       flex-direction: column;
       padding: 1rem 2rem 2rem;
       gap: 1rem;
@@ -201,7 +194,7 @@ const { title } = Astro.props;
   }
 
   .footer {
-    background: linear-gradient(135deg, var(--bleu), var(--teal));
+    background: linear-gradient(135deg, #1A6B5C, #2BAB7C);
     color: var(--blanc);
     text-align: center;
     padding: 2rem;
@@ -219,9 +212,7 @@ const { title } = Astro.props;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(135deg, var(--bleu), var(--teal), var(--bleu-clair), var(--bleu));
-      background-size: 300% 300%;
-      animation: header-breathe 8s ease-in-out infinite;
+      background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%);
       justify-content: space-around;
       align-items: center;
       padding: 0.5rem 0;

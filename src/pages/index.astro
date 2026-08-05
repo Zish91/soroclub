@@ -123,7 +123,7 @@ import Base from '../layouts/Base.astro';
           <h3>Individuel</h3>
         </div>
         <div class="tarif-body">
-          <span class="tarif-prix">À partir de <strong>10,80€</strong>/h</span>
+          <span class="tarif-prix">À partir de <strong>10,80€</strong> / heure</span>
           <p>Cours particulier 1-to-1, attention 100% sur ton enfant.</p>
           <a href="/tarifs" class="cta-outline">Voir les packs →</a>
         </div>
@@ -134,7 +134,7 @@ import Base from '../layouts/Base.astro';
           <h3>Groupe</h3>
         </div>
         <div class="tarif-body">
-          <span class="tarif-prix">À partir de <strong>7,50€</strong>/h</span>
+          <span class="tarif-prix">À partir de <strong>7,50€</strong> / heure</span>
           <p>Petits groupes dynamiques, entraide entre enfants.</p>
           <a href="/tarifs" class="cta-outline">Voir les packs →</a>
         </div>
@@ -177,26 +177,34 @@ import Base from '../layouts/Base.astro';
   <section class="pourquoi fade-in">
     <h2 class="section-title">La méthode qui fait la différence</h2>
     <p class="pourquoi-intro">Fondée par <strong>Ibtissama</strong>, enseignante Montessori depuis plus de 10 ans et coach diplômée à la méthode soroban. Tous nos enseignants sont formés à sa pédagogie bienveillante.</p>
-    <div class="pourquoi-grid stagger dock-container">
-      <div class="pourquoi-item dock-item">
-        <span class="icon-bounce" style="background: rgba(27,58,92,0.1);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>
-        <h3>Enseignante certifiée</h3>
-        <p>Une méthode conçue par une experte, avec 10 ans de pédagogie Montessori et une certification soroban.</p>
+    <div class="accordion accordion-pourquoi">
+      <div class="accordion-item" style="--acc-color: var(--bleu); --acc-bg: rgba(27,58,92,0.06);">
+        <div class="accordion-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+        </div>
+        <h3 class="accordion-title">Enseignante certifiée</h3>
+        <p class="accordion-text">Une méthode conçue par une experte, avec 10 ans de pédagogie Montessori et une certification soroban.</p>
       </div>
-      <div class="pourquoi-item dock-item">
-        <span class="icon-bounce" style="background: rgba(43,171,124,0.1);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"/><path d="M4.82 7.9 8 10"/><path d="M15.18 7.9 12 10"/><path d="M16.93 10H20a2 2 0 0 1 0 4H2"/></svg></span>
-        <h3>On ne brûle pas les étapes</h3>
-        <p>Chaque enfant avance à son rythme. Pas de pression, pas de course.</p>
+      <div class="accordion-item" style="--acc-color: var(--teal); --acc-bg: rgba(43,171,124,0.06);">
+        <div class="accordion-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"/><path d="M4.82 7.9 8 10"/><path d="M15.18 7.9 12 10"/><path d="M16.93 10H20a2 2 0 0 1 0 4H2"/></svg>
+        </div>
+        <h3 class="accordion-title">Chaque enfant à son rythme</h3>
+        <p class="accordion-text">Pas de pression, pas de course. La maîtrise avant la vitesse.</p>
       </div>
-      <div class="pourquoi-item dock-item">
-        <span class="icon-bounce" style="background: rgba(27,58,92,0.1);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
-        <h3>Suivi personnalisé</h3>
-        <p>Des petits groupes pour un vrai accompagnement. Chaque enfant est suivi individuellement.</p>
+      <div class="accordion-item" style="--acc-color: var(--bleu); --acc-bg: rgba(27,58,92,0.06);">
+        <div class="accordion-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h3 class="accordion-title">Suivi personnalisé</h3>
+        <p class="accordion-text">Des petits groupes pour un vrai accompagnement. Chaque enfant est suivi individuellement.</p>
       </div>
-      <div class="pourquoi-item dock-item">
-        <span class="icon-bounce" style="background: rgba(232,100,74,0.1);"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></span>
-        <h3>Zéro stress</h3>
-        <p>L'erreur fait partie de l'apprentissage. Ici on encourage, on ne juge pas.</p>
+      <div class="accordion-item" style="--acc-color: var(--corail); --acc-bg: rgba(232,100,74,0.06);">
+        <div class="accordion-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+        </div>
+        <h3 class="accordion-title">Zéro stress</h3>
+        <p class="accordion-text">L'erreur fait partie de l'apprentissage. Ici on encourage, on ne juge pas.</p>
       </div>
     </div>
   </section>
@@ -236,110 +244,43 @@ import Base from '../layouts/Base.astro';
   .cta:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(232, 100, 74, 0.35); }
   .cta-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shine 3s ease-in-out infinite; }
   @keyframes shine { 0% { left: -100%; } 50% { left: 150%; } 100% { left: 150%; } }
-  .cta-outline { display: inline-block; border: 2px solid var(--bleu); color: var(--bleu); padding: 0.8rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
-  .cta-outline:hover { background-color: var(--bleu); color: var(--blanc); }
+  .cta-outline { display: inline-block; border: 2px solid var(--bleu); color: var(--bleu); padding: 0.8rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; letter-spacing: 0.3px; }
+  .cta-outline:hover { background: linear-gradient(135deg, var(--corail), var(--jaune)); color: var(--blanc); border-color: transparent; transform: scale(1.03); box-shadow: 0 4px 15px rgba(232, 100, 74, 0.3); }
 
-  /* ACCORDION DESKTOP */
-  .benefices { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
-  .benefices h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
+  /* ACCORDION */
+  .benefices, .pourquoi { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .benefices h2, .pourquoi h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
+  .pourquoi-intro { font-size: 1.05rem; color: var(--texte); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8; opacity: 0.85; }
 
   .accordion { display: flex; gap: 0.75rem; height: 320px; }
-
   .accordion-item {
-    flex: 1;
-    min-width: 0;
+    flex: 1; min-width: 0;
     background: var(--acc-bg);
     border-radius: 16px;
     padding: 2rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; cursor: pointer;
     transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     border: 2px solid transparent;
   }
+  .accordion-item:hover { flex: 3; border-color: var(--acc-color); }
+  .accordion-icon { margin-bottom: 1rem; transition: transform 0.3s ease; }
+  .accordion-item:hover .accordion-icon { transform: scale(1.2); }
+  .accordion-title { color: var(--bleu); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; white-space: nowrap; }
+  .accordion-text { font-size: 0.9rem; color: var(--texte); line-height: 1.6; opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease 0.1s, max-height 0.4s ease; }
+  .accordion-item:hover .accordion-text { opacity: 0.85; max-height: 200px; }
 
-  .accordion-item:hover {
-    flex: 3;
-    border-color: var(--acc-color);
-  }
-
-  .accordion-icon {
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-  }
-
-  .accordion-item:hover .accordion-icon {
-    transform: scale(1.2);
-  }
-
-  .accordion-title {
-    color: var(--bleu);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    white-space: nowrap;
-  }
-
-  .accordion-text {
-    font-size: 0.9rem;
-    color: var(--texte);
-    line-height: 1.6;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease 0.1s, max-height 0.4s ease;
-  }
-
-  .accordion-item:hover .accordion-text {
-    opacity: 0.85;
-    max-height: 200px;
-  }
-
-  /* MOBILE: grille colorée (option I) */
   @media (max-width: 768px) {
-    .accordion {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      height: auto;
-      gap: 1rem;
-    }
-
-    .accordion-item {
-      flex: none;
-      padding: 1.5rem 1rem;
-      min-height: 180px;
-    }
-
-    .accordion-item:hover {
-      flex: none;
-    }
-
-    .accordion-text {
-      opacity: 0.85;
-      max-height: 200px;
-      font-size: 0.82rem;
-    }
+    .accordion { display: grid; grid-template-columns: 1fr 1fr; height: auto; gap: 1rem; }
+    .accordion-item { flex: none; padding: 1.5rem 1rem; min-height: 180px; }
+    .accordion-item:hover { flex: none; }
+    .accordion-text { opacity: 0.85; max-height: 200px; font-size: 0.82rem; }
   }
 
   /* COMPTEURS BANDEAU ARRONDI */
   .chiffres { padding: 3rem 2rem; text-align: center; position: relative; z-index: 1; }
-
-  .chiffres-bandeau {
-    max-width: 900px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%);
-    border-radius: 24px;
-    padding: 3rem 2rem;
-    box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2);
-  }
-
+  .chiffres-bandeau { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%); border-radius: 24px; padding: 3rem 2rem; box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2); }
   .chiffre-item { padding: 1rem; }
   .chiffre-link { display: block; color: inherit; border-radius: 12px; transition: transform 0.12s ease-out, background 0.12s ease-out; cursor: pointer; }
   .chiffre-link:hover { transform: translateY(-4px) scale(1.05); background: rgba(255,255,255,0.15); }
@@ -390,16 +331,6 @@ import Base from '../layouts/Base.astro';
   .etape h3 { color: var(--bleu); font-size: 1.1rem; margin-bottom: 0.75rem; font-weight: 600; }
   .etape p { font-size: 0.92rem; color: var(--texte); opacity: 0.85; line-height: 1.7; }
 
-  /* POURQUOI SOROCLUB */
-  .pourquoi { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
-  .pourquoi h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 1rem; font-weight: 600; }
-  .pourquoi-intro { font-size: 1.05rem; color: var(--texte); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8; opacity: 0.85; }
-  .pourquoi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; }
-  .pourquoi-item { background-color: var(--blanc); border-left: 4px solid var(--jaune); border-radius: 0 16px 16px 0; padding: 1.5rem; text-align: left; will-change: transform, box-shadow; transition: none; }
-  .pourquoi-item .icon-bounce { width: 52px; height: 52px; border-radius: 12px; margin-bottom: 0.75rem; }
-  .pourquoi-item h3 { color: var(--bleu); font-size: 1.05rem; margin-bottom: 0.5rem; font-weight: 600; }
-  .pourquoi-item p { font-size: 0.92rem; color: var(--texte); line-height: 1.7; opacity: 0.85; }
-
   /* CTA FINAL */
   .cta-final { text-align: center; padding: 5rem 2rem; background: var(--creme); color: var(--texte); position: relative; z-index: 1; }
   .cta-final h2 { font-size: 2rem; margin-bottom: 1rem; font-weight: 600; color: var(--bleu); }
@@ -435,37 +366,6 @@ import Base from '../layouts/Base.astro';
     requestAnimationFrame(animateSymbols);
   }
   requestAnimationFrame(animateSymbols);
-
-  /* === DOCK CARTES POURQUOI === */
-  document.querySelectorAll('.dock-container').forEach(container => {
-    const items = Array.from(container.querySelectorAll('.dock-item'));
-    container.addEventListener('mousemove', (e) => {
-      items.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dist = Math.sqrt((e.clientX - cx) ** 2 + (e.clientY - cy) ** 2);
-        const radius = 250;
-        if (dist < radius) {
-          const ratio = 1 - dist / radius;
-          item.style.transform = `scale(${1 + ratio * 0.1}) translateY(-${ratio * 8}px)`;
-          item.style.boxShadow = `0 ${4 + ratio * 16}px ${15 + ratio * 25}px rgba(0,0,0,${0.05 + ratio * 0.1})`;
-          item.style.borderLeftColor = ratio > 0.3 ? 'var(--corail)' : 'var(--jaune)';
-        } else {
-          item.style.transform = 'scale(1) translateY(0)';
-          item.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
-          item.style.borderLeftColor = 'var(--jaune)';
-        }
-      });
-    });
-    container.addEventListener('mouseleave', () => {
-      items.forEach(item => {
-        item.style.transform = 'scale(1) translateY(0)';
-        item.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
-        item.style.borderLeftColor = 'var(--jaune)';
-      });
-    });
-  });
 
   /* === SLIDER TÉMOIGNAGES === */
   const slides = document.querySelectorAll('.slide');

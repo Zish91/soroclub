@@ -64,7 +64,7 @@ const { title } = Astro.props;
         entry.target.classList.add("visible");
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.2, rootMargin: "0px 0px -150px 0px" });
 
   document.querySelectorAll(".fade-in, .stagger, .fade-left, .fade-right").forEach(el => observer.observe(el));
 </script>

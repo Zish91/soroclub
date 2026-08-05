@@ -65,21 +65,21 @@ import Base from '../layouts/Base.astro';
   <section class="etapes fade-in">
     <h2 class="section-title">Comment ça marche ?</h2>
     <div class="etapes-grid">
-      <div class="etape">
+      <a href="/reservation" class="etape etape-link">
         <span class="etape-num">1</span>
         <h3>Réserve ton cours d'essai</h3>
         <p>Choisis un créneau en ligne. Le premier cours est offert pour découvrir la méthode.</p>
-      </div>
-      <div class="etape">
+      </a>
+      <a href="/programme" class="etape etape-link">
         <span class="etape-num">2</span>
         <h3>Apprends avec ton soroban</h3>
         <p>En visio, ton enfant manipule son boulier avec un professeur passionné. Ludique et interactif.</p>
-      </div>
-      <div class="etape">
+      </a>
+      <a href="/programme" class="etape etape-link">
         <span class="etape-num">3</span>
         <h3>Progresse niveau par niveau</h3>
         <p>Du débutant au calcul mental avancé, chaque niveau est validé par un examen. Comme les ceintures en judo !</p>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -165,8 +165,8 @@ import Base from '../layouts/Base.astro';
   .symbol {
     position: absolute;
     font-weight: 700;
-    opacity: 0.12;
-    transition: transform 0.3s ease-out;
+    opacity: 0.2;
+    transition: transform 0.6s ease-out;
   }
 
   .symbol:nth-child(1) {
@@ -299,7 +299,6 @@ import Base from '../layouts/Base.astro';
     width: 60%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: none;
     animation: shine 3s ease-in-out infinite;
   }
 
@@ -360,8 +359,8 @@ import Base from '../layouts/Base.astro';
   }
 
   .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     border-color: var(--jaune);
   }
 
@@ -407,6 +406,20 @@ import Base from '../layouts/Base.astro';
 
   .etape {
     padding: 1.5rem;
+    display: block;
+    color: inherit;
+  }
+
+  .etape-link {
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+  }
+
+  .etape-link:hover {
+    transform: translateY(-4px);
+    background: var(--blanc);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   }
 
   .etape-num {
@@ -422,6 +435,12 @@ import Base from '../layouts/Base.astro';
     font-weight: 700;
     margin-bottom: 1.2rem;
     box-shadow: 0 3px 10px rgba(245, 166, 35, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .etape-link:hover .etape-num {
+    transform: scale(1.25);
+    box-shadow: 0 6px 20px rgba(245, 166, 35, 0.5);
   }
 
   .etape h3 {
@@ -475,12 +494,13 @@ import Base from '../layouts/Base.astro';
     border-radius: 0 16px 16px 0;
     padding: 1.5rem;
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
   }
 
   .pourquoi-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--corail);
   }
 
   .pourquoi-item .icon-bounce {
@@ -528,13 +548,13 @@ import Base from '../layouts/Base.astro';
     display: block;
     color: inherit;
     border-radius: 12px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.15s ease, background 0.15s ease;
     cursor: pointer;
   }
 
   .chiffre-link:hover {
-    transform: translateY(-4px);
-    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px) scale(1.05);
+    background: rgba(255,255,255,0.15);
   }
 
   .chiffre-num {
@@ -543,7 +563,7 @@ import Base from '../layouts/Base.astro';
     color: var(--blanc);
     line-height: 1;
     display: inline;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
   }
 
   .chiffre-suffix {
@@ -561,8 +581,8 @@ import Base from '../layouts/Base.astro';
   .cta-final {
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%);
-    color: var(--blanc);
+    background: var(--creme);
+    color: var(--texte);
     position: relative;
     z-index: 1;
   }
@@ -571,22 +591,19 @@ import Base from '../layouts/Base.astro';
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    color: var(--bleu);
   }
 
   .cta-final p {
     font-size: 1.15rem;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    opacity: 0.85;
   }
 
   .cta-final .cta {
-    background: var(--jaune);
-    color: var(--bleu);
+    background: linear-gradient(135deg, var(--corail), #F5A623);
+    color: var(--blanc);
     font-weight: 700;
-  }
-
-  .cta-final .cta:hover {
-    background-color: #e0950f;
   }
 
   @media (max-width: 768px) {
@@ -623,16 +640,26 @@ import Base from '../layouts/Base.astro';
 
 <script>
   const symbols = document.querySelectorAll('.symbol');
+  let mouseX = 0.5, mouseY = 0.5;
 
   document.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth - 0.5;
-    const y = e.clientY / window.innerHeight - 0.5;
-
-    symbols.forEach((sym, i) => {
-      const speed = (i + 1) * 15;
-      sym.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-    });
+    mouseX = e.clientX / window.innerWidth;
+    mouseY = e.clientY / window.innerHeight;
   });
+
+  function animateSymbols() {
+    symbols.forEach((sym, i) => {
+      const rect = sym.getBoundingClientRect();
+      const symX = (rect.left + rect.width / 2) / window.innerWidth;
+      const symY = (rect.top + rect.height / 2) / window.innerHeight;
+      const dx = (mouseX - symX) * 80 * ((i % 3) + 1);
+      const dy = (mouseY - symY) * 80 * ((i % 3) + 1);
+      sym.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+    requestAnimationFrame(animateSymbols);
+  }
+
+  requestAnimationFrame(animateSymbols);
 
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

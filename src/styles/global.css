@@ -57,7 +57,7 @@ img {
   transform: translateY(0);
 }
 
-/* ===== FADE GAUCHE / DROITE — DESKTOP ===== */
+/* ===== FADE GAUCHE / DROITE ===== */
 .fade-left {
   opacity: 0;
   transform: translateX(-120px);
@@ -149,11 +149,11 @@ img {
   }
 }
 
-/* ===== MOBILE : hero seul animé, reste visible direct ===== */
+/* ===== MOBILE : hero animé, reste visible direct ===== */
 @media (max-width: 768px) {
-  .fade-in,
-  .fade-left,
-  .fade-right {
+  .fade-in:not([class*="hero"]),
+  .fade-left:not([class*="hero"]),
+  .fade-right:not([class*="hero"]) {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -165,21 +165,11 @@ img {
     transition: none !important;
   }
 
-  .hero,
-  .prog-hero,
-  .tarifs-hero,
-  .soutien-hero,
-  .temoignages-hero,
-  .resa-hero,
-  .contact-hero,
-  .boutique-hero {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: pageEnter 2s ease-out !important;
+  .icon-bounce {
+    transform: scale(1) !important;
   }
 
-  @keyframes pageEnter {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
+  .section-title::after {
+    transform: translateX(-50%) scaleX(1) !important;
   }
 }

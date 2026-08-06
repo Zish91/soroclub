@@ -21,16 +21,18 @@
   box-sizing: border-box;
 }
 
-html { overflow-x: hidden;
+html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-body { overflow-x: hidden;
+body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--creme);
   color: var(--texte);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -43,7 +45,7 @@ img {
   display: block;
 }
 
-/* ===== ANIMATIONS AU SCROLL ===== */
+/* ===== ANIMATIONS AU SCROLL — DESKTOP ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -53,6 +55,25 @@ img {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== FADE GAUCHE / DROITE — DESKTOP ===== */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: opacity 2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(120px);
+  transition: opacity 2s cubic-bezier(0.25, 0.1, 0.25, 1), transform 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* ===== CASCADE DÉCALÉE (stagger) ===== */
@@ -128,37 +149,37 @@ img {
   }
 }
 
-/* ===== FADE GAUCHE / DROITE ===== */
-.fade-left {
-  opacity: 0;
-  transform: translateX(-120px);
-  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-}
-
-.fade-right {
-  opacity: 0;
-  transform: translateX(120px);
-  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-}
-
-.fade-left.visible,
-.fade-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* === MOBILE : animations simples === */
+/* ===== MOBILE : hero seul animé, reste visible direct ===== */
 @media (max-width: 768px) {
+  .fade-in,
   .fade-left,
   .fade-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 
-/* === MOBILE : animations simples === */
-@media (max-width: 768px) {
-  .fade-in:not([class*="hero"]),
-  .fade-left,
-  .fade-right,
   .stagger > * {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
+  }
+
+  .hero,
+  .prog-hero,
+  .tarifs-hero,
+  .soutien-hero,
+  .temoignages-hero,
+  .resa-hero,
+  .contact-hero,
+  .boutique-hero {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: pageEnter 2s ease-out !important;
+  }
+
+  @keyframes pageEnter {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 }

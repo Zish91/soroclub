@@ -151,19 +151,10 @@ img {
 @media (max-width: 768px) {
   .fade-left,
   .fade-right {
-    transform: translateY(30px) !important;
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out !important;
-  }
 
-  .fade-left.visible,
-  .fade-right.visible {
-    transform: translateY(0) !important;
-  }
-}
-
-/* === MOBILE : pas d'animations au scroll === */
+/* === MOBILE : animations simples === */
 @media (max-width: 768px) {
-  .fade-in,
+  .fade-in:not([class*="hero"]),
   .fade-left,
   .fade-right,
   .stagger > * {

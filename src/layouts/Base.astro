@@ -39,19 +39,23 @@ const { title } = Astro.props;
     </footer>
     <div class="mobile-bar">
       <a href="/">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
         <small>Accueil</small>
       </a>
+      <a href="/programme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg>
+        <small>Cours</small>
+      </a>
       <a href="/tarifs">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
         <small>Tarifs</small>
       </a>
       <a href="/reservation">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
         <small>Réserver</small>
       </a>
       <a href="/contact">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
         <small>Contact</small>
       </a>
     </div>
@@ -109,7 +113,6 @@ const { title } = Astro.props;
   .burger { display: none; background: none; border: none; color: var(--blanc); font-size: 1.8rem; cursor: pointer; }
 
   nav { display: flex; gap: 2rem; align-items: center; }
-
   nav > a {
     color: var(--blanc); font-size: 0.95rem;
     transition: color 0.2s, transform 0.2s;
@@ -140,7 +143,6 @@ const { title } = Astro.props;
   }
   .dropdown-toggle:hover { color: var(--jaune); transform: scale(1.05); }
   .dropdown-toggle:hover::after { transform: scaleX(1); }
-
   .dropdown-arrow { font-size: 0.75rem; transition: transform 0.3s ease; }
   .dropdown:hover .dropdown-arrow { transform: rotate(180deg); }
 
@@ -164,6 +166,7 @@ const { title } = Astro.props;
   }
   .dropdown-menu a:hover { background: var(--creme); color: var(--teal); padding-left: 2rem; }
 
+  /* === MOBILE NAV === */
   @media (max-width: 900px) {
     .burger { display: block; }
     .logo-img { height: 100px; }
@@ -172,30 +175,71 @@ const { title } = Astro.props;
       display: none; position: absolute;
       top: 100%; left: 0; right: 0;
       background: linear-gradient(135deg, #1B3A5C, #1A6B5C);
-      flex-direction: column; padding: 1rem 2rem 2rem;
-      gap: 0.5rem; align-items: stretch;
+      flex-direction: column;
+      padding: 1.5rem 2rem 2.5rem;
+      gap: 0; align-items: stretch;
       z-index: 999;
     }
     nav.open { display: flex; }
-    nav > a { padding: 0.75rem 0; }
 
-    .dropdown-toggle { padding: 0.75rem 0; width: 100%; justify-content: space-between; }
+    nav > a {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 1.05rem;
+    }
+    nav > a:last-child { border-bottom: none; }
+    nav > a::after { display: none; }
+
+    .dropdown {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .dropdown-toggle {
+      padding: 1rem 0;
+      width: 100%;
+      justify-content: space-between;
+      font-size: 1.05rem;
+    }
+    .dropdown-toggle::after { display: none; }
+
+    .dropdown.open .dropdown-arrow { transform: rotate(180deg); }
 
     .dropdown-menu {
-      position: static; transform: none; left: auto;
-      background: rgba(255,255,255,0.1);
-      box-shadow: none; border-radius: 8px;
-      opacity: 0; visibility: hidden;
-      max-height: 0; overflow: hidden;
-      transition: opacity 0.3s, max-height 0.3s, visibility 0.3s;
-      padding: 0; min-width: auto;
+      position: static;
+      transform: none !important;
+      left: auto !important;
+      background: rgba(255,255,255,0.08);
+      box-shadow: none;
+      border-radius: 12px;
+      min-width: auto;
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      margin: 0 0 0.5rem 0;
+      transition: opacity 0.3s ease, max-height 0.4s ease-in-out, visibility 0.3s, padding 0.4s ease-in-out, margin 0.4s ease-in-out;
     }
+
     .dropdown.open .dropdown-menu {
-      opacity: 1; visibility: visible;
-      max-height: 300px; padding: 0.5rem 0;
+      opacity: 1;
+      visibility: visible;
+      max-height: 300px;
+      padding: 0.75rem 0;
     }
-    .dropdown-menu a { color: var(--blanc); padding: 0.6rem 1.5rem; }
-    .dropdown-menu a:hover { background: rgba(255,255,255,0.1); color: var(--jaune); padding-left: 2rem; }
+
+    .dropdown-menu a {
+      color: var(--blanc);
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--jaune);
+      padding-left: 2rem;
+    }
 
     .header { position: relative; }
   }
@@ -205,6 +249,7 @@ const { title } = Astro.props;
     color: var(--blanc); text-align: center; padding: 2rem; margin-top: 4rem;
   }
 
+  /* === MOBILE BAR === */
   .mobile-bar { display: none; }
 
   @media (max-width: 768px) {
@@ -212,15 +257,16 @@ const { title } = Astro.props;
       display: flex; position: fixed; bottom: 0; left: 0; right: 0;
       background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%);
       justify-content: space-around; align-items: center;
-      padding: 0.5rem 0; z-index: 1000;
+      padding: 0.4rem 0; z-index: 1000;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
     }
     .mobile-bar a {
       display: flex; flex-direction: column; align-items: center;
-      color: var(--blanc); font-size: 0.65rem; gap: 0.2rem;
+      color: var(--blanc); font-size: 0.58rem; gap: 0.15rem;
       opacity: 0.7; transition: opacity 0.2s;
+      flex: 1; text-align: center;
     }
     .mobile-bar a:hover, .mobile-bar a:active { opacity: 1; }
-    .footer { margin-bottom: 60px; }
+    .footer { margin-bottom: 55px; }
   }
 </style>

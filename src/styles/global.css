@@ -21,11 +21,11 @@
   box-sizing: border-box;
 }
 
-html {
+html { overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-body {
+body { overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   background-color: var(--creme);
   color: var(--texte);

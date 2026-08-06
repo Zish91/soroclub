@@ -5,11 +5,12 @@ import Base from '../layouts/Base.astro';
 <Base title="Boutique">
 
   <section class="boutique-hero fade-in">
+    <div class="boutique-badge">Bientôt</div>
     <span class="boutique-icon">🧮</span>
     <h1>La boutique <span class="highlight">arrive bientôt</span></h1>
     <p>Retrouve ici prochainement le soroban idéal pour ton enfant. En attendant, contacte-nous pour te procurer ton boulier.</p>
     <div class="boutique-actions">
-      <a href="/contact" class="cta">Nous contacter</a>
+      <a href="/contact" class="cta cta-shine">Nous contacter</a>
     </div>
   </section>
 
@@ -17,60 +18,38 @@ import Base from '../layouts/Base.astro';
 
 <style>
   .boutique-hero {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-    text-align: center;
+    max-width: 700px; margin: 0 auto; padding: 5rem 2rem; text-align: center;
+    animation: pageEnter 2.5s ease-out;
   }
+  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
-  .boutique-icon {
-    font-size: 4rem;
-    display: block;
-    margin-bottom: 1.5rem;
+  .boutique-badge {
+    display: inline-block; background: linear-gradient(135deg, var(--corail), #F5A623);
+    color: var(--blanc); font-size: 0.85rem; font-weight: 600;
+    padding: 0.3rem 1.2rem; border-radius: 50px; margin-bottom: 1.5rem;
+    animation: pulse-badge 2s ease-in-out infinite;
   }
+  @keyframes pulse-badge { 0%, 100% { box-shadow: 0 0 0 0 rgba(232,100,74,0.3); } 50% { box-shadow: 0 0 0 10px rgba(232,100,74,0); } }
 
-  .boutique-hero h1 {
-    font-size: 2.2rem;
-    color: var(--bleu);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
-
-  .highlight {
-    color: var(--corail);
-  }
-
-  .boutique-hero p {
-    font-size: 1.1rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-  }
+  .boutique-icon { font-size: 4rem; display: block; margin-bottom: 1.5rem; }
+  .boutique-hero h1 { font-size: 2.2rem; color: var(--bleu); font-weight: 700; margin-bottom: 1.5rem; }
+  .highlight { color: var(--corail); }
+  .boutique-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; margin-bottom: 2.5rem; }
 
   .cta {
     display: inline-block;
-    background-color: var(--corail);
-    color: var(--blanc);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    transition: background-color 0.3s, transform 0.2s;
+    background: linear-gradient(135deg, var(--corail), #F5A623);
+    color: var(--blanc); padding: 1rem 2.5rem; border-radius: 50px;
+    font-size: 1.05rem; font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
   }
-
-  .cta:hover {
-    background-color: var(--corail-hover);
-    transform: scale(1.03);
-  }
+  .cta:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(232,100,74,0.3); }
+  .cta-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shine 3s ease-in-out infinite; }
+  @keyframes shine { 0% { left: -100%; } 50% { left: 150%; } 100% { left: 150%; } }
 
   @media (max-width: 768px) {
-    .boutique-hero h1 {
-      font-size: 1.8rem;
-    }
-
-    .boutique-hero {
-      padding: 3rem 1.5rem;
-    }
+    .boutique-hero h1 { font-size: 1.8rem; }
+    .boutique-hero { padding: 3rem 1.5rem; }
   }
 </style>

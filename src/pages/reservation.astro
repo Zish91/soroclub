@@ -13,22 +13,19 @@ import Base from '../layouts/Base.astro';
     <div id="cal-embed"></div>
   </section>
 
-  <section class="resa-infos fade-in">
+  <section class="resa-infos fade-right">
     <div class="info-cards">
       <div class="info-card">
-        <span>⏱️</span>
-        <h3>30 minutes</h3>
-        <p>Un cours d'essai pour découvrir la méthode.</p>
+        <div class="info-icon" style="background: rgba(245,166,35,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><h3>30 minutes</h3><p>Un cours d'essai pour découvrir la méthode.</p></div>
       </div>
       <div class="info-card">
-        <span><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
-        <h3>En visio</h3>
-        <p>Depuis chez toi, aucun déplacement.</p>
+        <div class="info-icon" style="background: rgba(27,58,92,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
+        <div><h3>En visio</h3><p>Depuis chez toi, aucun déplacement.</p></div>
       </div>
       <div class="info-card">
-        <span><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
-        <h3>5€ seulement</h3>
-        <p>Teste sans te ruiner.</p>
+        <div class="info-icon" style="background: rgba(232,100,74,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div><h3>5€ seulement</h3><p>Teste sans te ruiner.</p></div>
       </div>
     </div>
   </section>
@@ -36,132 +33,49 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <style>
-  .resa-hero {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem 2rem 2rem;
-    text-align: center;
-  }
+  .resa-hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem 2rem; text-align: center; animation: pageEnter 2.5s ease-out; }
+  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+  .resa-hero h1 { font-size: 2.5rem; color: var(--bleu); font-weight: 700; margin-bottom: 1.5rem; }
+  .highlight { color: var(--corail); }
+  .resa-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; }
 
-  .resa-hero h1 {
-    font-size: 2.5rem;
-    color: var(--bleu);
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
+  .resa-embed { max-width: 1000px; margin: 0 auto; padding: 2rem; min-height: 500px; }
 
-  .highlight {
-    color: var(--corail);
-  }
-
-  .resa-hero p {
-    font-size: 1.1rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.8;
-  }
-
-  .resa-embed {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 500px;
-  }
-
-  .resa-infos {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 2rem 5rem;
-  }
-
-  .info-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
+  .resa-infos { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 5rem; }
+  .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
 
   .info-card {
-    background-color: var(--blanc);
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: var(--blanc); border-radius: 16px; padding: 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
   }
+  .info-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-color: var(--jaune); }
 
-  .info-card span {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .info-card h3 {
-    font-size: 1.05rem;
-    color: var(--bleu);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .info-card p {
-    font-size: 0.92rem;
-    color: var(--texte);
-    opacity: 0.85;
-    line-height: 1.6;
-  }
+  .info-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .info-card h3 { font-size: 1.05rem; color: var(--bleu); font-weight: 600; margin-bottom: 0.3rem; }
+  .info-card p { font-size: 0.9rem; color: var(--texte); opacity: 0.85; line-height: 1.6; }
 
   @media (max-width: 768px) {
-    .resa-hero h1 {
-      font-size: 2rem;
-    }
-
-    .resa-hero {
-      padding: 2rem 1.5rem 1rem;
-    }
+    .resa-hero h1 { font-size: 2rem; }
+    .resa-hero { padding: 2rem 1.5rem 1rem; }
   }
 </style>
 
 <script>
   (function (C, A, L) {
-    let p = function (a, ar) {
-      a.q.push(ar);
-    };
+    let p = function (a, ar) { a.q.push(ar); };
     let d = C.document;
-    C.Cal =
-      C.Cal ||
-      function () {
-        let cal = C.Cal;
-        let ar = arguments;
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
-          cal.loaded = true;
-        }
-        if (ar[0] === L) {
-          const api = function () {
-            p(api, arguments);
-          };
-          const namespace = ar[1];
-          api.q = api.q || [];
-          if (typeof namespace === "string") {
-            cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else p(cal, ar);
-          return;
-        }
-        p(cal, ar);
-      };
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal; let ar = arguments;
+      if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
+      if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; }
+      p(cal, ar);
+    };
   })(window, "https://app.cal.com/embed/embed.js", "init");
 
   Cal("init", { origin: "https://cal.com" });
-  Cal("inline", {
-    calLink: "soroclub/cours-d-essai-5",
-    elementOrSelector: "#cal-embed",
-    config: { layout: "month_view" },
-  });
-  Cal("ui", {
-    styles: { branding: { brandColor: "#1B3A5C" } },
-    hideEventTypeDetails: false,
-    layout: "month_view",
-  });
+  Cal("inline", { calLink: "soroclub/cours-d-essai-5", elementOrSelector: "#cal-embed", config: { layout: "month_view" } });
+  Cal("ui", { styles: { branding: { brandColor: "#1A6B5C" } }, hideEventTypeDetails: false, layout: "month_view" });
 </script>

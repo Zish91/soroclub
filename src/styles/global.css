@@ -146,3 +146,17 @@ img {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* === MOBILE : animations simples === */
+@media (max-width: 768px) {
+  .fade-left,
+  .fade-right {
+    transform: translateY(30px) !important;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out !important;
+  }
+
+  .fade-left.visible,
+  .fade-right.visible {
+    transform: translateY(0) !important;
+  }
+}

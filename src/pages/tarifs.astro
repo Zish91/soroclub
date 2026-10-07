@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { stripe } from '../data/stripe';
 ---
 
 <Base title="Tarifs">
@@ -9,6 +10,13 @@ import Base from '../layouts/Base.astro';
     <p>Des formules adaptées à chaque besoin. Plus tu t'engages, plus le tarif est avantageux !</p>
   </section>
 
+  <div class="tabs" role="tablist" aria-label="Choix de la formule">
+    <span class="tab-indicator" aria-hidden="true"></span>
+    <button class="tab" role="tab" id="tab-soroban" data-tab="soroban" aria-controls="panel-soroban" aria-selected="true">Soroban</button>
+    <button class="tab" role="tab" id="tab-soutien" data-tab="soutien" aria-controls="panel-soutien" aria-selected="false">Soutien scolaire</button>
+  </div>
+
+  <div class="tab-panel" role="tabpanel" id="panel-soroban" aria-labelledby="tab-soroban">
   <section class="packs">
 
     <div class="pack fade-right">
@@ -16,31 +24,41 @@ import Base from '../layouts/Base.astro';
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <h2>Individuel</h2>
         <p class="pack-desc">Cours particulier 1-to-1. Attention 100% sur ton enfant.</p>
+        <p class="pack-rythme">1 cours d'1h par semaine</p>
       </div>
       <div class="pack-body">
         <div class="formule">
-          <div class="formule-info"><h3>À l'unité</h3><p>1 heure de cours</p></div>
+          <div class="formule-info"><h3>1 mois</h3></div>
           <div class="formule-prix">
-            <span class="prix">15€</span>
-            <span class="par-heure">/ heure</span>
-            <a href="https://buy.stripe.com/fZuaEZ6RV60r6JkaW31wY0b" target="_blank" class="btn-acheter">Acheter</a>
-          </div>
-        </div>
-        <div class="formule populaire">
-          <div class="formule-tag">Le plus choisi</div>
-          <div class="formule-info"><h3>Pack 4h</h3><p>4 heures de cours</p></div>
-          <div class="formule-prix">
-            <span class="prix">50€</span>
-            <span class="par-heure">soit 12,50€ / heure</span>
-            <a href="https://buy.stripe.com/28E5kF7VZ3Sj4BcaW31wY07" target="_blank" class="btn-acheter">Acheter</a>
+            <span class="prix">60€</span>
+            <span class="par-heure">/ mois</span>
+            <a href={stripe.individuel1m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule">
-          <div class="formule-info"><h3>Pack 12h</h3><p>12 heures de cours</p></div>
+          <div class="formule-info"><h3>3 mois</h3><span class="economie">21€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">130€</span>
-            <span class="par-heure">soit 10,80€ / heure</span>
-            <a href="https://buy.stripe.com/00w9AV6RVewX9Vwe8f1wY00" target="_blank" class="btn-acheter">Acheter</a>
+            <span class="prix">159€</span>
+            <span class="par-heure">soit 53€ / mois</span>
+            <a href={stripe.individuel3m} target="_blank" class="btn-acheter">Acheter</a>
+          </div>
+        </div>
+        <div class="formule populaire">
+          <div class="formule-tag">⭐ Le plus choisi</div>
+          <div class="formule-info"><h3>6 mois</h3><span class="economie">61€ économisés</span></div>
+          <div class="formule-prix">
+            <span class="prix">299€</span>
+            <span class="par-heure">soit 49,83€ / mois</span>
+            <a href={stripe.individuel6m} target="_blank" class="btn-acheter">Acheter</a>
+          </div>
+        </div>
+        <div class="formule meilleur-prix">
+          <div class="formule-tag">Meilleur prix</div>
+          <div class="formule-info"><h3>Année</h3><p class="periode">d'octobre à juin</p><span class="economie">141€ économisés</span></div>
+          <div class="formule-prix">
+            <span class="prix">399€</span>
+            <span class="par-heure">soit 44,33€ / mois</span>
+            <a href={stripe.individuelAn} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
       </div>
@@ -50,38 +68,91 @@ import Base from '../layouts/Base.astro';
       <div class="pack-header groupe">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
         <h2>Groupe</h2>
-        <p class="pack-desc">Petits groupes. Dynamique collective et entraide entre enfants.</p>
+        <p class="pack-desc">Petits groupes, entraide et suivi personnalisé de chaque enfant.</p>
+        <p class="pack-rythme">1 cours d'1h par semaine</p>
       </div>
       <div class="pack-body">
         <div class="formule">
-          <div class="formule-info"><h3>À l'unité</h3><p>1 heure de cours</p></div>
+          <div class="formule-info"><h3>1 mois</h3></div>
           <div class="formule-prix">
-            <span class="prix">10€</span>
-            <span class="par-heure">/ heure</span>
-            <a href="https://buy.stripe.com/dRmeVfekngF54Bc1lt1wY0a" target="_blank" class="btn-acheter">Acheter</a>
-          </div>
-        </div>
-        <div class="formule populaire">
-          <div class="formule-tag">Le plus choisi</div>
-          <div class="formule-info"><h3>Pack 4h</h3><p>4 heures de cours</p></div>
-          <div class="formule-prix">
-            <span class="prix">35€</span>
-            <span class="par-heure">soit 8,75€ / heure</span>
-            <a href="https://buy.stripe.com/5kQ8wRfor9cD4Bcc071wY06" target="_blank" class="btn-acheter">Acheter</a>
+            <span class="prix">40€</span>
+            <span class="par-heure">/ mois</span>
+            <a href={stripe.groupe1m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule">
-          <div class="formule-info"><h3>Pack 12h</h3><p>12 heures de cours</p></div>
+          <div class="formule-info"><h3>3 mois</h3><span class="economie">11€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">90€</span>
-            <span class="par-heure">soit 7,50€ / heure</span>
-            <a href="https://buy.stripe.com/cNi7sN6RV60r1p0aW31wY05" target="_blank" class="btn-acheter">Acheter</a>
+            <span class="prix">109€</span>
+            <span class="par-heure">soit 36,33€ / mois</span>
+            <a href={stripe.groupe3m} target="_blank" class="btn-acheter">Acheter</a>
+          </div>
+        </div>
+        <div class="formule populaire">
+          <div class="formule-tag">⭐ Le plus choisi</div>
+          <div class="formule-info"><h3>6 mois</h3><span class="economie">41€ économisés</span></div>
+          <div class="formule-prix">
+            <span class="prix">199€</span>
+            <span class="par-heure">soit 33,17€ / mois</span>
+            <a href={stripe.groupe6m} target="_blank" class="btn-acheter">Acheter</a>
+          </div>
+        </div>
+        <div class="formule meilleur-prix">
+          <div class="formule-tag">Meilleur prix</div>
+          <div class="formule-info"><h3>Année</h3><p class="periode">d'octobre à juin</p><span class="economie">81€ économisés</span></div>
+          <div class="formule-prix">
+            <span class="prix">279€</span>
+            <span class="par-heure">soit 31€ / mois</span>
+            <a href={stripe.groupeAn} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
       </div>
     </div>
 
   </section>
+  </div>
+
+  <div class="tab-panel" role="tabpanel" id="panel-soutien" aria-labelledby="tab-soutien" hidden>
+  <section class="soutien-tarifs">
+    <div class="pack">
+      <div class="pack-header soutien">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        <h2>Soutien scolaire</h2>
+        <p class="pack-desc">Maths & français. Cours individuels de 30 min, suivi personnalisé.</p>
+        <p class="pack-rythme">Abonnement mensuel, résiliable à tout moment</p>
+      </div>
+      <div class="pack-body">
+        <div class="formule">
+          <div class="formule-info"><h3>1 cours par semaine</h3></div>
+          <div class="formule-prix">
+            <span class="prix">29€</span>
+            <span class="par-heure">/ mois</span>
+            <a href={stripe.soutien1x} target="_blank" class="btn-acheter">S'abonner</a>
+          </div>
+        </div>
+        <div class="formule populaire">
+          <div class="formule-tag">Meilleur rapport</div>
+          <div class="formule-info"><h3>2 cours par semaine</h3></div>
+          <div class="formule-prix">
+            <span class="prix">52€</span>
+            <span class="par-heure">/ mois</span>
+            <a href={stripe.soutien2x} target="_blank" class="btn-acheter">S'abonner</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <script is:inline>
+    // Exécuté avant le premier affichage : ouvre directement l'onglet Soutien si l'URL finit par #soutien (évite le flash Soroban → Soutien)
+    if (location.hash === '#soutien') {
+      document.getElementById('tab-soroban').setAttribute('aria-selected', 'false');
+      document.getElementById('tab-soutien').setAttribute('aria-selected', 'true');
+      document.getElementById('panel-soroban').hidden = true;
+      document.getElementById('panel-soutien').hidden = false;
+    }
+  </script>
 
   <section class="tarifs-info fade-right">
     <div class="info-cards">
@@ -99,7 +170,7 @@ import Base from '../layouts/Base.astro';
       </a>
       <a href="/soutien-scolaire" class="info-card info-card-link">
         <div class="info-icon" style="background: rgba(43,171,124,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg></div>
-        <p><strong>Soutien scolaire</strong> — maths & français pour les 6-10 ans, même approche bienveillante.</p>
+        <p><strong>Soutien scolaire</strong> — maths & français avec un suivi personnalisé, même approche bienveillante.</p>
       </a>
     </div>
   </section>
@@ -138,6 +209,45 @@ import Base from '../layouts/Base.astro';
   .highlight { color: var(--corail); }
   .tarifs-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; }
 
+  .tabs {
+    position: relative; display: flex; gap: 0.5rem;
+    width: fit-content; margin: 0 auto;
+    padding: 0.4rem; background: var(--blanc);
+    border-radius: 50px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .tab {
+    font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600;
+    color: var(--bleu); background: none; border: none;
+    padding: 0.7rem 1.8rem; border-radius: 50px; cursor: pointer;
+    position: relative; z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .tab[aria-selected="false"]:hover { color: var(--corail); }
+  .tab[aria-selected="true"] { color: var(--blanc); }
+  .tab:focus-visible { outline: 2px solid var(--jaune); outline-offset: 2px; }
+
+  /* Pilule bleue qui glisse sous l'onglet actif (positionnée par le script) */
+  .tab-indicator {
+    position: absolute; top: 0.4rem; left: 0;
+    height: calc(100% - 0.8rem); width: 0;
+    background: var(--bleu); border-radius: 50px;
+  }
+  .tabs.is-ready .tab-indicator { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), width 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+  /* Avant que le script ait placé la pilule : fond bleu directement sur l'onglet actif */
+  .tabs:not(.is-ready) .tab[aria-selected="true"] { background: var(--bleu); }
+
+  /* Fondu enchaîné : l'ancien panneau s'efface, le nouveau apparaît en montant légèrement */
+  .tab-panel { transition: opacity 0.15s ease; }
+  .tab-panel.is-leaving { opacity: 0; }
+  .tab-panel.is-entering { animation: tabEnter 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+  @keyframes tabEnter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tab, .tab-panel, .tabs.is-ready .tab-indicator { transition: none; animation: none; }
+  }
+
   .packs {
     max-width: 1100px;
     margin: 0 auto;
@@ -158,30 +268,38 @@ import Base from '../layouts/Base.astro';
 
   .pack:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); border-color: var(--jaune); }
 
+  /* En-têtes Individuel / Groupe de même hauteur → lignes de prix alignées d'une carte à l'autre */
+  .packs .pack { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
+
   .pack-header { padding: 2rem; color: var(--blanc); display: flex; flex-direction: column; gap: 0.5rem; }
   .pack-header svg { margin-bottom: 0.3rem; }
   .pack-header.individuel { background: linear-gradient(135deg, #1B3A5C 0%, #2A5580 100%); }
   .pack-header.groupe { background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%); }
+  .pack-header.soutien { background: linear-gradient(135deg, var(--corail) 0%, #D4553B 100%); }
   .pack-header h2 { font-size: 1.5rem; font-weight: 700; }
   .pack-desc { font-size: 0.95rem; opacity: 0.9; }
+  .pack-rythme { font-size: 0.85rem; font-weight: 600; color: var(--jaune); }
+  .pack-header.soutien .pack-rythme { color: var(--blanc); }
 
-  .pack-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+  .pack-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
 
   .formule {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 1.2rem 1.5rem;
+    align-items: center;
+    padding: 1rem 1.25rem;
     border-radius: 12px;
-    background-color: var(--creme);
+    background-color: var(--blanc);
+    border: 1px solid #E3E8EE;
     position: relative;
     gap: 1rem;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
   }
 
-  .formule:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .formule:hover { background-color: #FAFBFC; border-color: #CBD3DD; }
 
-  .formule.populaire { border: 2px solid var(--jaune); background-color: #fffdf5; }
+  .formule.populaire { border: 2px solid var(--jaune); background-color: #FFFBF2; }
+  .formule.populaire, .formule.meilleur-prix { padding-top: 1.4rem; }
 
   .formule-tag {
     position: absolute; top: -10px; left: 1rem;
@@ -190,11 +308,14 @@ import Base from '../layouts/Base.astro';
     padding: 0.2rem 0.8rem; border-radius: 50px;
   }
 
-  .formule-info h3 { font-size: 1rem; color: var(--bleu); font-weight: 600; margin-bottom: 0.2rem; }
-  .formule-info p { font-size: 0.85rem; color: var(--texte); opacity: 0.7; }
+  .formule.meilleur-prix .formule-tag { background-color: var(--bleu); }
+
+  .formule-info h3 { font-size: 1.05rem; color: var(--bleu); font-weight: 600; }
+  .periode { font-size: 0.8rem; color: #5F6B78; }
+  .economie { display: inline-block; margin-top: 0.35rem; font-size: 0.75rem; font-weight: 600; color: var(--teal); background: rgba(26,107,92,0.1); padding: 0.15rem 0.6rem; border-radius: 50px; }
   .formule-prix { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
   .prix { font-size: 1.5rem; font-weight: 700; color: var(--corail); }
-  .par-heure { font-size: 0.8rem; color: var(--texte); opacity: 0.6; }
+  .par-heure { font-size: 0.8rem; color: #5F6B78; }
 
   .btn-acheter {
     display: inline-block;
@@ -205,12 +326,18 @@ import Base from '../layouts/Base.astro';
     font-size: 0.85rem;
     font-weight: 600;
     margin-top: 0.3rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
     position: relative;
     overflow: hidden;
   }
 
   .btn-acheter:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(232,100,74,0.3); }
+
+  /* Seule l'offre mise en avant garde le bouton plein, les autres passent en contour */
+  .formule:not(.populaire) .btn-acheter { background: none; color: var(--corail); box-shadow: inset 0 0 0 2px var(--corail); }
+  .formule:not(.populaire) .btn-acheter:hover { background: var(--corail); color: var(--blanc); }
+
+  .soutien-tarifs { max-width: 600px; margin: 0 auto; padding: 3rem 2rem; }
 
   .tarifs-info { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
 
@@ -244,9 +371,79 @@ import Base from '../layouts/Base.astro';
   @media (max-width: 768px) {
     .tarifs-hero h1 { font-size: 2rem; }
     .packs { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-    .formule { flex-direction: column; text-align: center; gap: 0.8rem; }
-    .formule-prix { align-items: center; }
+    .tab { padding: 0.6rem 1.1rem; font-size: 0.9rem; }
+    .soutien-tarifs { padding: 2rem 1.5rem; }
+    .pack-header { padding: 1.5rem; }
+    .pack-body { padding: 1.25rem 1rem 1.5rem; }
+    .formule { padding: 0.9rem 1rem; }
+    .formule.populaire, .formule.meilleur-prix { padding-top: 1.3rem; }
     .cta-end { padding: 2rem 1rem; }
     .cta-end-grid { grid-template-columns: 1fr; }
   }
 </style>
+
+<script>
+  // Onglets Soroban / Soutien — /tarifs#soutien ouvre directement l'onglet Soutien
+  function initTabs() {
+    const tablist = document.querySelector<HTMLElement>('.tabs');
+    if (!tablist) return;
+    const tabs = tablist.querySelectorAll<HTMLButtonElement>('.tab');
+    const indicator = tablist.querySelector<HTMLElement>('.tab-indicator')!;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const panel = (name: string) => document.getElementById(`panel-${name}`)!;
+    let current = location.hash === '#soutien' ? 'soutien' : 'soroban';
+    let timer: number | undefined;
+
+    // Place la pilule sous l'onglet actif
+    function moveIndicator() {
+      const tab = tablist!.querySelector<HTMLButtonElement>(`[data-tab="${current}"]`)!;
+      indicator.style.width = `${tab.offsetWidth}px`;
+      indicator.style.transform = `translateX(${tab.offsetLeft}px)`;
+    }
+
+    function select(name: string) {
+      current = name;
+      tabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.tab === name)));
+      moveIndicator();
+    }
+
+    // Affiche uniquement le panneau actif (+ animation d'entrée)
+    function swap(animate: boolean) {
+      tabs.forEach(tab => {
+        const p = panel(tab.dataset.tab!);
+        p.classList.remove('is-leaving', 'is-entering');
+        p.hidden = tab.dataset.tab !== current;
+      });
+      if (animate) {
+        void panel(current).offsetWidth; // relance l'animation même si on reclique vite
+        panel(current).classList.add('is-entering');
+      }
+    }
+
+    function showTab(name: string) {
+      const leaving = panel(current);
+      select(name);
+      clearTimeout(timer);
+      if (reduceMotion) return swap(false);
+      leaving.classList.add('is-leaving');
+      timer = window.setTimeout(() => swap(true), 150);
+    }
+
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      const name = tab.dataset.tab!;
+      if (name === current) return;
+      history.replaceState(null, '', name === 'soutien' ? '#soutien' : location.pathname);
+      showTab(name);
+    }));
+
+    select(current);
+    swap(false);
+    // Active le glissement seulement une fois Poppins chargée et la pilule à sa taille finale
+    document.fonts.ready.then(() => {
+      moveIndicator();
+      requestAnimationFrame(() => tablist.classList.add('is-ready'));
+    });
+    window.addEventListener('resize', moveIndicator);
+  }
+  initTabs();
+</script>

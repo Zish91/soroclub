@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import { stripe } from '../data/stripe';
 ---
 
 <Base title="Soutien scolaire">
 
   <section class="soutien-hero fade-in">
     <h1>Soutien scolaire <span class="highlight">Maths & Français</span></h1>
-    <p>Des cours individuels en ligne pour les enfants de 6 à 10 ans. Une pédagogie Montessori bienveillante pour reprendre confiance et progresser à son rythme.</p>
+    <p>Des cours individuels en ligne avec un suivi personnalisé. Une pédagogie Montessori bienveillante pour reprendre confiance et progresser à son rythme.</p>
   </section>
 
   <section class="matieres">
@@ -50,54 +51,32 @@ import Base from '../layouts/Base.astro';
 
   <section class="tarifs-soutien fade-right">
     <h2 class="section-title">Nos <span class="highlight">tarifs</span></h2>
-    <div class="formats">
-
-      <div class="format">
-        <div class="format-header">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <h3>Séance de 30 min</h3>
-          <p>Idéal pour les 6-8 ans</p>
+    <div class="pack">
+      <div class="pack-header">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        <h3>Soutien scolaire</h3>
+        <p class="pack-desc">Maths & français. Cours individuels de 30 min, suivi personnalisé.</p>
+        <p class="pack-rythme">Abonnement mensuel, résiliable à tout moment</p>
+      </div>
+      <div class="pack-body">
+        <div class="formule">
+          <div class="formule-info"><h4>1 cours par semaine</h4></div>
+          <div class="formule-prix">
+            <span class="prix">29€</span>
+            <span class="par-heure">/ mois</span>
+            <a href={stripe.soutien1x} target="_blank" class="btn-acheter">S'abonner</a>
+          </div>
         </div>
-        <div class="format-body">
-          <div class="formule">
-            <div class="formule-info"><h4>Pack 4 séances</h4></div>
-            <div class="formule-prix"><span class="prix">28€</span><span class="par-heure">soit 7€ / séance</span><a href="https://buy.stripe.com/3cI5kF1xB74v0kWc071wY04" target="_blank" class="btn-acheter">Acheter</a></div>
-          </div>
-          <div class="formule populaire">
-            <div class="formule-tag">Meilleur rapport</div>
-            <div class="formule-info"><h4>Pack 12 séances</h4></div>
-            <div class="formule-prix"><span class="prix">72€</span><span class="par-heure">soit 6€ / séance</span><a href="https://buy.stripe.com/dRmcN7ccf2OfaZA5BJ1wY03" target="_blank" class="btn-acheter">Acheter</a></div>
-          </div>
-          <div class="formule carte">
-            <div class="formule-info"><h4>À la carte</h4><p>Sans engagement</p></div>
-            <div class="formule-prix"><span class="prix">10€</span><span class="par-heure">/ séance</span><a href="https://buy.stripe.com/dRm3cx9034Wn7Nofcj1wY09" target="_blank" class="btn-acheter">Acheter</a></div>
+        <div class="formule populaire">
+          <div class="formule-tag">Meilleur rapport</div>
+          <div class="formule-info"><h4>2 cours par semaine</h4></div>
+          <div class="formule-prix">
+            <span class="prix">52€</span>
+            <span class="par-heure">/ mois</span>
+            <a href={stripe.soutien2x} target="_blank" class="btn-acheter">S'abonner</a>
           </div>
         </div>
       </div>
-
-      <div class="format">
-        <div class="format-header">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <h3>Séance de 1h</h3>
-          <p>Idéal pour les 8-10 ans</p>
-        </div>
-        <div class="format-body">
-          <div class="formule">
-            <div class="formule-info"><h4>Pack 4 séances</h4></div>
-            <div class="formule-prix"><span class="prix">56€</span><span class="par-heure">soit 14€ / séance</span><a href="https://buy.stripe.com/28EdRb2BF0G7gjU0hp1wY02" target="_blank" class="btn-acheter">Acheter</a></div>
-          </div>
-          <div class="formule populaire">
-            <div class="formule-tag">Meilleur rapport</div>
-            <div class="formule-info"><h4>Pack 12 séances</h4></div>
-            <div class="formule-prix"><span class="prix">150€</span><span class="par-heure">soit 12,50€ / séance</span><a href="https://buy.stripe.com/6oU9AVforagH2t49RZ1wY01" target="_blank" class="btn-acheter">Acheter</a></div>
-          </div>
-          <div class="formule carte">
-            <div class="formule-info"><h4>À la carte</h4><p>Sans engagement</p></div>
-            <div class="formule-prix"><span class="prix">18€</span><span class="par-heure">/ séance</span><a href="https://buy.stripe.com/14AaEZb8b1Kbc3E3tB1wY08" target="_blank" class="btn-acheter">Acheter</a></div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -164,37 +143,38 @@ import Base from '../layouts/Base.astro';
     .accordion-text { opacity: 0.85; transform: translateY(0); max-height: 200px; font-size: 0.82rem; }
   }
 
-  .tarifs-soutien { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+  .tarifs-soutien { max-width: 600px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
   .tarifs-soutien h2 { font-size: 2rem; color: var(--bleu); font-weight: 600; margin-bottom: 3rem; }
-  .formats { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
 
-  .format {
-    background-color: var(--blanc); border-radius: 20px; overflow: hidden;
+  .pack {
+    background-color: var(--blanc); border-radius: 20px; overflow: hidden; text-align: left;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 2px solid transparent;
   }
-  .format:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); border-color: var(--jaune); }
+  .pack:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); border-color: var(--jaune); }
 
-  .format-header { background: linear-gradient(135deg, var(--corail) 0%, #D4553B 100%); padding: 1.5rem 2rem; color: var(--blanc); display: flex; flex-direction: column; gap: 0.3rem; }
-  .format-header svg { margin-bottom: 0.3rem; }
-  .format-header h3 { font-size: 1.3rem; font-weight: 700; }
-  .format-header p { font-size: 0.9rem; opacity: 0.9; }
-  .format-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+  .pack-header { background: linear-gradient(135deg, var(--corail) 0%, #D4553B 100%); padding: 2rem; color: var(--blanc); display: flex; flex-direction: column; gap: 0.5rem; }
+  .pack-header svg { margin-bottom: 0.3rem; }
+  .pack-header h3 { font-size: 1.5rem; font-weight: 700; }
+  .pack-desc { font-size: 0.95rem; opacity: 0.9; }
+  .pack-rythme { font-size: 0.85rem; font-weight: 600; }
+  .pack-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
 
-  .formule { display: flex; justify-content: space-between; align-items: flex-start; padding: 1.2rem 1.5rem; border-radius: 12px; background-color: var(--creme); position: relative; gap: 1rem; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-  .formule:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-  .formule.populaire { border: 2px solid var(--jaune); background-color: #fffdf5; }
-  .formule.carte { border: 1px dashed var(--bleu); background-color: var(--blanc); }
+  .formule { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-radius: 12px; background-color: var(--blanc); border: 1px solid #E3E8EE; position: relative; gap: 1rem; transition: background-color 0.2s ease, border-color 0.2s ease; }
+  .formule:hover { background-color: #FAFBFC; border-color: #CBD3DD; }
+  .formule.populaire { border: 2px solid var(--jaune); background-color: #FFFBF2; padding-top: 1.4rem; }
   .formule-tag { position: absolute; top: -10px; left: 1rem; background-color: var(--jaune); color: var(--blanc); font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.8rem; border-radius: 50px; }
-  .formule-info h4 { font-size: 1rem; color: var(--bleu); font-weight: 600; margin-bottom: 0.2rem; }
-  .formule-info p { font-size: 0.85rem; color: var(--texte); opacity: 0.7; }
+  .formule-info h4 { font-size: 1.05rem; color: var(--bleu); font-weight: 600; }
   .formule-prix { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
   .prix { font-size: 1.5rem; font-weight: 700; color: var(--corail); }
-  .par-heure { font-size: 0.8rem; color: var(--texte); opacity: 0.6; }
+  .par-heure { font-size: 0.8rem; color: #5F6B78; }
 
-  .btn-acheter { display: inline-block; background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-top: 0.3rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .btn-acheter { display: inline-block; background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-top: 0.3rem; transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s; }
   .btn-acheter:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(232,100,74,0.3); }
+  /* Seule l'offre mise en avant garde le bouton plein, l'autre passe en contour */
+  .formule:not(.populaire) .btn-acheter { background: none; color: var(--corail); box-shadow: inset 0 0 0 2px var(--corail); }
+  .formule:not(.populaire) .btn-acheter:hover { background: var(--corail); color: var(--blanc); }
 
   .cta-end { padding: 4rem 2rem; position: relative; z-index: 1; }
   .cta-end-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -210,9 +190,11 @@ import Base from '../layouts/Base.astro';
     .soutien-hero h1 { font-size: 2rem; }
     .soutien-hero { padding: 2rem 1.5rem 1rem; }
     .matieres { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-    .formats { grid-template-columns: 1fr; }
-    .formule { flex-direction: column; text-align: center; gap: 0.8rem; }
-    .formule-prix { align-items: center; }
+    .tarifs-soutien { padding: 3rem 1.5rem; }
+    .pack-header { padding: 1.5rem; }
+    .pack-body { padding: 1.25rem 1rem 1.5rem; }
+    .formule { padding: 0.9rem 1rem; }
+    .formule.populaire { padding-top: 1.3rem; }
     .cta-end { padding: 2rem 1rem; }
     .cta-end-grid { grid-template-columns: 1fr; }
   }

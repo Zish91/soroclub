@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Règlement intérieur">
 
-  <section class="reglement-hero">
+  <section class="reglement-hero fade-in">
     <h1>Règlement <span class="highlight">intérieur</span></h1>
     <p>Pour que chaque enfant progresse dans les meilleures conditions, voici les règles qui encadrent nos cours.</p>
   </section>
@@ -101,8 +101,7 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <style>
-  .reglement-hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem 2rem; text-align: center; animation: heroFade 0.8s ease-out; }
-  @keyframes heroFade { from { opacity: 0; } to { opacity: 1; } }
+  .reglement-hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem 2rem; text-align: center; }
   .reglement-hero h1 { font-size: 2.5rem; color: var(--bleu); font-weight: 700; margin-bottom: 1.5rem; }
   .highlight { color: var(--corail); }
   .reglement-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; }

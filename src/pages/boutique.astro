@@ -10,7 +10,7 @@ import Base from '../layouts/Base.astro';
     <h1>La boutique <span class="highlight">arrive bientôt</span></h1>
     <p>Retrouve ici prochainement le soroban idéal pour ton enfant. En attendant, contacte-nous pour te procurer ton boulier.</p>
     <div class="boutique-actions">
-      <a href="/contact" class="cta cta-shine">Nous contacter</a>
+      <a href="/contact" class="cta">Nous contacter</a>
     </div>
   </section>
 
@@ -19,9 +19,7 @@ import Base from '../layouts/Base.astro';
 <style>
   .boutique-hero {
     max-width: 700px; margin: 0 auto; padding: 5rem 2rem; text-align: center;
-    animation: pageEnter 2.5s ease-out;
   }
-  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
   .boutique-badge {
     display: inline-block; background: linear-gradient(135deg, var(--corail), #F5A623);
@@ -45,8 +43,6 @@ import Base from '../layouts/Base.astro';
     position: relative; overflow: hidden;
   }
   .cta:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(232,100,74,0.3); }
-  .cta-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shine 3s ease-in-out infinite; }
-  @keyframes shine { 0% { left: -100%; } 50% { left: 150%; } 100% { left: 150%; } }
 
   @media (max-width: 768px) {
     .boutique-hero h1 { font-size: 1.8rem; }

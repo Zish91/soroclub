@@ -65,8 +65,8 @@ const { title } = Astro.props;
           entries.forEach(entry => {
             if (entry.isIntersecting) { entry.target.classList.add("visible"); }
           });
-        }, { threshold: 0.2, rootMargin: "0px 0px -250px 0px" });
-        document.querySelectorAll(".fade-in, .stagger, .fade-left, .fade-right").forEach(el => observer.observe(el));
+        }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
+        document.querySelectorAll(".fade-in, .stagger").forEach(el => observer.observe(el));
         document.addEventListener('astro:before-swap', () => observer.disconnect(), { once: true });
       });
 

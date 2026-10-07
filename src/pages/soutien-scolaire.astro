@@ -11,12 +11,12 @@ import { stripe } from '../data/stripe';
   </section>
 
   <section class="matieres">
-    <div class="matiere fade-right">
+    <div class="matiere fade-in">
       <div class="matiere-icon-wrap" style="background: rgba(232,100,74,0.1);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div>
       <h2>Mathématiques</h2>
       <p>Numération, calcul, géométrie, résolution de problèmes. On reprend les bases avec patience et on construit des fondations solides.</p>
     </div>
-    <div class="matiere fade-left">
+    <div class="matiere fade-in">
       <div class="matiere-icon-wrap" style="background: rgba(27,58,92,0.1);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg></div>
       <h2>Français</h2>
       <p>Lecture, écriture, grammaire, conjugaison. On travaille la compréhension et l'expression, à l'oral comme à l'écrit.</p>
@@ -49,7 +49,7 @@ import { stripe } from '../data/stripe';
     </div>
   </section>
 
-  <section class="tarifs-soutien fade-right">
+  <section class="tarifs-soutien fade-in">
     <h2 class="section-title">Nos <span class="highlight">tarifs</span></h2>
     <div class="pack">
       <div class="pack-header">
@@ -102,9 +102,8 @@ import { stripe } from '../data/stripe';
 <style>
   .soutien-hero {
     max-width: 800px; margin: 0 auto; padding: 4rem 2rem 2rem;
-    text-align: center; animation: pageEnter 2.5s ease-out;
+    text-align: center;
   }
-  @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
   .soutien-hero h1 { font-size: 2.5rem; color: var(--bleu); font-weight: 700; margin-bottom: 1.5rem; }
   .highlight { color: var(--corail); }
   .soutien-hero p { font-size: 1.1rem; color: var(--texte); opacity: 0.85; line-height: 1.8; }
@@ -117,7 +116,6 @@ import { stripe } from '../data/stripe';
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     border: 2px solid transparent;
   }
-  .matiere.fade-left, .matiere.fade-right { transition: opacity 3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 3s cubic-bezier(0.25, 0.1, 0.25, 1) !important; }
   .matiere:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-color: var(--jaune); }
 
   .matiere-icon-wrap { width: 72px; height: 72px; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }

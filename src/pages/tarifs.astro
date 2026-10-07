@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { stripe } from '../data/stripe';
 import CarteSoutien from '../components/CarteSoutien.astro';
+import BandeauEssai from '../components/BandeauEssai.astro';
 ---
 
 <Base title="Tarifs">
@@ -25,22 +26,20 @@ import CarteSoutien from '../components/CarteSoutien.astro';
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <h2>Individuel</h2>
         <p class="pack-desc">Cours particulier 1-to-1. Attention 100% sur ton enfant.</p>
-        <p class="pack-rythme">1 cours d'1h par semaine</p>
+        <p class="pack-rythme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1 cours d'1h par semaine</p>
       </div>
       <div class="pack-body">
         <div class="formule">
           <div class="formule-info"><h3>1 mois</h3></div>
           <div class="formule-prix">
-            <span class="prix">60€</span>
-            <span class="par-heure">/ mois</span>
+            <div class="formule-montant"><span class="prix">60€</span><span class="par-heure">par mois</span></div>
             <a href={stripe.individuel1m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule">
           <div class="formule-info"><h3>3 mois</h3><span class="economie">21€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">159€</span>
-            <span class="par-heure">soit 53€ / mois</span>
+            <div class="formule-montant"><span class="prix">159€</span><span class="par-heure">soit 53€ par mois</span></div>
             <a href={stripe.individuel3m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
@@ -48,8 +47,7 @@ import CarteSoutien from '../components/CarteSoutien.astro';
           <div class="formule-tag">⭐ Le plus choisi</div>
           <div class="formule-info"><h3>6 mois</h3><span class="economie">61€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">299€</span>
-            <span class="par-heure">soit 49,83€ / mois</span>
+            <div class="formule-montant"><span class="prix">299€</span><span class="par-heure">soit 49,83€ par mois</span></div>
             <a href={stripe.individuel6m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
@@ -57,8 +55,7 @@ import CarteSoutien from '../components/CarteSoutien.astro';
           <div class="formule-tag">Meilleur prix</div>
           <div class="formule-info"><h3>Année</h3><p class="periode">d'octobre à juin</p><span class="economie">141€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">399€</span>
-            <span class="par-heure">soit 44,33€ / mois</span>
+            <div class="formule-montant"><span class="prix">399€</span><span class="par-heure">soit 44,33€ par mois</span></div>
             <a href={stripe.individuelAn} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
@@ -70,22 +67,20 @@ import CarteSoutien from '../components/CarteSoutien.astro';
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
         <h2>Groupe</h2>
         <p class="pack-desc">Petits groupes, entraide et suivi personnalisé de chaque enfant.</p>
-        <p class="pack-rythme">1 cours d'1h par semaine</p>
+        <p class="pack-rythme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1 cours d'1h par semaine</p>
       </div>
       <div class="pack-body">
         <div class="formule">
           <div class="formule-info"><h3>1 mois</h3></div>
           <div class="formule-prix">
-            <span class="prix">40€</span>
-            <span class="par-heure">/ mois</span>
+            <div class="formule-montant"><span class="prix">40€</span><span class="par-heure">par mois</span></div>
             <a href={stripe.groupe1m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
         <div class="formule">
           <div class="formule-info"><h3>3 mois</h3><span class="economie">11€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">109€</span>
-            <span class="par-heure">soit 36,33€ / mois</span>
+            <div class="formule-montant"><span class="prix">109€</span><span class="par-heure">soit 36,33€ par mois</span></div>
             <a href={stripe.groupe3m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
@@ -93,8 +88,7 @@ import CarteSoutien from '../components/CarteSoutien.astro';
           <div class="formule-tag">⭐ Le plus choisi</div>
           <div class="formule-info"><h3>6 mois</h3><span class="economie">41€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">199€</span>
-            <span class="par-heure">soit 33,17€ / mois</span>
+            <div class="formule-montant"><span class="prix">199€</span><span class="par-heure">soit 33,17€ par mois</span></div>
             <a href={stripe.groupe6m} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
@@ -102,8 +96,7 @@ import CarteSoutien from '../components/CarteSoutien.astro';
           <div class="formule-tag">Meilleur prix</div>
           <div class="formule-info"><h3>Année</h3><p class="periode">d'octobre à juin</p><span class="economie">81€ économisés</span></div>
           <div class="formule-prix">
-            <span class="prix">279€</span>
-            <span class="par-heure">soit 31€ / mois</span>
+            <div class="formule-montant"><span class="prix">279€</span><span class="par-heure">soit 31€ par mois</span></div>
             <a href={stripe.groupeAn} target="_blank" class="btn-acheter">Acheter</a>
           </div>
         </div>
@@ -129,42 +122,27 @@ import CarteSoutien from '../components/CarteSoutien.astro';
     }
   </script>
 
-  <section class="tarifs-info fade-in">
-    <div class="info-cards">
-      <a href="/reservation" class="info-card info-card-link">
-        <div class="info-icon" style="background: rgba(232,100,74,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></div>
-        <p><strong>Cours d'essai à 5€</strong> — teste la méthode et vois si ça plaît à ton enfant.</p>
-      </a>
-      <div class="info-card">
-        <div class="info-icon" style="background: rgba(27,58,92,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
-        <p><strong>100% en ligne</strong> — cours en visio depuis chez toi, pas de déplacement.</p>
+  <section class="reassurance fade-in">
+    <div class="reassurance-grid">
+      <div class="reassurance-item" style="--c: var(--bleu);">
+        <span class="reassurance-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+        <h3>Suivi personnalisé</h3>
+        <p>Chaque enfant est suivi individuellement, à son rythme.</p>
       </div>
-      <a href="/boutique" class="info-card info-card-link">
-        <div class="info-icon" style="background: rgba(245,166,35,0.1);"><span style="font-size:1.5rem;">🧮</span></div>
-        <p><strong>Commande ton soroban</strong> — retrouve le boulier idéal dans notre boutique.</p>
-      </a>
-      <a href="/soutien-scolaire" class="info-card info-card-link">
-        <div class="info-icon" style="background: rgba(43,171,124,0.1);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg></div>
-        <p><strong>Soutien scolaire</strong> — maths & français avec un suivi personnalisé, même approche bienveillante.</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="cta-end fade-in">
-    <div class="cta-end-grid">
-      <a href="/reservation" class="cta-end-card">
-        <div class="cta-end-icon" style="background: linear-gradient(135deg, var(--corail), #F5A623);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div>
-        <h3>Cours d'essai · 5€</h3>
-        <p>Teste la méthode sans engagement.</p>
-        <span class="cta-outline">Réserver <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </a>
-      <a href="/contact" class="cta-end-card">
-        <div class="cta-end-icon" style="background: linear-gradient(135deg, #1B3A5C, #1A6B5C);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
-        <h3>Une question ?</h3>
-        <p>On est là pour toi.</p>
-        <span class="cta-outline">Nous contacter <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      <div class="reassurance-item" style="--c: var(--teal);">
+        <span class="reassurance-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+        <h3>100% en ligne</h3>
+        <p>Les cours se font en visio, depuis chez toi.</p>
+      </div>
+      <a href="/boutique" class="reassurance-item reassurance-lien" style="--c: var(--corail);">
+        <span class="reassurance-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg></span>
+        <h3>Ton soroban</h3>
+        <p>Le boulier idéal pour s'entraîner, dans notre boutique.</p>
+        <span class="reassurance-voir">Voir la boutique <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
     </div>
+    <BandeauEssai />
+    <p class="question">Une question ? <a href="/contact">Contacte-nous <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></p>
   </section>
 
 </Base>
@@ -250,7 +228,8 @@ import CarteSoutien from '../components/CarteSoutien.astro';
   .pack-header.groupe { background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%); }
   .pack-header h2 { font-size: 1.5rem; font-weight: 700; }
   .pack-desc { font-size: 0.95rem; opacity: 0.9; }
-  .pack-rythme { font-size: 0.85rem; font-weight: 600; color: var(--jaune); }
+  /* Pastille du rythme des cours, bien visible, calée en bas de l'en-tête (alignée d'une carte à l'autre) */
+  .pack-rythme { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: auto; padding: 0.45rem 1rem; border-radius: 50px; background: rgba(255,255,255,0.18); color: var(--blanc); font-size: 0.95rem; font-weight: 600; }
 
   .pack-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
 
@@ -284,9 +263,10 @@ import CarteSoutien from '../components/CarteSoutien.astro';
   .formule-info h3 { font-size: 1.05rem; color: var(--bleu); font-weight: 600; }
   .periode { font-size: 0.8rem; color: #5F6B78; }
   .economie { display: inline-block; margin-top: 0.35rem; font-size: 0.75rem; font-weight: 600; color: var(--teal); background: rgba(26,107,92,0.1); padding: 0.15rem 0.6rem; border-radius: 50px; }
-  .formule-prix { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
-  .prix { font-size: 1.5rem; font-weight: 700; color: var(--corail); }
-  .par-heure { font-size: 0.8rem; color: #5F6B78; }
+  .formule-prix { display: flex; align-items: center; gap: 1.25rem; }
+  .formule-montant { display: flex; flex-direction: column; align-items: flex-end; text-align: right; line-height: 1.25; }
+  .prix { font-size: 1.6rem; font-weight: 700; color: var(--corail); }
+  .par-heure { font-size: 0.8rem; color: #5F6B78; margin-top: 0.15rem; }
 
   .btn-acheter {
     display: inline-block;
@@ -296,7 +276,6 @@ import CarteSoutien from '../components/CarteSoutien.astro';
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    margin-top: 0.3rem;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
     position: relative;
     overflow: hidden;
@@ -310,34 +289,17 @@ import CarteSoutien from '../components/CarteSoutien.astro';
 
   .soutien-tarifs { max-width: 600px; margin: 0 auto; padding: 3rem 2rem; }
 
-  .tarifs-info { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
-
-  .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-
-  .info-card {
-    display: flex; align-items: flex-start; gap: 1rem;
-    padding: 1.5rem; background-color: var(--blanc);
-    border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border: 2px solid transparent;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-
-  .info-card-link { cursor: pointer; color: inherit; }
-  .info-card-link:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); border-color: var(--jaune); }
-
-  .info-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .info-card p { font-size: 0.92rem; color: var(--texte); line-height: 1.6; }
-
-  .cta-end { padding: 4rem 2rem; }
-  .cta-end-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .cta-end-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--blanc); border-radius: 20px; padding: 3rem 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; color: inherit; }
-  .cta-end-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
-  .cta-end-icon { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
-  .cta-end-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--bleu); margin-bottom: 0.75rem; }
-  .cta-end-card p { font-size: 0.95rem; color: var(--texte); opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem; }
-
-  .cta-outline { display: inline-block; border: 2px solid var(--teal); color: var(--teal); padding: 0.8rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
-  .cta-outline:hover { background: linear-gradient(135deg, #1A6B5C, #2BAB7C); color: var(--blanc); border-color: #1A6B5C; transform: scale(1.03); box-shadow: 0 4px 15px rgba(26, 107, 92, 0.3); }
+  .reassurance { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+  .reassurance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .reassurance-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.5rem; padding: 2rem 1.5rem; background: var(--blanc); border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 2px solid transparent; color: inherit; }
+  .reassurance-lien { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+  .reassurance-lien:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-color: var(--jaune); }
+  .reassurance-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--c); background: color-mix(in srgb, var(--c) 10%, transparent); margin-bottom: 0.5rem; }
+  .reassurance-item h3 { font-size: 1.1rem; font-weight: 600; color: var(--bleu); }
+  .reassurance-item p { font-size: 0.92rem; color: #5F6B78; line-height: 1.6; }
+  .reassurance-voir { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--corail); }
+  .question { text-align: center; margin-top: 2rem; font-size: 1rem; color: var(--texte); }
+  .question a { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; color: var(--teal); }
 
   @media (max-width: 768px) {
     .tarifs-hero h1 { font-size: 2rem; }
@@ -348,8 +310,12 @@ import CarteSoutien from '../components/CarteSoutien.astro';
     .pack-body { padding: 1.25rem 1rem 1.5rem; }
     .formule { padding: 0.9rem 1rem; }
     .formule.populaire, .formule.meilleur-prix { padding-top: 1.3rem; }
-    .cta-end { padding: 2rem 1rem; }
-    .cta-end-grid { grid-template-columns: 1fr; }
+    /* Mobile : durée + montant sur une ligne, bouton sur toute la largeur en dessous */
+    .formule { flex-wrap: wrap; }
+    .formule-prix { display: contents; }
+    .btn-acheter { flex-basis: 100%; text-align: center; padding: 0.6rem 1rem; }
+    .reassurance { padding: 2rem 1.5rem 3rem; }
+    .reassurance-grid { grid-template-columns: 1fr; }
   }
 </style>
 

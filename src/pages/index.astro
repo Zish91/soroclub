@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import BandeauEssai from '../components/BandeauEssai.astro';
 ---
 
 <Base title="Accueil">
@@ -143,11 +144,7 @@ import Base from '../layouts/Base.astro';
         </div>
       </a>
     </div>
-    <a href="/reservation" class="essai-banner">
-      <span class="essai-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></span>
-      <span class="essai-text"><strong>Cours d'essai à 5€</strong> · Teste la méthode, sans engagement</span>
-      <span class="essai-btn">Réserver <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-    </a>
+    <BandeauEssai />
   </section>
 
   <section class="etapes fade-in">
@@ -220,7 +217,6 @@ import Base from '../layouts/Base.astro';
 
 <style>
 
-
   .hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
   .hero h1 { font-size: 2.8rem; color: var(--bleu); line-height: 1.2; margin-bottom: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
   .highlight { color: var(--corail); }
@@ -241,8 +237,6 @@ import Base from '../layouts/Base.astro';
   .benefices, .pourquoi { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
   .benefices h2, .pourquoi h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
   .pourquoi-intro { font-size: 1.05rem; color: var(--texte); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8; opacity: 0.85; }
-
-
 
   /* === ROUE « Pourquoi le soroban ? » === */
   .roue-section { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; text-align: left; }
@@ -369,14 +363,6 @@ import Base from '../layouts/Base.astro';
   .tarif-points li::before { content: '✓'; color: var(--teal); font-weight: 700; }
   .tarif-points .point-fort { font-weight: 600; color: var(--bleu); }
 
-  .essai-btn { display: inline-flex; align-items: center; gap: 0.4rem; }
-
-  .essai-banner { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; padding: 1.25rem 1.75rem; border-radius: 16px; background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); text-align: left; box-shadow: 0 4px 15px rgba(232,100,74,0.25); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  .essai-banner:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(232,100,74,0.35); }
-  .essai-icon { display: flex; flex-shrink: 0; }
-  .essai-text { flex: 1; font-size: 1.05rem; }
-  .essai-btn { flex-shrink: 0; background: var(--blanc); color: var(--corail); font-weight: 600; padding: 0.7rem 1.6rem; border-radius: 50px; }
-
   .etapes { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
   .etapes h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
   .etapes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
@@ -404,7 +390,6 @@ import Base from '../layouts/Base.astro';
     .chiffres-bandeau { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 2rem 1.5rem; border-radius: 20px; }
     .chiffre-num { font-size: 2.5rem; }
     .tarifs-preview-grid { grid-template-columns: 1fr; }
-    .essai-banner { flex-direction: column; text-align: center; padding: 1.5rem; }
     .cta-end { padding: 2rem 1rem; }
     .cta-end-grid { grid-template-columns: 1fr; }
   }

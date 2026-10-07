@@ -135,6 +135,12 @@ img {
   transform: translateX(-50%) scaleX(1);
 }
 
+/* ===== FLÈCHE DES BOUTONS ===== */
+/* SVG plus épais que le caractère →, qui avance légèrement au survol */
+:is(a, span).cta-outline:has(.arrow) { display: inline-flex; align-items: center; gap: 0.4rem; }
+.arrow { flex-shrink: 0; transition: transform 0.2s ease; }
+a:hover .arrow { transform: translateX(3px); }
+
 /* ===== PULSE DOUX CTA ===== */
 .cta-pulse {
   animation: pulse-glow 2.5s ease-in-out infinite;

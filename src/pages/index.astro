@@ -106,11 +106,11 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
     <div class="slider-nav">
-      <button class="slider-btn" id="prev-btn">←</button>
+      <button class="slider-btn" id="prev-btn" aria-label="Avis précédent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
       <div class="slider-dots" id="slider-dots"></div>
-      <button class="slider-btn" id="next-btn">→</button>
+      <button class="slider-btn" id="next-btn" aria-label="Avis suivant"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
     </div>
-    <a href="/temoignages" class="cta-outline" style="margin-top:2rem; display:inline-block;">Voir tous les avis →</a>
+    <a href="/temoignages" class="cta-outline" style="margin-top:2rem;">Voir tous les avis <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
   </section>
 
   <section class="tarifs-preview fade-right">
@@ -205,13 +205,13 @@ import Base from '../layouts/Base.astro';
         <div class="cta-end-icon" style="background: linear-gradient(135deg, #1B3A5C, #1A6B5C);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
         <h3>Comment ça marche ?</h3>
         <p>Annulation, ponctualité, vacances : toutes les règles des cours.</p>
-        <span class="cta-outline">Lire le règlement →</span>
+        <span class="cta-outline">Lire le règlement <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
       <a href="/contact" class="cta-end-card">
         <div class="cta-end-icon" style="background: linear-gradient(135deg, var(--corail), #F5A623);"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
         <h3>Une question ?</h3>
         <p>On est là pour toi. Email, WhatsApp ou formulaire.</p>
-        <span class="cta-outline">Nous contacter →</span>
+        <span class="cta-outline">Nous contacter <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
     </div>
   </section>
@@ -420,45 +420,54 @@ import Base from '../layouts/Base.astro';
 </style>
 
 <script>
-  const slides = document.querySelectorAll('.slide');
-  const dotsContainer = document.getElementById('slider-dots');
-  let currentSlide = 0;
-  slides.forEach((_, i) => {
-    const dot = document.createElement('span');
-    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  });
-  function goTo(n) {
-    slides[currentSlide].classList.remove('active');
-    dotsContainer.children[currentSlide].classList.remove('active');
-    currentSlide = (n + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    dotsContainer.children[currentSlide].classList.add('active');
-  }
-  document.getElementById('prev-btn').addEventListener('click', () => goTo(currentSlide - 1));
-  document.getElementById('next-btn').addEventListener('click', () => goTo(currentSlide + 1));
-  setInterval(() => goTo(currentSlide + 1), 5000);
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.chiffre-num').forEach(counter => {
-          const target = parseInt(counter.dataset.target);
-          const step = Math.ceil(target / 50);
-          let val = 0;
-          const timer = setInterval(() => {
-            val += step;
-            if (val >= target) { val = target; clearInterval(timer); counter.style.transform = 'scale(1.15)'; setTimeout(() => { counter.style.transform = 'scale(1)'; }, 200); }
-            counter.textContent = val;
-          }, 30);
-        });
-        counterObserver.unobserve(entry.target);
-      }
+  // Slider des avis + compteurs animés, relancés à chaque arrivée sur l'accueil (View Transitions)
+  document.addEventListener('astro:page-load', () => {
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('slider-dots');
+    if (!slides.length || !dotsContainer) return;
+    let currentSlide = 0;
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
     });
-  }, { threshold: 0.3 });
-  const chiffresSection = document.querySelector('.chiffres');
-  if (chiffresSection) counterObserver.observe(chiffresSection);
+    function goTo(n) {
+      slides[currentSlide].classList.remove('active');
+      dotsContainer.children[currentSlide].classList.remove('active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dotsContainer.children[currentSlide].classList.add('active');
+    }
+    document.getElementById('prev-btn').addEventListener('click', () => goTo(currentSlide - 1));
+    document.getElementById('next-btn').addEventListener('click', () => goTo(currentSlide + 1));
+    const autoSlide = setInterval(() => goTo(currentSlide + 1), 5000);
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.chiffre-num').forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            const step = Math.ceil(target / 50);
+            let val = 0;
+            const timer = setInterval(() => {
+              val += step;
+              if (val >= target) { val = target; clearInterval(timer); counter.style.transform = 'scale(1.15)'; setTimeout(() => { counter.style.transform = 'scale(1)'; }, 200); }
+              counter.textContent = val;
+            }, 30);
+          });
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const chiffresSection = document.querySelector('.chiffres');
+    if (chiffresSection) counterObserver.observe(chiffresSection);
+
+    document.addEventListener('astro:before-swap', () => {
+      clearInterval(autoSlide);
+      counterObserver.disconnect();
+    }, { once: true });
+  });
 </script>
 
 <script>
@@ -493,14 +502,21 @@ import Base from '../layouts/Base.astro';
     }));
 
     // Rotation automatique toutes les 5 s, seulement quand la roue est visible à l'écran
-    new IntersectionObserver(([entry]) => {
+    const observer = new IntersectionObserver(([entry]) => {
       clearInterval(auto);
       if (entry.isIntersecting && !priseEnMain && !reduceMotion) {
         auto = window.setInterval(() => afficher((actif + 1) % 4), 5000);
       }
-    }, { threshold: 0.5 }).observe(roue);
+    }, { threshold: 0.5 });
+    observer.observe(roue);
+
+    // Nettoyage avant de quitter la page (View Transitions)
+    document.addEventListener('astro:before-swap', () => {
+      clearInterval(auto);
+      observer.disconnect();
+    }, { once: true });
   }
-  initRoue();
+  document.addEventListener('astro:page-load', initRoue);
 </script>
 
 <script>
@@ -545,12 +561,22 @@ import Base from '../layouts/Base.astro';
     window.addEventListener('resize', placer);
 
     // Défilement automatique toutes les 5 s, seulement quand la barre est visible à l'écran
-    new IntersectionObserver(([entry]) => {
+    const observer = new IntersectionObserver(([entry]) => {
       clearInterval(auto);
       if (entry.isIntersecting && !priseEnMain && !reduceMotion) {
         auto = window.setInterval(() => afficher((actif + 1) % atouts.length), 5000);
       }
-    }, { threshold: 0.5 }).observe(barre);
+    }, { threshold: 0.5 });
+    observer.observe(barre);
+
+    // Nettoyage avant de quitter la page (View Transitions)
+    document.addEventListener('astro:before-swap', () => {
+      clearInterval(auto);
+      observer.disconnect();
+      window.removeEventListener('resize', placer);
+    }, { once: true });
   }
-  document.querySelectorAll<HTMLElement>('.atouts').forEach(initAtouts);
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLElement>('.atouts').forEach(initAtouts);
+  });
 </script>

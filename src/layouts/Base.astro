@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 const { title } = Astro.props;
 ---
 <!doctype html>
@@ -9,9 +10,10 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | Soroclub</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <ClientRouter />
   </head>
   <body>
-    <header class="header">
+    <header class="header" transition:persist>
       <div class="header-inner">
         <a href="/" class="logo"><img src="/logo.png" alt="Soroclub" class="logo-img" /></a>
         <button class="burger" aria-label="Menu">☰</button>
@@ -38,7 +40,7 @@ const { title } = Astro.props;
       <nav class="footer-links"><a href="/reglement">Règlement intérieur</a><a href="/contact">Contact</a></nav>
       <p>&copy; 2025 Soroclub. Tous droits réservés.</p>
     </footer>
-    <div class="mobile-bar">
+    <div class="mobile-bar" transition:persist>
       <a href="/soutien-scolaire">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg>
         <small>Soutien</small>
@@ -57,15 +59,21 @@ const { title } = Astro.props;
       </a>
     </div>
     <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) { entry.target.classList.add("visible"); }
-        });
-      }, { threshold: 0.2, rootMargin: "0px 0px -250px 0px" });
-      document.querySelectorAll(".fade-in, .stagger, .fade-left, .fade-right").forEach(el => observer.observe(el));
+      // Fondus au scroll : à relancer sur chaque nouvelle page (View Transitions)
+      document.addEventListener('astro:page-load', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add("visible"); }
+          });
+        }, { threshold: 0.2, rootMargin: "0px 0px -250px 0px" });
+        document.querySelectorAll(".fade-in, .stagger, .fade-left, .fade-right").forEach(el => observer.observe(el));
+        document.addEventListener('astro:before-swap', () => observer.disconnect(), { once: true });
+      });
 
+      // Header et barre mobile restent en place d'une page à l'autre (transition:persist) :
+      // leurs écouteurs ne sont posés qu'une seule fois
       const burger = document.querySelector('.burger');
-      const nav = document.querySelector('nav');
+      const nav = document.querySelector('.header nav');
       burger.addEventListener('click', () => {
         nav.classList.toggle('open');
         burger.textContent = nav.classList.contains('open') ? '✕' : '☰';
@@ -78,6 +86,13 @@ const { title } = Astro.props;
           e.preventDefault();
           dropdown.classList.toggle('open');
         }
+      });
+
+      // Referme le menu mobile après un changement de page
+      document.addEventListener('astro:after-swap', () => {
+        nav.classList.remove('open');
+        burger.textContent = '☰';
+        dropdown.classList.remove('open');
       });
     </script>
   </body>

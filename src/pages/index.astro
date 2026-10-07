@@ -221,7 +221,7 @@ import Base from '../layouts/Base.astro';
 <style>
 
 
-  .hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .hero { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
   .hero h1 { font-size: 2.8rem; color: var(--bleu); line-height: 1.2; margin-bottom: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
   .highlight { color: var(--corail); }
   .hero-sub { font-size: 1.15rem; color: var(--texte); margin-bottom: 2.5rem; opacity: 0.85; line-height: 1.8; }
@@ -238,7 +238,7 @@ import Base from '../layouts/Base.astro';
   .cta-outline { display: inline-block; border: 2px solid var(--teal); color: var(--teal); padding: 0.8rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
   .cta-outline:hover { background: linear-gradient(135deg, #1A6B5C, #2BAB7C); color: var(--blanc); border-color: #1A6B5C; transform: scale(1.03); box-shadow: 0 4px 15px rgba(26, 107, 92, 0.3); }
 
-  .benefices, .pourquoi { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .benefices, .pourquoi { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
   .benefices h2, .pourquoi h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
   .pourquoi-intro { font-size: 1.05rem; color: var(--texte); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8; opacity: 0.85; }
 
@@ -283,7 +283,6 @@ import Base from '../layouts/Base.astro';
   .roue-texte p { font-size: 1.05rem; line-height: 1.8; color: var(--texte); margin-bottom: 1.75rem; }
   .roue-cta { display: inline-flex; align-items: center; gap: 0.4rem; background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); padding: 0.9rem 1.8rem; border-radius: 50px; font-weight: 600; transition: transform 0.2s ease, box-shadow 0.2s ease; }
   .roue-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,100,74,0.35); }
-  .roue-cta:hover .arrow { transform: translateX(3px); }
 
   @media (max-width: 768px) {
     .roue-section { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
@@ -328,7 +327,7 @@ import Base from '../layouts/Base.astro';
     .atouts-barre.is-ready .atouts-indicateur, .atout-texte, .atout-texte.is-active { transition: none; }
   }
 
-  .chiffres { padding: 3rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .chiffres { padding: 3rem 2rem; text-align: center; }
   .chiffres-bandeau { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%); border-radius: 24px; padding: 4rem 3rem; box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2); }
   .chiffre-item { padding: 1rem; }
   .chiffre-link { display: block; color: inherit; border-radius: 12px; transition: transform 0.12s ease-out, background 0.12s ease-out; cursor: pointer; }
@@ -337,7 +336,7 @@ import Base from '../layouts/Base.astro';
   .chiffre-suffix { font-size: 2.5rem; font-weight: 700; color: var(--jaune); }
   .chiffre-item p { font-size: 1.05rem; color: rgba(255,255,255,0.8); margin-top: 0.5rem; }
 
-  .temoignages-home { max-width: 700px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .temoignages-home { max-width: 700px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
   .temoignages-home h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
   .slider { position: relative; min-height: 180px; }
   .slide { display: none; animation: fadeSlide 0.5s ease; }
@@ -353,7 +352,7 @@ import Base from '../layouts/Base.astro';
   .slider-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--bleu); opacity: 0.2; cursor: pointer; transition: opacity 0.2s; }
   .slider-dot.active { opacity: 1; }
 
-  .tarifs-preview { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .tarifs-preview { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
   .tarifs-preview h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
   .tarifs-preview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .tarif-card { background: var(--blanc); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; color: inherit; display: block; }
@@ -370,10 +369,7 @@ import Base from '../layouts/Base.astro';
   .tarif-points li::before { content: '✓'; color: var(--teal); font-weight: 700; }
   .tarif-points .point-fort { font-weight: 600; color: var(--bleu); }
 
-  /* Flèche des boutons : SVG plus épais que le caractère →, avance au survol */
-  .tarif-body .cta-outline, .essai-btn { display: inline-flex; align-items: center; gap: 0.4rem; }
-  .arrow { transition: transform 0.2s ease; }
-  .tarif-card:hover .arrow, .essai-banner:hover .arrow { transform: translateX(3px); }
+  .essai-btn { display: inline-flex; align-items: center; gap: 0.4rem; }
 
   .essai-banner { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; padding: 1.25rem 1.75rem; border-radius: 16px; background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); text-align: left; box-shadow: 0 4px 15px rgba(232,100,74,0.25); transition: transform 0.2s ease, box-shadow 0.2s ease; }
   .essai-banner:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(232,100,74,0.35); }
@@ -381,7 +377,7 @@ import Base from '../layouts/Base.astro';
   .essai-text { flex: 1; font-size: 1.05rem; }
   .essai-btn { flex-shrink: 0; background: var(--blanc); color: var(--corail); font-weight: 600; padding: 0.7rem 1.6rem; border-radius: 50px; }
 
-  .etapes { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .etapes { max-width: 1000px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
   .etapes h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
   .etapes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
   .etape { padding: 1.5rem; display: block; color: inherit; }
@@ -392,7 +388,7 @@ import Base from '../layouts/Base.astro';
   .etape h3 { color: var(--bleu); font-size: 1.1rem; margin-bottom: 0.75rem; font-weight: 600; }
   .etape p { font-size: 0.92rem; color: var(--texte); opacity: 0.85; line-height: 1.7; }
 
-  .cta-end { padding: 4rem 2rem; position: relative; z-index: 1; }
+  .cta-end { padding: 4rem 2rem; }
   .cta-end-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .cta-end-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--blanc); border-radius: 20px; padding: 3rem 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; color: inherit; }
   .cta-end-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }

@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { stripe } from '../data/stripe';
+import CarteSoutien from '../components/CarteSoutien.astro';
 ---
 
 <Base title="Tarifs">
@@ -114,33 +115,7 @@ import { stripe } from '../data/stripe';
 
   <div class="tab-panel" role="tabpanel" id="panel-soutien" aria-labelledby="tab-soutien" hidden>
   <section class="soutien-tarifs">
-    <div class="pack">
-      <div class="pack-header soutien">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
-        <h2>Soutien scolaire</h2>
-        <p class="pack-desc">Maths & français. Cours individuels de 30 min, suivi personnalisé.</p>
-        <p class="pack-rythme">Abonnement mensuel, résiliable à tout moment</p>
-      </div>
-      <div class="pack-body">
-        <div class="formule">
-          <div class="formule-info"><h3>1 cours par semaine</h3></div>
-          <div class="formule-prix">
-            <span class="prix">29€</span>
-            <span class="par-heure">/ mois</span>
-            <a href={stripe.soutien1x} target="_blank" class="btn-acheter">S'abonner</a>
-          </div>
-        </div>
-        <div class="formule populaire">
-          <div class="formule-tag">Meilleur rapport</div>
-          <div class="formule-info"><h3>2 cours par semaine</h3></div>
-          <div class="formule-prix">
-            <span class="prix">52€</span>
-            <span class="par-heure">/ mois</span>
-            <a href={stripe.soutien2x} target="_blank" class="btn-acheter">S'abonner</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <CarteSoutien />
   </section>
   </div>
 
@@ -273,11 +248,9 @@ import { stripe } from '../data/stripe';
   .pack-header svg { margin-bottom: 0.3rem; }
   .pack-header.individuel { background: linear-gradient(135deg, #1B3A5C 0%, #2A5580 100%); }
   .pack-header.groupe { background: linear-gradient(135deg, #1A6B5C 0%, #2BAB7C 100%); }
-  .pack-header.soutien { background: linear-gradient(135deg, var(--corail) 0%, #D4553B 100%); }
   .pack-header h2 { font-size: 1.5rem; font-weight: 700; }
   .pack-desc { font-size: 0.95rem; opacity: 0.9; }
   .pack-rythme { font-size: 0.85rem; font-weight: 600; color: var(--jaune); }
-  .pack-header.soutien .pack-rythme { color: var(--blanc); }
 
   .pack-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
 
@@ -355,7 +328,7 @@ import { stripe } from '../data/stripe';
   .info-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .info-card p { font-size: 0.92rem; color: var(--texte); line-height: 1.6; }
 
-  .cta-end { padding: 4rem 2rem; position: relative; z-index: 1; }
+  .cta-end { padding: 4rem 2rem; }
   .cta-end-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .cta-end-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--blanc); border-radius: 20px; padding: 3rem 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; color: inherit; }
   .cta-end-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }

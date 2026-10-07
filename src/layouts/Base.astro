@@ -20,9 +20,9 @@ const { title } = Astro.props;
           <div class="dropdown">
             <button class="dropdown-toggle">Nos cours <span class="dropdown-arrow">▾</span></button>
             <div class="dropdown-menu">
-              <a href="/programme">Programme</a>
               <a href="/soutien-scolaire">Soutien scolaire</a>
               <a href="/reservation">Cours d'essai</a>
+              <a href="/reglement">Règlement</a>
             </div>
           </div>
           <a href="/tarifs">Tarifs</a>
@@ -35,16 +35,13 @@ const { title } = Astro.props;
       <slot />
     </main>
     <footer class="footer">
+      <nav class="footer-links"><a href="/reglement">Règlement intérieur</a><a href="/contact">Contact</a></nav>
       <p>&copy; 2025 Soroclub. Tous droits réservés.</p>
     </footer>
     <div class="mobile-bar">
-      <a href="/">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-        <small>Accueil</small>
-      </a>
-      <a href="/programme">
+      <a href="/soutien-scolaire">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg>
-        <small>Cours</small>
+        <small>Soutien</small>
       </a>
       <a href="/tarifs">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
@@ -248,6 +245,9 @@ const { title } = Astro.props;
     background: linear-gradient(135deg, #1B3A5C, #1A6B5C);
     color: var(--blanc); text-align: center; padding: 2rem; margin-top: 4rem;
   }
+  .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .footer-links a { opacity: 0.85; transition: opacity 0.2s, color 0.2s; }
+  .footer-links a:hover { opacity: 1; color: var(--jaune); }
 
   /* === MOBILE BAR === */
   .mobile-bar { display: none; }

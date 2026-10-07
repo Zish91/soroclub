@@ -4,21 +4,6 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Accueil">
 
-<div class="floating-symbols">
-  <span class="symbol">+</span>
-  <span class="symbol">×</span>
-  <span class="symbol">★</span>
-  <span class="symbol">√</span>
-  <span class="symbol">÷</span>
-  <span class="symbol">=</span>
-  <span class="symbol">+</span>
-  <span class="symbol">★</span>
-  <span class="symbol">×</span>
-  <span class="symbol">√</span>
-  <span class="symbol">÷</span>
-  <span class="symbol">=</span>
-</div>
-
 <section class="hero fade-in">
     <h1>Apprends le calcul mental<br />avec le <span class="highlight">soroban</span></h1>
     <p class="hero-sub">Des cours en ligne avec un suivi personnalisé pour chaque enfant.<br />Ludiques, progressifs, et efficaces.</p>
@@ -30,26 +15,48 @@ import Base from '../layouts/Base.astro';
 
   <section class="benefices fade-right">
     <h2 class="section-title">Pourquoi le <span class="highlight">soroban</span> ?</h2>
-    <div class="accordion">
-      <div class="accordion-item" style="--acc-color: var(--corail); --acc-bg: rgba(232,100,74,0.08);">
-        <div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--corail)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg></div>
-        <h3 class="accordion-title">Calcul mental</h3>
-        <p class="accordion-text">Ton enfant apprend à visualiser le boulier mentalement pour calculer à une vitesse fulgurante, sans calculatrice.</p>
+    <div class="roue-section">
+      <div class="roue">
+        <div class="roue-fond"></div>
+        <div class="roue-indicateur"></div>
+        <div class="roue-traits"></div>
+        <div class="roue-zones" role="tablist" aria-label="Les bienfaits du soroban">
+          <button class="roue-zone z0" role="tab" id="roue-tab-0" aria-controls="roue-texte-0" aria-selected="true" style="--c: var(--corail);"><span><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg><b>Calcul<br />mental</b></span></button>
+          <button class="roue-zone z1" role="tab" id="roue-tab-1" aria-controls="roue-texte-1" aria-selected="false" style="--c: var(--jaune);"><span><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><b>Concen-<br />tration</b></span></button>
+          <button class="roue-zone z2" role="tab" id="roue-tab-2" aria-controls="roue-texte-2" aria-selected="false" style="--c: var(--corail);"><span><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg><b>Confiance<br />en soi</b></span></button>
+          <button class="roue-zone z3" role="tab" id="roue-tab-3" aria-controls="roue-texte-3" aria-selected="false" style="--c: var(--jaune);"><span><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg><b>Stimulation<br />cérébrale</b></span></button>
+        </div>
+        <div class="roue-centre"><img src="/logo.png" alt="" /></div>
       </div>
-      <div class="accordion-item" style="--acc-color: var(--jaune); --acc-bg: rgba(245,166,35,0.08);">
-        <div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--jaune)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <h3 class="accordion-title">Concentration</h3>
-        <p class="accordion-text">Manipuler les perles demande une attention totale. Cette habitude se transfère dans toutes les matières à l'école.</p>
-      </div>
-      <div class="accordion-item" style="--acc-color: var(--corail); --acc-bg: rgba(232,100,74,0.08);">
-        <div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--corail)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div>
-        <h3 class="accordion-title">Confiance en soi</h3>
-        <p class="accordion-text">Fini les "je suis nul en maths". En maîtrisant le calcul, ton enfant retrouve le plaisir d'apprendre.</p>
-      </div>
-      <div class="accordion-item" style="--acc-color: var(--jaune); --acc-bg: rgba(245,166,35,0.08);">
-        <div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--jaune)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg></div>
-        <h3 class="accordion-title">Stimulation cérébrale</h3>
-        <p class="accordion-text">Le soroban active les deux hémisphères du cerveau : la logique à gauche, la visualisation et la créativité à droite.</p>
+      <div class="roue-textes">
+        <div class="roue-texte is-active" role="tabpanel" id="roue-texte-0" aria-labelledby="roue-tab-0" style="--c: var(--corail);">
+          <span class="roue-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg></span>
+          <h3>Calcul mental</h3>
+          <span class="roue-sous-titre">Calculer vite, sans calculatrice</span>
+          <p>Ton enfant apprend à visualiser le boulier mentalement pour calculer à une vitesse fulgurante, sans calculatrice.</p>
+          <a href="/reservation" class="roue-cta">Réserver un cours d'essai <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+        <div class="roue-texte" role="tabpanel" id="roue-texte-1" aria-labelledby="roue-tab-1" style="--c: var(--jaune);">
+          <span class="roue-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+          <h3>Concentration</h3>
+          <span class="roue-sous-titre">Une attention qui se muscle</span>
+          <p>Manipuler les perles demande une attention totale. Cette habitude se transfère dans toutes les matières à l'école.</p>
+          <a href="/reservation" class="roue-cta">Réserver un cours d'essai <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+        <div class="roue-texte" role="tabpanel" id="roue-texte-2" aria-labelledby="roue-tab-2" style="--c: var(--corail);">
+          <span class="roue-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span>
+          <h3>Confiance en soi</h3>
+          <span class="roue-sous-titre">Le plaisir d'apprendre retrouvé</span>
+          <p>Fini les « je suis nul en maths ». En maîtrisant le calcul, ton enfant retrouve le plaisir d'apprendre.</p>
+          <a href="/reservation" class="roue-cta">Réserver un cours d'essai <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+        <div class="roue-texte" role="tabpanel" id="roue-texte-3" aria-labelledby="roue-tab-3" style="--c: var(--jaune);">
+          <span class="roue-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg></span>
+          <h3>Stimulation cérébrale</h3>
+          <span class="roue-sous-titre">Logique et créativité réunies</span>
+          <p>Le soroban active les deux hémisphères du cerveau : la logique à gauche, la visualisation et la créativité à droite.</p>
+          <a href="/reservation" class="roue-cta">Réserver un cours d'essai <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
@@ -155,11 +162,40 @@ import Base from '../layouts/Base.astro';
   <section class="pourquoi fade-right">
     <h2 class="section-title">La méthode qui fait la <span class="highlight">différence</span></h2>
     <p class="pourquoi-intro">Fondée par <strong>Ibtissama</strong>, enseignante Montessori depuis plus de 10 ans et coach diplômée à la méthode soroban. Tous nos enseignants sont formés à sa pédagogie bienveillante.</p>
-    <div class="accordion">
-      <div class="accordion-item" style="--acc-color: var(--bleu); --acc-bg: rgba(27,58,92,0.06);"><div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><h3 class="accordion-title">Certifiée</h3><p class="accordion-text">Une méthode conçue par une experte, avec 10 ans de pédagogie Montessori et une certification soroban.</p></div>
-      <div class="accordion-item" style="--acc-color: var(--teal); --acc-bg: rgba(43,171,124,0.06);"><div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2BAB7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"/><path d="M4.82 7.9 8 10"/><path d="M15.18 7.9 12 10"/><path d="M16.93 10H20a2 2 0 0 1 0 4H2"/></svg></div><h3 class="accordion-title">À son rythme</h3><p class="accordion-text">Pas de pression, pas de course. La maîtrise avant la vitesse.</p></div>
-      <div class="accordion-item" style="--acc-color: var(--bleu); --acc-bg: rgba(27,58,92,0.06);"><div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3 class="accordion-title">Suivi perso</h3><p class="accordion-text">Des petits groupes pour un vrai accompagnement. Chaque enfant est suivi individuellement.</p></div>
-      <div class="accordion-item" style="--acc-color: var(--corail); --acc-bg: rgba(232,100,74,0.06);"><div class="accordion-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8644A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></div><h3 class="accordion-title">Zéro stress</h3><p class="accordion-text">L'erreur fait partie de l'apprentissage. Ici on encourage, on ne juge pas.</p></div>
+    <div class="atouts">
+      <div class="atouts-barre" role="tablist" aria-label="Notre méthode">
+        <span class="atouts-indicateur" aria-hidden="true"></span>
+        <button class="atout" role="tab" id="methode-tab-0" aria-controls="methode-texte-0" aria-selected="true" style="--c: var(--bleu);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg><span>Certifiée</span></button>
+        <button class="atout" role="tab" id="methode-tab-1" aria-controls="methode-texte-1" aria-selected="false" style="--c: var(--teal);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"/><path d="M4.82 7.9 8 10"/><path d="M15.18 7.9 12 10"/><path d="M16.93 10H20a2 2 0 0 1 0 4H2"/></svg><span>À son rythme</span></button>
+        <button class="atout" role="tab" id="methode-tab-2" aria-controls="methode-texte-2" aria-selected="false" style="--c: var(--bleu);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Suivi personnalisé</span></button>
+        <button class="atout" role="tab" id="methode-tab-3" aria-controls="methode-texte-3" aria-selected="false" style="--c: var(--corail);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg><span>Zéro stress</span></button>
+      </div>
+      <div class="atout-textes">
+        <div class="atout-texte is-active" role="tabpanel" id="methode-texte-0" aria-labelledby="methode-tab-0" style="--c: var(--bleu);">
+          <span class="atout-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>
+          <h3>Certifiée</h3>
+          <span class="atout-sous-titre">Experte Montessori et soroban</span>
+          <p>Une méthode conçue par une experte, avec 10 ans de pédagogie Montessori et une certification soroban.</p>
+        </div>
+        <div class="atout-texte" role="tabpanel" id="methode-texte-1" aria-labelledby="methode-tab-1" style="--c: var(--teal);">
+          <span class="atout-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"/><path d="M4.82 7.9 8 10"/><path d="M15.18 7.9 12 10"/><path d="M16.93 10H20a2 2 0 0 1 0 4H2"/></svg></span>
+          <h3>À son rythme</h3>
+          <span class="atout-sous-titre">Chaque enfant avance à sa vitesse</span>
+          <p>Pas de pression, pas de course. La maîtrise avant la vitesse.</p>
+        </div>
+        <div class="atout-texte" role="tabpanel" id="methode-texte-2" aria-labelledby="methode-tab-2" style="--c: var(--bleu);">
+          <span class="atout-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+          <h3>Suivi personnalisé</h3>
+          <span class="atout-sous-titre">Chaque enfant compte</span>
+          <p>Des petits groupes pour un vrai accompagnement. Chaque enfant est suivi individuellement.</p>
+        </div>
+        <div class="atout-texte" role="tabpanel" id="methode-texte-3" aria-labelledby="methode-tab-3" style="--c: var(--corail);">
+          <span class="atout-texte-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></span>
+          <h3>Zéro stress</h3>
+          <span class="atout-sous-titre">Un cadre bienveillant</span>
+          <p>L'erreur fait partie de l'apprentissage. Ici on encourage, on ne juge pas.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -183,21 +219,6 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <style>
-  .floating-symbols { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-  .symbol { position: absolute; font-weight: 700; opacity: 0.25; }
-  .symbol:nth-child(1) { font-size: 2.5rem; color: var(--corail); top: 12%; left: 6%; animation: float 6s ease-in-out infinite; }
-  .symbol:nth-child(2) { font-size: 2rem; color: var(--jaune); top: 55%; left: 90%; animation: float 7s ease-in-out infinite 1s; }
-  .symbol:nth-child(3) { font-size: 3rem; color: var(--teal); top: 78%; left: 22%; animation: float 8s ease-in-out infinite 2s; }
-  .symbol:nth-child(4) { font-size: 2.2rem; color: var(--corail); top: 6%; left: 75%; animation: float 6.5s ease-in-out infinite 0.5s; }
-  .symbol:nth-child(5) { font-size: 2rem; color: var(--jaune); top: 42%; left: 3%; animation: float 7.5s ease-in-out infinite 1.5s; }
-  .symbol:nth-child(6) { font-size: 2.8rem; color: var(--teal); top: 22%; left: 93%; animation: float 6s ease-in-out infinite 3s; }
-  .symbol:nth-child(7) { font-size: 1.8rem; color: var(--bleu-clair); top: 68%; left: 58%; animation: float 7s ease-in-out infinite 2.5s; }
-  .symbol:nth-child(8) { font-size: 2.4rem; color: var(--jaune); top: 32%; left: 42%; animation: float 8s ease-in-out infinite 4s; }
-  .symbol:nth-child(9) { font-size: 1.6rem; color: var(--corail); top: 88%; left: 70%; animation: float 6.5s ease-in-out infinite 1.2s; }
-  .symbol:nth-child(10) { font-size: 2.6rem; color: var(--teal); top: 48%; left: 78%; animation: float 7.5s ease-in-out infinite 3.5s; }
-  .symbol:nth-child(11) { font-size: 1.9rem; color: var(--jaune); top: 92%; left: 12%; animation: float 6s ease-in-out infinite 2.2s; }
-  .symbol:nth-child(12) { font-size: 2.1rem; color: var(--bleu-clair); top: 3%; left: 45%; animation: float 7s ease-in-out infinite 0.8s; }
-  @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } }
 
   @keyframes pageEnter { 0% { opacity: 0; transform: translateY(40px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
@@ -222,20 +243,90 @@ import Base from '../layouts/Base.astro';
   .benefices h2, .pourquoi h2 { font-size: 2rem; color: var(--bleu); margin-bottom: 3rem; font-weight: 600; }
   .pourquoi-intro { font-size: 1.05rem; color: var(--texte); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8; opacity: 0.85; }
 
-  .accordion { display: flex; gap: 0.75rem; height: 320px; }
-  .accordion-item { flex: 1; min-width: 0; background: var(--acc-bg); border-radius: 16px; padding: 2rem 1.2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease; overflow: hidden; border: 2px solid transparent; position: relative; }
-  .accordion-item:hover { flex: 3; border-color: var(--acc-color); }
-  .accordion-icon { margin-bottom: 1rem; transition: transform 0.3s ease; }
-  .accordion-item:hover .accordion-icon { transform: scale(1.2); }
-  .accordion-title { color: var(--bleu); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; white-space: nowrap; }
-  .accordion-text { font-size: 0.9rem; color: var(--texte); line-height: 1.6; opacity: 0; transform: translateY(8px); max-height: 0; overflow: hidden; transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s, max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-  .accordion-item:hover .accordion-text { opacity: 0.85; transform: translateY(0); max-height: 200px; }
+
+
+  /* === ROUE « Pourquoi le soroban ? » === */
+  .roue-section { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; text-align: left; }
+  .roue { position: relative; width: min(440px, 100%); aspect-ratio: 1; margin: 0 auto; }
+  /* Disque blanc avec les 4 quarts en pastel (corail / jaune), comme les anciennes cartes de bénéfices */
+  .roue-fond { position: absolute; inset: 0; border-radius: 50%; background: var(--blanc); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+  .roue-fond::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from -45deg, rgba(232,100,74,0.10) 0deg 90deg, rgba(245,166,35,0.13) 90deg 180deg, rgba(232,100,74,0.10) 180deg 270deg, rgba(245,166,35,0.13) 270deg 360deg); }
+  /* Quart jaune qui tourne vers la zone active */
+  .roue-indicateur { position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from -45deg, var(--jaune) 0deg 90deg, transparent 90deg 360deg); transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+  .roue-traits { position: absolute; inset: 0; }
+  .roue-traits::before, .roue-traits::after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 4px; margin-top: -2px; background: var(--blanc); transform: rotate(45deg); }
+  .roue-traits::after { transform: rotate(-45deg); }
+  /* Grille 2×2 tournée de 45° : chaque case devient un quart de roue (haut, droite, bas, gauche) */
+  .roue-zones { position: absolute; inset: 0; border-radius: 50%; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; transform: rotate(45deg); }
+  .roue-zone { border: none; background: transparent; cursor: pointer; color: var(--bleu); font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease; -webkit-tap-highlight-color: transparent; }
+  .roue-zone.z0 { grid-area: 1 / 1; }
+  .roue-zone.z1 { grid-area: 1 / 2; }
+  .roue-zone.z2 { grid-area: 2 / 2; }
+  .roue-zone.z3 { grid-area: 2 / 1; }
+  .roue-zone[aria-selected="false"]:hover { background-color: rgba(255,255,255,0.5); }
+  .roue-zone:focus-visible { outline: 3px solid var(--bleu); outline-offset: -8px; }
+  .roue-zone span { transform: rotate(-45deg); display: flex; flex-direction: column; align-items: center; gap: 0.35rem; transition: transform 0.4s ease; }
+  .roue-zone svg { width: clamp(20px, 5vw, 30px); height: auto; color: var(--c); transition: color 0.3s ease; }
+  .roue-zone b { font-weight: 600; font-size: clamp(0.72rem, 2.2vw, 0.98rem); line-height: 1.25; text-align: center; }
+  .roue-zone[aria-selected="true"] span { transform: rotate(-45deg) scale(1.08); }
+  .roue-zone[aria-selected="true"] b { font-weight: 700; }
+  .roue-zone[aria-selected="true"] svg { color: var(--blanc); }
+  .roue-centre { position: absolute; inset: 0; margin: auto; width: 38%; height: 38%; border-radius: 50%; background: var(--blanc); border: 1px solid #EEF1F4; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.06); pointer-events: none; }
+  .roue-centre img { width: 74%; height: auto; }
+
+  /* Textes empilés dans la même case : la hauteur ne saute pas, fondu enchaîné */
+  .roue-textes { display: grid; background: var(--blanc); border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .roue-texte { grid-area: 1 / 1; visibility: hidden; opacity: 0; transform: translateY(6px); transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s; }
+  .roue-texte.is-active { visibility: visible; opacity: 1; transform: none; transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s; }
+  .roue-texte-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: color-mix(in srgb, var(--c) 12%, transparent); color: var(--c); margin-bottom: 1rem; }
+  .roue-texte h3 { font-size: 1.8rem; color: var(--bleu); font-weight: 700; margin-bottom: 0.4rem; }
+  .roue-sous-titre { display: block; color: var(--corail); font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem; }
+  .roue-texte p { font-size: 1.05rem; line-height: 1.8; color: var(--texte); margin-bottom: 1.75rem; }
+  .roue-cta { display: inline-flex; align-items: center; gap: 0.4rem; background: linear-gradient(135deg, var(--corail), #F5A623); color: var(--blanc); padding: 0.9rem 1.8rem; border-radius: 50px; font-weight: 600; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .roue-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,100,74,0.35); }
+  .roue-cta:hover .arrow { transform: translateX(3px); }
 
   @media (max-width: 768px) {
-    .accordion { display: grid; grid-template-columns: 1fr; height: auto; gap: 1rem; }
-    .accordion-item { flex: none; padding: 1.5rem 1rem; min-height: 180px; }
-    .accordion-item:hover { flex: none; }
-    .accordion-text { opacity: 0.85; transform: translateY(0); max-height: 200px; font-size: 0.82rem; }
+    .roue-section { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+    .roue { width: min(320px, 100%); }
+    .roue-textes { padding: 1.75rem 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .roue-indicateur, .roue-texte, .roue-texte.is-active, .roue-zone span { transition: none; }
+  }
+
+  /* === BARRE « La méthode » (même forme que le bandeau compteur) === */
+  .atouts { max-width: 900px; margin: 0 auto; }
+  .atouts-barre { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; padding: 0.75rem; border-radius: 24px; background: linear-gradient(135deg, #1B3A5C 0%, #1A6B5C 100%); box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2); margin-bottom: 2rem; }
+  /* Pilule blanche qui glisse sous la case active (positionnée par le script) */
+  .atouts-indicateur { position: absolute; top: 0; left: 0; width: 0; height: 0; border-radius: 18px; background: var(--blanc); box-shadow: 0 4px 15px rgba(0,0,0,0.12); }
+  .atouts-barre.is-ready .atouts-indicateur { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), width 0.45s cubic-bezier(0.22, 1, 0.36, 1), height 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+  .atouts-barre:not(.is-ready) .atout[aria-selected="true"] { background: var(--blanc); }
+  .atout { position: relative; z-index: 1; border: none; background: transparent; cursor: pointer; border-radius: 18px; padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--blanc); transition: color 0.3s ease, background-color 0.3s ease; -webkit-tap-highlight-color: transparent; }
+  .atout svg { color: rgba(255,255,255,0.85); transition: color 0.3s ease, transform 0.3s ease; }
+  .atout[aria-selected="false"]:hover { background-color: rgba(255,255,255,0.08); }
+  .atout[aria-selected="true"] { color: var(--bleu); }
+  .atout[aria-selected="true"] svg { color: var(--c); transform: scale(1.1); }
+  .atout:focus-visible { outline: 2px solid var(--jaune); outline-offset: 2px; }
+
+  /* Textes empilés dans la même case : la hauteur ne saute pas, fondu enchaîné */
+  .atout-textes { display: grid; max-width: 720px; margin: 0 auto; background: var(--blanc); border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .atout-texte { grid-area: 1 / 1; visibility: hidden; opacity: 0; transform: translateY(6px); transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s; }
+  .atout-texte.is-active { visibility: visible; opacity: 1; transform: none; transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s; }
+  .atout-texte-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: color-mix(in srgb, var(--c) 12%, transparent); color: var(--c); margin-bottom: 1rem; }
+  .atout-texte h3 { font-size: 1.8rem; color: var(--bleu); font-weight: 700; margin-bottom: 0.4rem; }
+  .atout-sous-titre { display: block; color: var(--corail); font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem; }
+  .atout-texte p { font-size: 1.05rem; line-height: 1.8; color: var(--texte); }
+
+  @media (max-width: 768px) {
+    .atouts-barre { grid-template-columns: repeat(2, 1fr); border-radius: 20px; }
+    .atout { padding: 1rem 0.5rem; font-size: 0.85rem; }
+    .atout-textes { padding: 1.75rem 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .atouts-barre.is-ready .atouts-indicateur, .atout-texte, .atout-texte.is-active { transition: none; }
   }
 
   @keyframes pulse-bandeau { 0%, 100% { box-shadow: 0 8px 30px rgba(27, 58, 92, 0.2); transform: scale(1); } 50% { box-shadow: 0 16px 60px rgba(26, 107, 92, 0.6), 0 0 0 20px rgba(26, 107, 92, 0); transform: scale(1.02); } }
@@ -329,23 +420,6 @@ import Base from '../layouts/Base.astro';
 </style>
 
 <script>
-  const symbols = document.querySelectorAll('.symbol');
-  let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
-  document.addEventListener('mousemove', (e) => {
-    targetX = (e.clientX / window.innerWidth - 0.5) * 2;
-    targetY = (e.clientY / window.innerHeight - 0.5) * 2;
-  });
-  function animateSymbols() {
-    currentX += (targetX - currentX) * 0.05;
-    currentY += (targetY - currentY) * 0.05;
-    symbols.forEach((sym, i) => {
-      const speed = (i + 1) * 25;
-      sym.style.transform = `translate(${currentX * speed}px, ${currentY * speed}px)`;
-    });
-    requestAnimationFrame(animateSymbols);
-  }
-  requestAnimationFrame(animateSymbols);
-
   const slides = document.querySelectorAll('.slide');
   const dotsContainer = document.getElementById('slider-dots');
   let currentSlide = 0;
@@ -385,4 +459,98 @@ import Base from '../layouts/Base.astro';
   }, { threshold: 0.3 });
   const chiffresSection = document.querySelector('.chiffres');
   if (chiffresSection) counterObserver.observe(chiffresSection);
+</script>
+
+<script>
+  // Roue « Pourquoi le soroban ? » : au clic, le quart jaune tourne vers la zone et le texte change
+  function initRoue() {
+    const roue = document.querySelector<HTMLElement>('.roue');
+    if (!roue) return;
+    const zones = roue.querySelectorAll<HTMLButtonElement>('.roue-zone');
+    const textes = document.querySelectorAll<HTMLElement>('.roue-texte');
+    const indicateur = roue.querySelector<HTMLElement>('.roue-indicateur')!;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let actif = 0;
+    let rotation = 0;
+    let auto: number | undefined;
+    let priseEnMain = false;
+
+    function afficher(index: number) {
+      // Tourne toujours par le chemin le plus court (jamais 270° dans le mauvais sens)
+      let pas = (index - actif + 4) % 4;
+      if (pas === 3) pas = -1;
+      rotation += pas * 90;
+      indicateur.style.transform = `rotate(${rotation}deg)`;
+      actif = index;
+      zones.forEach((z, i) => z.setAttribute('aria-selected', String(i === index)));
+      textes.forEach((t, i) => t.classList.toggle('is-active', i === index));
+    }
+
+    zones.forEach((zone, i) => zone.addEventListener('click', () => {
+      priseEnMain = true; // le visiteur a pris la main : plus de rotation automatique
+      clearInterval(auto);
+      afficher(i);
+    }));
+
+    // Rotation automatique toutes les 5 s, seulement quand la roue est visible à l'écran
+    new IntersectionObserver(([entry]) => {
+      clearInterval(auto);
+      if (entry.isIntersecting && !priseEnMain && !reduceMotion) {
+        auto = window.setInterval(() => afficher((actif + 1) % 4), 5000);
+      }
+    }, { threshold: 0.5 }).observe(roue);
+  }
+  initRoue();
+</script>
+
+<script>
+  // Barre « La méthode » : au clic, la pilule blanche glisse vers la case et le texte change
+  function initAtouts(bloc: HTMLElement) {
+    const barre = bloc.querySelector<HTMLElement>('.atouts-barre')!;
+    const atouts = barre.querySelectorAll<HTMLButtonElement>('.atout');
+    const textes = bloc.querySelectorAll<HTMLElement>('.atout-texte');
+    const indicateur = barre.querySelector<HTMLElement>('.atouts-indicateur')!;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let actif = 0;
+    let auto: number | undefined;
+    let priseEnMain = false;
+
+    // Place la pilule sous la case active (fonctionne aussi en 2×2 sur mobile)
+    function placer() {
+      const a = atouts[actif];
+      indicateur.style.width = `${a.offsetWidth}px`;
+      indicateur.style.height = `${a.offsetHeight}px`;
+      indicateur.style.transform = `translate(${a.offsetLeft}px, ${a.offsetTop}px)`;
+    }
+
+    function afficher(index: number) {
+      actif = index;
+      atouts.forEach((a, i) => a.setAttribute('aria-selected', String(i === index)));
+      textes.forEach((t, i) => t.classList.toggle('is-active', i === index));
+      placer();
+    }
+
+    atouts.forEach((atout, i) => atout.addEventListener('click', () => {
+      priseEnMain = true; // le visiteur a pris la main : plus de défilement automatique
+      clearInterval(auto);
+      afficher(i);
+    }));
+
+    placer();
+    // Active le glissement une fois Poppins chargée et la pilule à sa taille finale
+    document.fonts.ready.then(() => {
+      placer();
+      requestAnimationFrame(() => barre.classList.add('is-ready'));
+    });
+    window.addEventListener('resize', placer);
+
+    // Défilement automatique toutes les 5 s, seulement quand la barre est visible à l'écran
+    new IntersectionObserver(([entry]) => {
+      clearInterval(auto);
+      if (entry.isIntersecting && !priseEnMain && !reduceMotion) {
+        auto = window.setInterval(() => afficher((actif + 1) % atouts.length), 5000);
+      }
+    }, { threshold: 0.5 }).observe(barre);
+  }
+  document.querySelectorAll<HTMLElement>('.atouts').forEach(initAtouts);
 </script>

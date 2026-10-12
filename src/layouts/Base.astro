@@ -183,7 +183,7 @@ const { title } = Astro.props;
     .burger { display: block; }
     .logo-img { height: 100px; }
 
-    nav {
+    .header nav {
       display: none; position: absolute;
       top: 100%; left: 0; right: 0;
       background: linear-gradient(135deg, #1B3A5C, #1A6B5C);
@@ -192,15 +192,15 @@ const { title } = Astro.props;
       gap: 0; align-items: stretch;
       z-index: 999;
     }
-    nav.open { display: flex; }
+    .header nav.open { display: flex; }
 
-    nav > a {
+    .header nav > a {
       padding: 1rem 0;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       font-size: 1.05rem;
     }
-    nav > a:last-child { border-bottom: none; }
-    nav > a::after { display: none; }
+    .header nav > a:last-child { border-bottom: none; }
+    .header nav > a::after { display: none; }
 
     .dropdown {
       border-bottom: 1px solid rgba(255,255,255,0.1);

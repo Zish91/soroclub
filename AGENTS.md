@@ -23,7 +23,7 @@ Consult these guides before working on related tasks:
 
 ## Projet Soroclub — contexte et règles de travail
 
-Site de Soroclub : école de soroban + soutien scolaire en ligne pour enfants, fondée par Esma (le site mentionne « Ibtissama » comme fondatrice : **à garder tel quel**, choix validé). Stack : Astro 7 + Vercel + GitHub (`Zish91/soroclub`, branche `master`). **Chaque `git push` sur `master` déploie en production** (https://soroclub.vercel.app). Paiements via Stripe Payment Links.
+Site de Soroclub : école de soroban + soutien scolaire en ligne pour enfants, fondée par Esma (le site mentionne « Ibtissama » comme fondatrice : **à garder tel quel**, choix validé). Stack : Astro 7 + Vercel + GitHub (`Zish91/soroclub`, branche `master`). **Chaque `git push` sur `master` déploie en production** (https://www.soroclub.fr, `soroclub.fr` y redirige ; aussi accessible via https://soroclub.vercel.app). Paiements via Stripe Payment Links.
 
 Palette : bleu `#1B3A5C`, jaune `#F5A623`, corail `#E8644A`, crème `#F7F4EF`, texte `#2D2D2D` (+ teal `#1A6B5C` utilisé dans les dégradés). Police : Poppins.
 

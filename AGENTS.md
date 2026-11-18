@@ -37,27 +37,30 @@ Palette : bleu `#1B3A5C`, jaune `#F5A623`, corail `#E8644A`, crème `#F7F4EF`, t
 ## Où on en est (mise à jour : 18 novembre 2026)
 
 ### Fait et en ligne
-1. **Tarifs** (`/tarifs`) : nouvelle grille Soroban (1 / 3 / 6 mois / année d'octobre à juin, individuel et groupe), badge « ⭐ Le plus choisi » sur 6 mois, « Meilleur prix » sur l'année. Soutien scolaire en abonnement mensuel (29€ = 1 cours/semaine, 52€ = 2 cours/semaine, séances de 30 min). Onglets Soroban / Soutien (`/tarifs#soutien` ouvre l'onglet Soutien), pastilles « 1 cours de 40 min / semaine », lignes de prix en 3 colonnes, cartes de réassurance + bandeau d'essai en bas.
+1. **Tarifs** (`/tarifs`) : nouvelle grille Soroban (1 / 3 / 6 mois / année d'octobre à juin ; individuel 60 / 159 / 299 / 399€, groupe 40 / 109 / 199 / 279€), badge « ⭐ Le plus choisi » sur 6 mois, « Meilleur prix » sur l'année. Soutien scolaire en abonnement mensuel (29€ = 1 cours/semaine, 52€ = 2 cours/semaine, séances de 30 min). Onglets Soroban / Soutien (`/tarifs#soutien` ouvre l'onglet Soutien), pastilles « 1 cours de 40 min / semaine », lignes de prix en 3 colonnes, cartes de réassurance + bandeau d'essai en bas.
 2. **Programme → Règlement** : `/programme` supprimée (redirection vers `/tarifs` dans `astro.config.mjs`), nouvelle page `/reglement` (annulation 48h sinon cours dû et reporté si annulé à temps, aucune tolérance de retard, vacances zone C sans cours ni rattrapage, aucun remboursement hors rétractation légale de 14 jours, été sans cours et abonnements suspendus, enregistrement des cours interdit).
 3. **Accueil** : fond animé supprimé ; roue interactive « Pourquoi le soroban ? » (version claire, pastel) ; barre « La méthode qui fait la différence » (style bandeau compteur, pilule qui glisse) ; cartes Soroban / Soutien + bandeau « Cours d'essai à 5€ ». Plus aucune tranche d'âge sur le site, « suivi personnalisé » mis en avant.
 4. **Fluidité** : View Transitions Astro (fondu simple ; header et barre mobile en `transition:persist`). La transition « perle / cercle » façon cipher-it a été **testée puis refusée**. Animations : un seul fondu doux `.fade-in` (16px, 0,7 s) ; plus de glissements latéraux ni de `pageEnter` ; seule animation en boucle : le bouton « Cours d'essai · 5€ » du hero. Pas d'animations au scroll sur mobile (choix volontaire). `prefers-reduced-motion` respecté.
 5. **Finitions** : flèches SVG unifiées (style dans `global.css`), composants communs, nettoyage des `z-index` devenus inutiles.
+6. **Paiements Stripe** (18 novembre 2026) : les 10 Payment Links sont en ligne et vérifiés en production par l'utilisateur (commits `f7f0398` et `4b4d0a8`).
+7. **Durée des cours de soroban** : 40 min (avant : 45 min, et 1h encore avant), affichée sur l'accueil et sur `/tarifs` (commit `2a55ece`). Soutien : 30 min. Cours d'essai : 30 min.
 
 ### Architecture à connaître
 - `src/layouts/Base.astro` : layout unique (head, header, menu, footer, barre mobile 4 icônes, scripts communs).
-- `src/data/stripe.ts` : **les 10 liens Stripe, à un seul endroit** (tous renseignés ; utilisés par `tarifs.astro` et `CarteSoutien.astro`).
+- `src/data/stripe.ts` : **les 10 liens Stripe, à un seul endroit** (tous renseignés ; utilisés par `tarifs.astro` et `CarteSoutien.astro`). Pour changer un lien, c'est ce fichier qu'on modifie, pas les pages.
 - `src/components/CarteSoutien.astro` : carte tarifs Soutien (utilisée sur `/tarifs` et `/soutien-scolaire`, prop `niveau` h2/h3).
 - `src/components/BandeauEssai.astro` : bandeau « Cours d'essai à 5€ » (accueil + tarifs).
 - **Scripts et View Transitions** : chaque script de page démarre sur `document.addEventListener('astro:page-load', …)` et nettoie ses minuteurs / observateurs sur `astro:before-swap` (`{ once: true }`), sinon ils s'accumulent à chaque navigation.
 - Icônes : SVG Lucide inline, **trait 2** (validé, préféré au trait 1,5). `lucide-static` est installé mais pas encore utilisé.
+- **`CLAUDE.md` est un lien symbolique vers `AGENTS.md`** : l'outil Edit refuse d'écrire dans `CLAUDE.md`, il faut modifier `AGENTS.md`.
+- **Build de prévisualisation** : `astro build --outDir` vers le scratchpad (`/tmp`) échoue (`EXDEV`, autre disque). Faire un `npx astro build` simple dans `dist/` (ignoré par git).
 
 ## Reste à faire
-1. **Liens Stripe** : les 10 Payment Links sont dans `src/data/stripe.ts` (18 novembre 2026). Reste : vérifier les liens Groupe et Soutien en production, puis désactiver les 12 anciens liens dans Stripe.
-2. **Icônes** :
+1. **Icônes** :
    - Composant `<Icone nom="…" />` basé sur `lucide-static` pour remplacer les SVG inline (trait 2), et remplacer les emojis ☰ / ✕ (menu burger, piloté par `textContent` dans `Base.astro`), 🧮 (boutique), ⭐ (badges).
    - Icônes animées Lottie (comme sur cipher-it, dont les animations viennent de **LottieFiles**) à 11 emplacements : `eleves.json`, `experience.json`, `niveaux.json`, `essai.json` (4 compteurs de l'accueil, fond foncé), `suivi.json`, `en-ligne.json`, `soroban.json` (réassurance Tarifs), `annulation.json`, `ponctualite.json`, `vacances.json`, `remboursement.json` (« L'essentiel » du Règlement). L'utilisateur hésite entre LottieFiles et **Lordicon** (style cohérent, couleurs personnalisables, animation au survol / à l'apparition). Il fournira les fichiers plus tard.
-3. Optionnel : passer l'accordéon « L'approche Soroclub » de `/soutien-scolaire` en barre ; supprimer la branche GitHub `refonte-tarifs` (inutile).
-4. Rappels pour l'utilisateur : faire relire les sections 7 et 8 du règlement (remboursement / rétractation) ; fin juin, mettre en pause les abonnements soutien dans Stripe.
+2. Optionnel : passer l'accordéon « L'approche Soroclub » de `/soutien-scolaire` en barre ; supprimer la branche GitHub `refonte-tarifs` (inutile).
+3. Rappels pour l'utilisateur : désactiver les 12 anciens liens dans Stripe ; faire relire les sections 7 et 8 du règlement (remboursement / rétractation) ; fin juin, mettre en pause les abonnements soutien dans Stripe.
 
 ### Référence
 - Site cipher-it (autre site de l'utilisateur, même stack) : `~/malsi-it` (`Zish91/malsi-it`) — sert de modèle (ClientRouter, roue « Approach », Lottie avec `dotlottie-player`).

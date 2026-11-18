@@ -34,7 +34,7 @@ Palette : bleu `#1B3A5C`, jaune `#F5A623`, corail `#E8644A`, crème `#F7F4EF`, t
 - Préparer les changements dans le scratchpad, vérifier le rendu (build de prévisualisation + captures Chrome headless) **avant** de proposer le diff.
 - Commits en anglais. Commit / push seulement quand l'utilisateur le demande.
 
-## Où on en est (mise à jour : 7 octobre 2026)
+## Où on en est (mise à jour : 18 novembre 2026)
 
 ### Fait et en ligne
 1. **Tarifs** (`/tarifs`) : nouvelle grille Soroban (1 / 3 / 6 mois / année d'octobre à juin, individuel et groupe), badge « ⭐ Le plus choisi » sur 6 mois, « Meilleur prix » sur l'année. Soutien scolaire en abonnement mensuel (29€ = 1 cours/semaine, 52€ = 2 cours/semaine, séances de 30 min). Onglets Soroban / Soutien (`/tarifs#soutien` ouvre l'onglet Soutien), pastilles « 1 cours de 45 min / semaine », lignes de prix en 3 colonnes, cartes de réassurance + bandeau d'essai en bas.
@@ -45,14 +45,14 @@ Palette : bleu `#1B3A5C`, jaune `#F5A623`, corail `#E8644A`, crème `#F7F4EF`, t
 
 ### Architecture à connaître
 - `src/layouts/Base.astro` : layout unique (head, header, menu, footer, barre mobile 4 icônes, scripts communs).
-- `src/data/stripe.ts` : **les 10 liens Stripe, à un seul endroit** (placeholders `'#'` pour l'instant).
+- `src/data/stripe.ts` : **les 10 liens Stripe, à un seul endroit** (tous renseignés ; utilisés par `tarifs.astro` et `CarteSoutien.astro`).
 - `src/components/CarteSoutien.astro` : carte tarifs Soutien (utilisée sur `/tarifs` et `/soutien-scolaire`, prop `niveau` h2/h3).
 - `src/components/BandeauEssai.astro` : bandeau « Cours d'essai à 5€ » (accueil + tarifs).
 - **Scripts et View Transitions** : chaque script de page démarre sur `document.addEventListener('astro:page-load', …)` et nettoie ses minuteurs / observateurs sur `astro:before-swap` (`{ once: true }`), sinon ils s'accumulent à chaque navigation.
 - Icônes : SVG Lucide inline, **trait 2** (validé, préféré au trait 1,5). `lucide-static` est installé mais pas encore utilisé.
 
 ## Reste à faire
-1. **Liens Stripe (prioritaire)** : les boutons de paiement mènent à `#` en production. L'utilisateur doit créer 10 Payment Links (8 soroban en paiement unique, 2 soutien en abonnement mensuel), idéalement avec l'option « accepter les conditions » pointant vers `/reglement`. Les coller dans `src/data/stripe.ts`. Ensuite seulement : désactiver les 12 anciens liens dans Stripe.
+1. **Liens Stripe** : les 10 Payment Links sont dans `src/data/stripe.ts` (18 novembre 2026). Reste : vérifier les liens Groupe et Soutien en production, puis désactiver les 12 anciens liens dans Stripe.
 2. **Icônes** :
    - Composant `<Icone nom="…" />` basé sur `lucide-static` pour remplacer les SVG inline (trait 2), et remplacer les emojis ☰ / ✕ (menu burger, piloté par `textContent` dans `Base.astro`), 🧮 (boutique), ⭐ (badges).
    - Icônes animées Lottie (comme sur cipher-it, dont les animations viennent de **LottieFiles**) à 11 emplacements : `eleves.json`, `experience.json`, `niveaux.json`, `essai.json` (4 compteurs de l'accueil, fond foncé), `suivi.json`, `en-ligne.json`, `soroban.json` (réassurance Tarifs), `annulation.json`, `ponctualite.json`, `vacances.json`, `remboursement.json` (« L'essentiel » du Règlement). L'utilisateur hésite entre LottieFiles et **Lordicon** (style cohérent, couleurs personnalisables, animation au survol / à l'apparition). Il fournira les fichiers plus tard.
